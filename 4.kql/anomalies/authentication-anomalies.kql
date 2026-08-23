@@ -1,0 +1,3 @@
+SigninLogs
+| summarize FailedCount = countif(ResultType != 0) by UserPrincipalName, IPAddress
+| where FailedCount > 10

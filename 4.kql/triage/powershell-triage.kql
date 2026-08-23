@@ -1,0 +1,3 @@
+DeviceProcessEvents
+| where FileName =~ "powershell.exe"
+| project Timestamp, DeviceName, ProcessCommandLine, InitiatingProcessFileName, AccountName

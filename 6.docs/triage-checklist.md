@@ -2,7 +2,7 @@
 
 - [ ] What triggered the alert?
 - [ ] Which user, host, or asset is involved?
-- [ ] Is the behaviour authorized or expected?
+- [ ] Is the behaviour authorised or expected?
 - [ ] Are there signs of obfuscation or defense evasion?
 - [ ] Are there anomalous network connections?
 - [ ] Is there evidence of privilege escalation?
@@ -11,6 +11,6 @@
 
 ### Verdict / Final Disposition
 - [ ] **True Positive (Malicious)**: Confirmed security incident.
-- [ ] **Benign Positive (Authorized / Tuning required)**: Legitimate action triggered alert.
+- [ ] **Benign Positive (Authorised / Tuning required)**: Legitimate action triggered alert.
 - [ ] **False Positive**: Erroneous alert or telemetry noise.
 - [ ] **Inconclusive**: Insufficient telemetry / pending escalation.

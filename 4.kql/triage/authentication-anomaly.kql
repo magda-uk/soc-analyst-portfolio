@@ -1,0 +1,6 @@
+// Triage: Authentication Anomaly
+SigninLogs
+| where ResultType != 0
+| where FailureReason has_any ("invalid", "password", "MFA")
+| project Timestamp, UserPrincipalName, IPAddress, ResultType, FailureReason
+| order by Timestamp desc

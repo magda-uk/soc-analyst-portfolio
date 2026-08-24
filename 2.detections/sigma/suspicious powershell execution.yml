@@ -1,0 +1,26 @@
+title: Suspicious PowerShell Execution
+id: sigma-template-001
+description: Detects potentially malicious PowerShell activity indicative of execution or reconnaissance.
+status: experimental
+author: M
+date: 2026/08/23
+references:
+  - https://attack.mitre.org/techniques/T1059/001/
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+    Image|endswith: '\powershell.exe'
+    CommandLine|contains:
+      - '-enc'
+      - 'Invoke-WebRequest'
+      - 'IEX'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentImage
+falsepositives:
+  - Administrative scripts
+level: medium

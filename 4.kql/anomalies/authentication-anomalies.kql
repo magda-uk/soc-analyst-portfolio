@@ -1,3 +1,34 @@
+// ===============================
+// AUTHENTICATION ANOMALY DETECTION
+// Techniques: T1078 (Valid Accounts), T1110 (Brute Force)
+// ===============================
+
+// 1. Impossible Travel Detection
+let ImpossibleTravel = 
 SigninLogs
-| summarize FailedCount = countif(ResultType != 0) by UserPrincipalName, IPAddress
-| where FailedCount > 10
+| extend PreviousTimestamp = prev(Timestamp), PreviousLocation = prev(Location)
+| where isnotempty(PreviousLocation)
+| where Location != PreviousLocation
+| where datetime_diff('minute', PreviousTimestamp, Timestamp) < 60
+| project Timestamp, UserPrincipalName, IPAddress, Location, PreviousLocation, PreviousTimestamp;
+
+// 2. MFA Fatigue Detection (multiple MFA failures in short time)
+let MfaFatigue =
+SigninLogs
+| where ResultType != 0
+| where FailureReason has_any ("MFA", "denied", "timeout")
+| summarize Failures = count(), FirstFailure = min(Timestamp), LastFailure = max(Timestamp)
+    by UserPrincipalName, IPAddress
+| where Failures >= 5 and datetime_diff('minute', FirstFailure, LastFailure) <= 10;
+
+// 3. Suspicious IP Patterns (TOR, VPN, known bad ranges)
+let SuspiciousIPs =
+SigninLogs
+| where IPAddress in ("185.220.101.0/24", "104.244.72.0/24", "198.98.48.0/20") // TOR/VPN examples
+| project Timestamp, UserPrincipalName, IPAddress, Location;
+
+// Combine all anomalies
+ImpossibleTravel
+| union MfaFatigue
+| union SuspiciousIPs
+| order by Timestamp desc

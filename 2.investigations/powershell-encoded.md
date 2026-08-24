@@ -1,25 +1,33 @@
 # Investigation Case: Suspicious PowerShell Encoded Command (T1059.001)
 
 ## Summary
-Initial triage of an alert triggered by the execution of an encoded PowerShell command. Encoded commands are frequently used to obfuscate malicious payloads, download scripts, or execute in‑memory attacks.
+This investigation analyses a suspicious PowerShell execution involving encoded or obfuscated commands. Such behaviour is commonly associated with malware delivery, credential harvesting, and in‑memory execution.
 
-## Detection Trigger
-Detection: PowerShell execution containing "-enc" or Base64‑encoded payloads.
+## Initial Alert
+- Detection: Suspicious PowerShell Execution (Sentinel)
+- MITRE ATT&CK: T1059.001 – PowerShell
 
-## KQL Validation
-(Insert KQL queries used to validate the alert.)
+## Evidence
+- Process: powershell.exe
+- Indicators: "-enc", "IEX", "Invoke-WebRequest"
+- Parent process: Unusual (not explorer.exe or cmd.exe)
 
-## Process Tree Analysis
-(Identify parent process: e.g., winword.exe, outlook.exe, wscript.exe, explorer.exe.)
+## Analysis
+1. Reviewed command line for obfuscation.
+2. Checked parent process for signs of compromise.
+3. Correlated with network events for outbound connections.
+4. Verified user context and recent activity.
 
-## User Behaviour
-(Review user identity, role, recent sign‑ins, anomalies.)
+## Findings
+- Encoded command present.
+- Network connection to external host.
+- Execution triggered by an unexpected parent process.
 
-## Network Activity
-(Check outbound connections initiated by PowerShell.)
+## Conclusion
+Activity is consistent with malicious PowerShell usage. Further investigation required.
 
-## Verdict
-(Benign / Suspicious / Malicious)
+## Recommended Response
+- Contain device.
+- Review user account for lateral movement.
+- Check for additional suspicious processes.
 
-## Escalation Notes
-(If suspicious or malicious, include justification for escalation to L2.)

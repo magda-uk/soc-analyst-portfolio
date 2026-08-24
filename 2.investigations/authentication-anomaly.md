@@ -1,25 +1,33 @@
 # Investigation Case: Authentication Anomaly (T1110 / T1078)
 
 ## Summary
-Investigation of abnormal authentication behaviour, such as multiple failed logins, unusual geolocation, impossible travel, or use of compromised credentials.
+This investigation analyses unusual authentication patterns, including impossible travel and repeated failures.
 
-## Detection Trigger
-Detection: Authentication anomaly (e.g., brute force, password spraying, unusual sign‑in location).
+## Initial Alert
+- Detection: Anomalous Authentication Patterns (Sentinel)
+- MITRE ATT&CK: T1078 – Valid Accounts
 
-## KQL Validation
-(Insert KQL queries used to validate authentication anomalies.)
+## Evidence
+- Multiple sign-ins from geographically distant IPs.
+- Repeated MFA failures.
+- Unusual device activity.
 
-## Process Tree Analysis
-(Not always applicable; include if sign‑in leads to suspicious process execution.)
+## Analysis
+1. Reviewed sign-in logs for impossible travel.
+2. Checked MFA logs for repeated failures.
+3. Correlated with device activity.
+4. Investigated user behaviour and recent changes.
 
-## User Behaviour
-(Review user identity, recent activity, MFA status, role.)
+## Findings
+- Authentication attempts from suspicious IPs.
+- MFA failures consistent with brute-force or credential stuffing.
+- Device activity inconsistent with user profile.
 
-## Network Activity
-(Check for suspicious connections following authentication.)
+## Conclusion
+Potential account compromise.
 
-## Verdict
-(Benign / Suspicious / Malicious)
+## Recommended Response
+- Enforce MFA reset.
+- Review recent sign-ins.
+- Investigate user activity.
 
-## Escalation Notes
-(If suspicious or malicious, include justification for escalation to L2.)

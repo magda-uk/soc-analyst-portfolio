@@ -1,25 +1,32 @@
-# Investigation Case: Potential Credential Dumping Activity (T1003)
+# Investigation: Potential Credential Dumping
 
 ## Summary
-Investigation of behaviour indicative of credential access attempts, such as LSASS memory access, suspicious tooling, or abnormal process interactions.
+This investigation focuses on suspicious access to LSASS memory, a common technique used for credential dumping.
 
-## Detection Trigger
-Detection: Possible credential dumping behaviour (e.g., access to LSASS, use of mimikatz‑like patterns).
+## Initial Alert
+- Detection: LSASS Access Attempt (Elastic)
+- MITRE ATT&CK: T1003 – Credential Dumping
 
-## KQL Validation
-(Insert KQL queries used to validate LSASS access or related events.)
+## Evidence
+- Process accessing LSASS.
+- Parent process not associated with legitimate LSASS access.
+- Indicators of process injection.
 
-## Process Tree Analysis
-(Identify suspicious parent processes interacting with LSASS.)
+## Analysis
+1. Reviewed DLL loads for suspicious modules.
+2. Checked for process injection techniques.
+3. Correlated with authentication logs for anomalies.
+4. Investigated user privilege level.
 
-## User Behaviour
-(Review user privileges, admin rights, recent authentication patterns.)
+## Findings
+- Unauthorised LSASS access attempt.
+- Suspicious DLL loaded.
+- Authentication anomalies detected.
 
-## Network Activity
-(Check for lateral movement or outbound connections following credential access.)
+## Conclusion
+High likelihood of credential dumping attempt.
 
-## Verdict
-(Benign / Suspicious / Malicious)
-
-## Escalation Notes
-(If suspicious or malicious, include justification for escalation to L2 or IR.)
+## Recommended Response
+- Reset affected credentials.
+- Investigate privilege escalation.
+- Review lateral movement.

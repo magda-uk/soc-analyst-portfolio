@@ -16,11 +16,11 @@ It includes practical work across alert triage, investigations, threat hunting, 
 ### 1. Detections (`1.detections/`)
 Production-style detection rules written in YAML for:
 - Microsoft Sentinel  
-- Elastic Security  
-- Sigma  
+- Elastic-compatible Sigma rules 
+- Sigma (generic detection format)
 
 Each rule includes:
-- MITRE ATT&CK mapping  
+- basic MITRE ATT&CK mapping  
 - entity mappings  
 - investigation notes  
 - response guidance  
@@ -35,7 +35,7 @@ Case-based investigations covering:
 - suspicious PowerShell activity  
 - credential access attempts  
 
-Focused on building timelines, pivoting across datasets and documenting findings — core skills for L1 triage and escalation.
+Focused on building timelines, pivoting across datasets and documenting findings: core skills for L1 triage and escalation.
 
 ---
 
@@ -100,12 +100,14 @@ To demonstrate that I am fully prepared for SOC Analyst L1 positions by showcasi
 
 ## 🛠️ Technologies Used
 
-- Microsoft Sentinel (KQL, Analytics Rules)  
-- Elastic Security  
-- Sigma  
-- Sysmon  
-- Wazuh  
-- MITRE ATT&CK  
+### Hands-on experience
+- **Microsoft Sentinel** — KQL queries, Analytics Rules, alert triage and log analysis  
+- **Sysmon** — local event analysis, process monitoring and behaviour review  
+
+### Additional Blue Team technologies explored
+- **Elastic Security** — reviewed detection workflows and SIEM capabilities  
+- **Sigma** — studied rule structure and and basic MITRE ATT&CK mapping  
+- **Wazuh** — explored documentation, agent behaviour and alerting model  
 
 ---
 

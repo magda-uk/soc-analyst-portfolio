@@ -1,0 +1,30 @@
+name: Authentication Anomaly Detection
+severity: High
+status: Enabled
+description: Detects suspicious authentication patterns including impossible travel, MFA fatigue, and risky IP ranges.
+tactics:
+  - InitialAccess
+techniques:
+  - T1078
+query: |
+  let AuthAnomalies =
+  SigninLogs
+  | where ResultType == 0
+  | where Location != prev(Location)
+      or IPAddress in ("185.220.101.0/24", "104.244.72.0/24")
+      or FailureReason has_any ("MFA", "denied", "timeout")
+  | project Timestamp, UserPrincipalName, IPAddress, Location, FailureReason;
+
+  AuthAnomalies
+entityMappings:
+  - entityType: Account
+    fieldMappings:
+      - identifier: Name
+        columnName: UserPrincipalName
+  - entityType: IP
+    fieldMappings:
+      - identifier: Address
+        columnName: IPAddress
+alertDetailsOverride:
+  alertDisplayName: "Suspicious Authentication Activity Detected"
+  alertDescription: "User shows abnormal authentication patterns including impossible travel, MFA fatigue or risky IP usage."

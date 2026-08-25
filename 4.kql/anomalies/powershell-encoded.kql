@@ -1,0 +1,31 @@
+// ===============================
+// ADVANCED POWERSHELL ENCODED ANOMALY DETECTION
+// Technique: T1059.001 (PowerShell)
+// ===============================
+
+// 1. Encoded command detection
+let EncodedCmd =
+DeviceProcessEvents
+| where FileName =~ "powershell.exe"
+| where ProcessCommandLine has_any ("-enc", "-encodedcommand", "FromBase64String")
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName;
+
+// 2. Suspicious ScriptBlock content
+let SuspiciousScriptBlocks =
+DeviceEvents
+| where ActionType == "ScriptBlockLogging"
+| where AdditionalFields.ScriptBlockText has_any ("Invoke-WebRequest", "Invoke-Expression", "IEX", "DownloadString")
+| project Timestamp, DeviceName, AdditionalFields.ScriptBlockText;
+
+// 3. PowerShell spawning unusual child processes
+let SuspiciousChildren =
+DeviceProcessEvents
+| where InitiatingProcessFileName =~ "powershell.exe"
+| where FileName in ("cmd.exe", "wscript.exe", "cscript.exe", "rundll32.exe")
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName;
+
+// Combine anomalies
+EncodedCmd
+| union SuspiciousScriptBlocks
+| union SuspiciousChildren
+| order by Timestamp desc

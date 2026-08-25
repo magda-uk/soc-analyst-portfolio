@@ -14,7 +14,7 @@ It includes practical work across alert triage, investigations, threat hunting, 
 ## 📁 Repository Structure
 
 ### 1. Detections (`1.detections/`)
-A collection of production-style detection rules for:
+Production-style detection rules written in YAML for:
 - Microsoft Sentinel  
 - Elastic Security  
 - Sigma  
@@ -112,7 +112,11 @@ To demonstrate that I am fully prepared for SOC Analyst L1 positions by showcasi
 ## 👤 Author
 
 **Magdalena Dominguez**  
-SOC Analyst (L1-ready) — Triage, Investigations, Threat Hunting  
-Bristol, UK 2026
+
+SOC Analyst (L1-ready) 
+Triage, Investigations, Threat Hunting  
+Bristol, UK 
 ## 📬 Contact
 If you would like to discuss any part of this portfolio or my work in security operations, feel free to reach out.
+
+LindedIn: www.linkedin.com/in/magda-d-infosec

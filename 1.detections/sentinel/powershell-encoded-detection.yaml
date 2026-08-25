@@ -1,0 +1,25 @@
+name: PowerShell Encoded Command Execution
+severity: High
+status: Enabled
+description: Detects encoded PowerShell execution and suspicious scriptblock activity.
+tactics:
+  - Execution
+techniques:
+  - T1059.001
+query: |
+  DeviceProcessEvents
+  | where FileName =~ "powershell.exe"
+  | where ProcessCommandLine has_any ("-enc", "-encodedcommand", "FromBase64String")
+  | project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName
+entityMappings:
+  - entityType: Host
+    fieldMappings:
+      - identifier: HostName
+        columnName: DeviceName
+  - entityType: Process
+    fieldMappings:
+      - identifier: CommandLine
+        columnName: ProcessCommandLine
+alertDetailsOverride:
+  alertDisplayName: "Encoded PowerShell Execution Detected"
+  alertDescription: "PowerShell executed with encoded commands, often used for obfuscation and malicious activity."

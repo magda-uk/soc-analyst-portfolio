@@ -81,20 +81,44 @@ Operational documentation used in real SOC teams:
 - response playbooks  
 - runbooks  
 
-Shows structured thinking and understanding of SOC processes — crucial for L1 analysts.
+Shows structured thinking and understanding of SOC processes, crucial for L1 analysts.
+
+---
+### 7. Hands-on Labs (`7.hands-on/`)
+
+Hands-on practice exercises designed to build real SOC L1 skills using local logging, Azure AD sign-in data and controlled suspicious activity.
+
+This section includes:
+
+- Sysmon baseline analysis  
+- Sysmon suspicious activity  
+- PowerShell ScriptBlock logging  
+- Azure AD authentication triage  
+- Process tree analysis  
+- MITRE ATT&CK mapping  
+- Mini-investigation (end-to-end)  
+
+Each lab contains:
+
+- step-by-step actions  
+- screenshots of relevant logs  
+- analysis notes  
+- conclusions  
+- SOC-style documentation  
+
+This section is currently in progress and will be updated daily.
 
 ---
 
-## 🎯 Purpose of This Portfolio
+## 🎯 Purpose of this project
 
-To demonstrate that I am fully prepared for SOC Analyst L1 positions by showcasing practical, hands-on experience in:
-- alert triage  
-- investigations  
-- threat hunting  
-- incident response  
-- log analysis  
-- SOC workflow design  
-- operational documentation  
+
+This portfolio showcases my practical learning path toward becoming a SOC Analyst L1.  
+It includes production-style detection rules, log analysis exercises, KQL queries, investigations and documentation aligned with real SOC workflows.
+
+The project is actively maintained and expanded.  
+The new **Hands-on Labs (7.hands-on/)** section is currently in progress and will be updated daily with practical exercises covering Sysmon, PowerShell logging, authentication triage, MITRE mapping and end‑to‑end investigations.
+
 
 ---
 

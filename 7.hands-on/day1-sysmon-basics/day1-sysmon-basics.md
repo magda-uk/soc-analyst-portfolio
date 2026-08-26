@@ -1,4 +1,4 @@
-## Day 1 — Sysmon Basics 
+## Day 1  Sysmon Basics  -- ![Sysmon](https://img.shields.io/badge/Sysmon-Event_Telemetry-B48CFF?style=flat-square&logo=windows&logoColor=white)
 ### 1. What is Sysmon?
 
 Sysmon is a component of the Sysinternals suite that provides high‑fidelity telemetry about process creation, network activity, registry modifications, driver loading, and other system behaviour.
@@ -26,7 +26,8 @@ The configuration summary shows:
 
 * hashing algorithms (MD5, SHA256, IMPHASH)
 
-### 4. Sysmon Event ID 1 — Process Creation
+### 4. Sysmon Event ID 1  
+### **_Process Creation_**
 
 
 In this exercise, I executed calc.exe   to generate a clean and controlled event.    

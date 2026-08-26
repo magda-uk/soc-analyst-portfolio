@@ -44,30 +44,30 @@ This information is essential for SOC analysts, as it allows them to identify su
 In this exercise, the execution of calc.exe produced a clean and controlled Event ID 1 entry.
 Key fields include:
 
-   * Image — the full path of the executable (calc.exe).
+   * **Image** -> the full path of the executable (calc.exe).
     `C:\Windows\System32\calc.exe`
 
 
-* CommandLine — how the process was launched.
+* **CommandLine** -> how the process was launched.
 `"C:\Windows\System32\calc.exe"`
 
 
-* ParentImage — the process responsible for launching it (PowerShell in this case).   `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
+* **ParentImage** -> the process responsible for launching it (PowerShell in this case).   `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
 
 
-* ParentCommandLine — how the parent process was invoked.
+* **ParentCommandLine** -> how the parent process was invoked.
 `"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"`
 
-* User — the account under which the process was executed.
+* **User** -> the account under which the process was executed.
 `Azul_Fifty`
 
 
-* IntegrityLevel — privilege level of the process. `High`
+* **IntegrityLevel**-> privilege level of the process. `High`
 
-* Hashes — MD5, SHA256 and ImpHash values used for file identification.
+* **Hashes** -> MD5, SHA256 and ImpHash values used for file identification.
 `MD5=...` `SHA256=...` `IMPHASH=...`
 
-* ParentUser `Azul_Fifty\magda`
+* **ParentUser** -> `Azul_Fifty\magda`
 
 ---
 
@@ -101,7 +101,7 @@ or
 `C:\Users\<user>\Downloads\`
 
 ---
----
+
 
 **_That wraps up the checks for Sysmon, it’s installed properly and logging exactly as it should._**
 

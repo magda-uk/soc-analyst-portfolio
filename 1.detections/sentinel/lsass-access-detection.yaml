@@ -1,0 +1,25 @@
+name: Suspicious LSASS Access
+severity: High
+status: Enabled
+description: Detects suspicious access to LSASS memory, often used for credential dumping.
+tactics:
+  - CredentialAccess
+techniques:
+  - T1003
+query: |
+  DeviceProcessEvents
+  | where GrantedAccess has_any ("0x40", "0x1000", "0x1FFFFF")
+  | where FileName =~ "lsass.exe"
+  | project Timestamp, DeviceName, InitiatingProcessFileName, GrantedAccess
+entityMappings:
+  - entityType: Host
+    fieldMappings:
+      - identifier: HostName
+        columnName: DeviceName
+  - entityType: Process
+    fieldMappings:
+      - identifier: ProcessName
+        columnName: InitiatingProcessFileName
+alertDetailsOverride:
+  alertDisplayName: "Suspicious LSASS Access Detected"
+  alertDescription: "Process accessed LSASS memory with high privileges, indicating potential credential dumping."

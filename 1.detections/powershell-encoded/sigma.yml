@@ -2,7 +2,7 @@ title: Suspicious PowerShell Execution
 id: sigma-template-001
 description: Detects potentially malicious PowerShell activity indicative of execution or reconnaissance.
 status: experimental
-author: M
+author: Magda Dominguez
 date: 2026/08/23
 references:
   - https://attack.mitre.org/techniques/T1059/001/

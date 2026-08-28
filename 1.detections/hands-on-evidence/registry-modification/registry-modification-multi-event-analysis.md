@@ -63,7 +63,7 @@ This entry adds a file‑level context‑menu option. The `*\shell\...` path is 
 * Hide malicious commands behind legitimate UI elements
 * Persist through Explorer interactions
 
-Again, legitimate — but SOC‑relevant.
+Legitimate activity, but highly relevant for SOC practice due to its similarity to attacker techniques.
 
 ![event2](./screenshots/EVENT2.png)
 ---
@@ -149,7 +149,7 @@ This adds a third category of registry modification to the evidence set.
 
 ---
 
-## Combined SOC Interpretation
+## Main Takeaways
 
 Together, these four events demonstrate:
 

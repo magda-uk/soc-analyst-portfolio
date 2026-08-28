@@ -37,7 +37,7 @@ This modification adds a right‑click command to the Windows Explorer directory
 
 Although legitimate, the pattern is identical to malicious shell extension techniques.
 
-![event1](screenshots/event1.png)
+![event1](./screenshots/EVENT1.png)
 
 ---
 
@@ -65,7 +65,7 @@ This entry adds a file‑level context‑menu option. The `*\shell\...` path is 
 
 Again, legitimate — but SOC‑relevant.
 
-![event2](screenshots/event2.png)
+![event2](./screenshots/EVENT2.png)
 ---
 
 ### Event 3 — McAfee Service ImagePath Modification (SYSTEM‑Level Service Change)
@@ -99,7 +99,7 @@ Attackers use this to:
 
 Although McAfee is legitimate, the behaviour is identical to malicious service hijacking.
 
-![event3](screenshots/event3.png)
+![event3](./screenshots/EVENT3.png)
 ---
 
 ### Event 4 : AppCompatFlags Modification (svchost.exe - SYSTEM)

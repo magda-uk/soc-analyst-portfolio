@@ -13,7 +13,7 @@ These artefacts are extremely valuable for SOC analysis because they closely res
 
 ---
 
-### Event 1 — NordVPN Shell Command Extension (Directory Context Menu)
+### Event 1 NordVPN Shell Command Extension (Directory Context Menu)
 
 **Log Artefact**
 
@@ -37,7 +37,7 @@ This modification adds a right‑click command to the Windows Explorer directory
 
 Although legitimate, the pattern is identical to malicious shell extension techniques.
 
-![EVENT1](screenshots/EVENT1.png)
+![event1](screenshots/event1.png)
 
 ---
 

@@ -52,7 +52,7 @@ These documents showcase not only technical capability, but also analytical reas
 
 ## 🎯 Purpose of This Directory
 
-This directory demonstrates your ability to:
+This directory demonstrates my ability to:
 
 * Conduct manual threat-hunting investigations
 * Correlate identity, process, network, and file telemetry
@@ -60,7 +60,7 @@ This directory demonstrates your ability to:
 * Document findings clearly and professionally
 * Think like a SOC Analyst.
 
-It shows that you can go beyond writing queries — you can investigate, interpret, and respond to real attack behaviours.
+It shows that I'm ready to go beyond writing queries — you can investigate, interpret, and respond to real attack behaviours.
 
 ---
 
@@ -78,7 +78,7 @@ These hunting documents can be used as:
 
 ## 📘 Analyst Notes
 
-> **Portfolio Context:** This directory is part of your SOC Analyst Portfolio, designed to highlight hands-on skills in:
+> **Portfolio Context:** This directory is part of my SOC Analyst Portfolio, designed to highlight hands-on skills in:
 > * KQL (Kusto Query Language)
 > * Microsoft Sentinel
 > * Microsoft Defender for Endpoint

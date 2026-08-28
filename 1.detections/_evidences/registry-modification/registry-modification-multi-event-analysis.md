@@ -3,17 +3,17 @@
 
 **Summary**
 
-Four Sysmon Event ID 13 events were observed on the analyst workstation. Although all four originate from legitimate software (NordVPN, McAfee, Windows Photos), they demonstrate three distinct categories of registry modification:
+Four Sysmon Event ID 13 events were observed during practical Sysmon logging exercises. Although all four originate from legitimate software (NordVPN, McAfee, Windows Photos), they demonstrate three distinct categories of registry modification:
 
 * Shell extensions (NordVPN)
 * Service configuration changes (McAfee)
 * AppCompatFlags compatibility metadata (`svchost.exe`)
 
-These artefacts are extremely valuable for SOC analysis because they closely resemble attacker techniques such as persistence, service hijacking, execution via shell extensions, and registry‑based evasion. This combined evidence shows how benign activity can mimic malicious behaviour — a critical skill for SOC analysts.
+These artefacts are extremely valuable for SOC analysis because they closely resemble attacker techniques such as persistence, service hijacking, execution via shell extensions, and registry‑based evasion. This combined evidence shows how benign activity can mimic malicious behaviour.
 
 ---
 
-### Event 1 NordVPN Shell Command Extension (Directory Context Menu)
+### Event 1: **NordVPN Shell Command Extension (Directory Context Menu)**
 
 **Log Artefact**
 
@@ -27,7 +27,7 @@ These artefacts are extremely valuable for SOC analysis because they closely res
 | **New Value** | `"C:\Program Files\NordVPN\NordVPN.exe" -m --send "Incorrect function."` |
 | **User** | `Azul_Fifty\magda` |
 
-**SOC Interpretation**
+**Interpretation**
 
 This modification adds a right‑click command to the Windows Explorer directory context menu. Malware frequently abuses identical registry paths to:
 
@@ -41,7 +41,7 @@ Although legitimate, the pattern is identical to malicious shell extension techn
 
 ---
 
-### Event 2 — NordVPN Meshnet Shell Extension (File Context Menu)
+### Event 2 : **NordVPN Meshnet Shell Extension (File Context Menu)**
 
 **Log Artefact**
 
@@ -55,7 +55,7 @@ Although legitimate, the pattern is identical to malicious shell extension techn
 | **New Value** | `Send with NordVPN Meshnet` |
 | **User** | `Azul_Fifty\magda` |
 
-**SOC Interpretation**
+**Interpretation**
 
 This entry adds a file‑level context‑menu option. The `*\shell\...` path is commonly abused by malware to:
 
@@ -68,7 +68,7 @@ Again, legitimate — but SOC‑relevant.
 ![event2](./screenshots/EVENT2.png)
 ---
 
-### Event 3 — McAfee Service ImagePath Modification (SYSTEM‑Level Service Change)
+### Event 3 : **McAfee Service ImagePath Modification (SYSTEM‑Level Service Change)**
 
 **Log Artefact**
 
@@ -83,7 +83,7 @@ Again, legitimate — but SOC‑relevant.
 | **User** | `NT AUTHORITY\SYSTEM` |
 | **RuleName** | `T1031, T1050` |
 
-**SOC Interpretation**
+**Interpretation**
 
 This is high‑value evidence. Modifying `ImagePath` under `HKLM\System\CurrentControlSet\Services\...` is a recognised attacker technique:
 
@@ -102,7 +102,7 @@ Although McAfee is legitimate, the behaviour is identical to malicious service h
 ![event3](./screenshots/EVENT3.png)
 ---
 
-### Event 4 : AppCompatFlags Modification (svchost.exe - SYSTEM)
+### Event 4 : **AppCompatFlags Modification (svchost.exe - SYSTEM)**
 
 **Log Artefact**
 
@@ -117,7 +117,7 @@ Although McAfee is legitimate, the behaviour is identical to malicious service h
 | **User** | `NT AUTHORITY\SYSTEM` |
 | **RuleName** | `InvDB` |
 
-**SOC Interpretation**
+**Interpretation**
 
 This event shows Windows updating compatibility metadata for a UWP application. The `AppCompatFlags` keys are used to:
 

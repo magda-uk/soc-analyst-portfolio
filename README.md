@@ -48,20 +48,23 @@ Beginner-friendly labs designed to build core SOC skills:
 📁 **Stored in:** `7.hands-on/`
 
 ---
-
-## 💡 Advanced Hands-On Labs (Work in Progress)
+# ✨ Advanced Hands-On Labs (Work in Progress)
 
 As I progressed, some topics required deeper investigation than the foundation roadmap allowed.  
-This section was created to document more advanced, realistic, and multi-event SOC analysis.
+This section was created to document **more advanced**, **realistic**, and **multi‑event** SOC analysis.
 
-*It is a work in progress and updated daily as I continue learning and diving deeper into Blue Team operations.*
+It is a **work in progress** updated daily as I continue learning and diving deeper into Blue Team operations.
 
-### Current Advanced Lab
-* **Registry Modification : Multi-Event Analysis (Sysmon Event ID 13)**  
-  * 📄 **Evidence:** `7.hands-on/registry-modification-multi-event-analysis.md`  
-  * 🎯 **Related Detection:** `1.detections/registry-modification/`
+### Current Advanced Lab  
+- **Registry Modification — Multi‑Event Analysis (Sysmon Event ID 13)**  
+  → Evidence: [`registry-modification-multi-event-analysis.md`](1.detections/0.hands-on-evidence/registry-modification/registry-modification-multi-event-analysis.md)  
+  → Related detection: [`registry-modification.md`](1.detections/registry-modification/registry-modification.md)
 
-*More advanced labs will be added as I explore LSASS access, PowerShell abuse, authentication anomalies, and network-based hunting.*
+> ⚠️ *Advanced labs currently live in their original folders (e.g., detections, investigations).  
+> As more advanced labs are created, they will be consolidated under `7.hands-on/advanced/`.*
+
+More advanced labs will be added as I explore LSASS access, PowerShell abuse, authentication anomalies, and network-based hunting.
+
 
 ---
 
@@ -132,7 +135,7 @@ This portfolio showcases my practical learning path toward becoming a SOC Analys
 
 If you work in Blue Team, detection engineering or SOC operations, feedback is always welcome.
 
-* 💼 **LinkedIn:** [linkedin.com/in/magda-d-infosec](https://linkedin.com/in/magda-d-infosec)
+💼 **LinkedIn:** [linkedin.com/in/magda-d-infosec](https://linkedin.com/in/magda-d-infosec)
 
 ---
 

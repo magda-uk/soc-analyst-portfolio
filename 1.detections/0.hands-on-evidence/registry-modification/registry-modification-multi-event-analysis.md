@@ -1,5 +1,5 @@
 # Evidence : Sysmon Event ID 13 (Registry Value Set)
-## Combined Multi‑Event Analysis: Shell Extensions, Service Modification & AppCompatFlags
+### **Combined Multi‑Event Analysis: Shell Extensions, Service Modification & AppCompatFlags**
 
 **Summary**
 
@@ -140,7 +140,7 @@ This adds a third category of registry modification to the evidence set.
 
 ---
 
-## MITRE ATT&CK Mapping (Across All Events)
+### **MITRE ATT&CK Mapping (Across All Events)**
 
 * **T1112:** Modify Registry
 * **T1547:** Persistence via Registry (Shell Extensions)
@@ -148,22 +148,30 @@ This adds a third category of registry modification to the evidence set.
 * **T1050:** New Service
 
 ---
+### **Main Takeaways**
+These four **Sysmon Event ID 13** entries highlight several important aspects of registry-based activity on Windows systems:
 
-## Main Takeaways
+**Registry modifications occurring under both `HKU` (user context) and `HKLM` (system context):**  
+This shows how changes can originate from different privilege levels.  
+(Glossary: [HKU vs HKLM](../../../0.therory/glossary.md#registry-modification-across-hku-and-hklm))
 
-Together, these four events demonstrate:
+**Clear examples of three distinct registry modification behaviours:**  
+  * Shell extensions added to Explorer context menus  
+    (Glossary: [Shell Extensions](../../../0.therory/glossary.md#shell-extensions))  
+  * Service configuration changes via `ImagePath` updates  
+    (Glossary: [Service Configuration Changes](../../../0.therory/glossary.md#service-configuration-changes))  
+  * `AppCompatFlags` entries created by the Compatibility Assistant  
+    (Glossary: [AppCompatFlags](../../../0.therory/glossary.md#appcompatflags))
 
-* Registry modification across `HKU` and `HKLM`
-* Activity from both user‑level and `SYSTEM`‑level processes
-* Three distinct registry modification behaviours:
-  * Shell extensions
-  * Service configuration changes
-  * AppCompatFlags compatibility metadata
-* How benign software can produce artefacts identical to attacker techniques
-* How Sysmon captures high‑value telemetry for SOC investigations
-* How a SOC analyst correlates multiple registry events into a single coherent picture
+**Legitimate software noise:**  
+Legitimate applications can generate registry activity that closely resembles attacker techniques used for persistence, privilege escalation, or evasion.
 
-This combined evidence supports detection logic for identifying suspicious registry activity across multiple threat categories.
+**Multi-event context:**  
+Correlating multiple registry events helps build a clearer understanding of how different processes interact with the registry over time, supporting the development of robust detection logic for suspicious registry activity.
+
+
+
+
 
 ---
 

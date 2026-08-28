@@ -58,7 +58,8 @@ It is a **work in progress** updated daily as I continue learning and diving dee
 ### Current Advanced Lab  
 - **Registry Modification — Multi‑Event Analysis (Sysmon Event ID 13)**  
   → Evidence: [`registry-modification-multi-event-analysis.md`](1.detections/0.hands-on-evidence/registry-modification/registry-modification-multi-event-analysis.md)  
-  → Related detection: [`registry-modification.md`](1.detections/registry-modification/registry-modification.md)
+ → Threat background: [`threat-background.md`](1.detections/registry-modification/threat-background.md)  
+  → Detection rule: *coming soon*
 
 > ⚠️ *Advanced labs currently live in their original folders (e.g., detections, investigations).  
 > As more advanced labs are created, they will be consolidated under `7.hands-on/advanced/`.*

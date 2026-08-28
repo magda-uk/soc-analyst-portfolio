@@ -1,153 +1,146 @@
-# SOC Analyst Portfolio
-
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Language](https://img.shields.io/badge/Language-KQL%20%7C%20YAML%20%7C%20Markdown-blue)
-![Focus](https://img.shields.io/badge/Focus-Threat%20Detection%20%26%20Investigation-orange)
-![MITRE](https://img.shields.io/badge/MITRE%20ATT%26CK-Coverage-lightgrey)
 
 
-This repository documents my practical learning path toward becoming a SOC Analyst L1.  
-It contains hands-on exercises, detection engineering work, log analysis, KQL queries, investigations and learner‑friendly SOC projects aligned with real Blue Team workflows.
+#  SOC Analyst Portfolio
 
-The project is actively maintained and expanded.  
-The new **Hands-on Labs (7.hands-on/)** section is currently in progress and will be updated daily with practical exercises covering Sysmon, PowerShell logging, authentication triage, MITRE mapping and end‑to‑end investigations.
+Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, investigations, and Blue Team labs. (Actively maintained, updated daily)
 
+<p align="left">
+  <img src="https://img.shields.io/badge/Blue%20Team-SOC%20Analyst-blue?style=flat-square" alt="Blue Team SOC Analyst">
+  <img src="https://img.shields.io/badge/Microsoft-Sentinel-0078D4?style=flat-square&logo=microsoft" alt="Microsoft Sentinel">
+  <img src="https://img.shields.io/badge/Azure-Entra%20ID-0078D4?style=flat-square&logo=microsoftazure" alt="Azure Entra ID">
+  <img src="https://img.shields.io/badge/Elastic-Security-005571?style=flat-square&logo=elastic" alt="Elastic Security">
+  <img src="https://img.shields.io/badge/Sigma-Detection%20Rules-orange?style=flat-square" alt="Sigma Detection Rules">
+  <img src="https://img.shields.io/badge/Sysmon-Event%20Analysis-purple?style=flat-square" alt="Sysmon Event Analysis">
+  <img src="https://img.shields.io/badge/KQL-Queries-green?style=flat-square" alt="KQL Queries">
+  <img src="https://img.shields.io/badge/Work%20in%20Progress-Active-yellow?style=flat-square" alt="Work in Progress">
+</p>
 
-## 🛠️ Technologies Used
+---
 
-This portfolio uses a practical Blue Team toolset, including:
+## 📌 Central Hub : From Zero to Hero
 
-- **Microsoft Sentinel** (Analytics Rules, KQL, entity mapping)  
-- **Azure AD / Entra ID** (authentication logs, sign-in analysis)  
-- **Elastic Stack** (Elasticsearch, Kibana, EQL detections)  
-- **Wazuh** (host-based monitoring, rule validation)  
-- **Sysmon** (high-fidelity Windows telemetry)  
-- **Sigma** (generic detection format)  
-- **Kusto Query Language (KQL)** (triage and hunting queries)  
-- **PowerShell Logging** (ScriptBlock, Module, Transcription)  
-- **Windows Event Logs** (Security, Sysmon, PowerShell)  
+This repository documents my practical learning path toward becoming a **SOC Analyst L1**.  
+It contains hands-on labs, detection engineering, log analysis, hunting playbooks, KQL queries, investigations and SOC documentation; all aligned with real Blue Team workflows.
+
+The project is actively maintained and updated daily as I continue learning and deepening my understanding of SOC operations.
+
+---
 
 ## 🎓 Learning Path
 
-I am currently preparing for the **Microsoft SC‑200: Security Operations Analyst** certification.  
-This portfolio supports my learning by providing hands-on practice with detection engineering, KQL, log analysis and investigation workflows aligned with the exam’s core skills.
-
-## 📁 Repository Structure
-
-### 1. Detections (`1.detections/`)
-Production-style detection rules written in YAML for:
-- Microsoft Sentinel  
-- Elastic-compatible Sigma rules 
-- Sigma (generic detection format)
-
-Each rule includes:
-- basic MITRE ATT&CK mapping  
-- entity mappings  
-- investigation notes  
-- response guidance  
+I am currently preparing for **Microsoft SC-200: Security Operations Analyst**.  
+This portfolio supports my learning with practical exercises across detection engineering, KQL, log analysis and investigation workflows.
 
 ---
 
-### 2. Investigations (`2.investigations/`)
-SOC-style investigations including:
-- timelines  
-- log evidence  
-- triage notes  
-- escalation decisions  
-- MITRE mapping  
+## 🛣️ Foundation Roadmap (7 Days)
+
+Beginner-friendly labs designed to build core SOC skills:
+
+* Sysmon baseline
+* Suspicious Sysmon + Wireshark
+* PowerShell ScriptBlock logging
+* Authentication triage
+* Process tree analysis
+* MITRE ATT&CK mapping
+* End-to-end mini investigation
+
+📁 **Stored in:** `7.hands-on/`
 
 ---
 
-### 3. Log Analysis (`3.log-analysis/`)
-Hands-on log analysis exercises covering:
-- Sysmon  
-- PowerShell  
-- authentication patterns  
-- credential access behaviour  
+## 💡 Advanced Hands-On Labs (Work in Progress)
+
+As I progressed, some topics required deeper investigation than the foundation roadmap allowed.  
+This section was created to document more advanced, realistic, and multi-event SOC analysis.
+
+*It is a work in progress and updated daily as I continue learning and diving deeper into Blue Team operations.*
+
+### Current Advanced Lab
+* **Registry Modification : Multi-Event Analysis (Sysmon Event ID 13)**  
+  * 📄 **Evidence:** `7.hands-on/registry-modification-multi-event-analysis.md`  
+  * 🎯 **Related Detection:** `1.detections/registry-modification/`
+
+*More advanced labs will be added as I explore LSASS access, PowerShell abuse, authentication anomalies, and network-based hunting.*
 
 ---
 
-### 4. KQL Queries (`4.kql/`)
-Kusto Query Language (KQL) queries for:
-- triage  
-- anomaly detection  
-- threat hunting  
-- documentation and checklists  
+## 🗺️ Repository Structure
 
+### 🧪 Detection Engineering
+Production-style detection rules written in YAML and KQL for:
+* Microsoft Sentinel
+* Elastic
+* Sigma (generic format)
 
----
+Each rule includes MITRE mapping, entity mappings, investigation notes and response guidance.  
+📂 `1.detections/`
 
-### 5. Security Labs (`5.projects/`)
-Larger, learner‑friendly SOC projects designed to help me build practical skills in detection engineering, log analysis, KQL investigations and incident documentation.
+### 🔎 Investigations
+SOC-style investigations including timelines, triage notes, log evidence and MITRE mapping.  
+📂 `2.investigations/`
 
-Current project:
-- #### **Sysmon Lab Environment**  
+### 📊 Log Analysis
+Hands-on log analysis exercises covering Sysmon, PowerShell, authentication patterns and credential access behaviour.  
+📂 `3.log-analysis/`
 
-More projects will be added progressively as part of my ongoing learning path.
+### 🕵️ Threat Hunting
+Behavioural hunting playbooks, anomaly detection and pattern-based hunting.  
+Each hunting case includes:
+* Hypothesis
+* Behavioural indicators
+* Sysmon evidence
+* KQL hunting queries
+* MITRE mapping
+* Triage notes
+* Investigation guidance  
+📂 `4.hunting/`
 
+### 🧩 Security Labs
+Larger SOC projects designed to build practical skills in detection engineering, log analysis, KQL and incident documentation.  
+📂 `5.projects/` *(Current project: Sysmon Lab Environment)*
 
----
-
-### 6. SOC Documentation (`6.documents/`)
+### 📝 SOC Documentation
 Operational documentation used in real SOC teams:
-- SOC methodology  
-- incident response workflow  
-- MITRE mapping guide  
-- alert severity framework  
-- response playbooks  
-- runbooks  
+* SOC methodology
+* Incident response workflow
+* MITRE mapping guide
+* Alert severity framework
+* Response playbooks
+* Runbooks  
+📂 `6.documents/`
 
+### 🧰 Hands-On Labs
+Practical SOC exercises including Sysmon baseline, suspicious activity, ScriptBlock logging, authentication triage, MITRE mapping and end-to-end investigations.  
+📂 `7.hands-on/` *(Updated daily)*
 
 ---
-### 7. Hands-on Labs (`7.hands-on/`)
 
-Hands-on practice exercises designed to build real SOC L1 skills.
+## 🛠️ Technologies Used
 
-Includes:
-- Sysmon baseline analysis  
-- Sysmon suspicious activity  
-- PowerShell ScriptBlock logging  
-- Azure AD authentication triage  
-- Process tree analysis  
-- MITRE ATT&CK mapping  
-- Mini-investigation (end-to-end)  
+Microsoft Sentinel, Azure AD / Entra ID, Elastic Security, Wazuh, Sysmon, Sigma, KQL, PowerShell Logging, Windows Event Logs.
 
-Each lab contains:
+---
 
-- step-by-step actions  
-- screenshots of relevant logs  
-- analysis notes  
-- conclusions  
-- SOC-style documentation  
+## 🎯 Purpose
 
-This section is currently in progress and will be updated daily.
+This portfolio showcases my practical learning path toward becoming a SOC Analyst L1, with real-world aligned workflows and continuous updates.
 
-
-
-## 🎯 Purpose of this project
-
-
-This portfolio showcases my practical learning path toward becoming a SOC Analyst L1.  
-It includes production-style detection rules, log analysis exercises, KQL queries, investigations and documentation aligned with real SOC workflows.
-
-The project is actively maintained and expanded.  
-The new **Hands-on Labs (7.hands-on/)** section is currently in progress and will be updated daily with practical exercises covering Sysmon, PowerShell logging, authentication triage, MITRE mapping and end‑to‑end investigations.
-
-
+---
 
 ## 📬 Feedback
 
 If you work in Blue Team, detection engineering or SOC operations, feedback is always welcome.
 
-LinkedIn: https://linkedin.com/in/magda-d-infosec
+* 💼 **LinkedIn:** [linkedin.com/in/magda-d-infosec](https://linkedin.com/in/magda-d-infosec)
 
+---
 
+## 🪪 Author
 
-## 👤 Author
+**Magda Dominguez**  
+*SOC Analyst (L1-ready)  Bristol, UK*  
+Focused on Blue Team operations, detection engineering and log analysis.
 
-**Magda Dominguez**    
-SOC Analyst (L1-ready) 
-Focused on Blue Team operations, detection engineering and log analysis.  
-
-Bristol, UK
-
+---
+---

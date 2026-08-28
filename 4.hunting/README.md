@@ -60,7 +60,7 @@ This directory demonstrates my ability to:
 * Document findings clearly and professionally
 * Think like a SOC Analyst.
 
-It shows that I'm ready to go beyond writing queries — you can investigate, interpret, and respond to real attack behaviours.
+It shows that I'm ready to go beyond writing queries and investigate, interpret, and respond to real attack behaviours.
 
 ---
 

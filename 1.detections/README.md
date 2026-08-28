@@ -19,11 +19,13 @@ This folder helps you understand:
 ---
 
 ## 📁 Structure of Detection Subfolders
-Each detection subfolder is named after the attack or threat, for example:
+There are currently **five threat detection categories**, each named after the attack or behaviour:
 
 * `lsass-credential-dumping/`
+* `lsass-access/`
 * `authentication-anomalies/`
 * `powershell-encoded/`
+* `registry-modification/`
 
 Within each folder, you may find some or all of the following:
 
@@ -36,9 +38,12 @@ Human-readable documentation (`sentinel-rule.md`) and rule logic (`sentinel.yaml
 ### 3. Elastic / Sigma (Selected Examples)
 Where relevant, additional examples showing how the same threat can be detected in Elastic (`elastic.md`) or expressed as a SIEM-agnostic rule (`sigma.yml`).
 
-### 4. Evidence (Planned)
-Screenshots, log excerpts, and artefacts from hands-on practice.  
-*Evidence will be added progressively as lab work is completed.*
+### 4. Evidence (Hands‑On)
+All practical investigations, screenshots, and artefacts are stored in:
+
+**`0.hands-on-evidence/`**
+
+*This folder is now operational and contains real Sysmon/Wireshark artefacts from ongoing hands‑on practice. More evidence will be added progressively as learning and investigations continue.*
 
 ---
 

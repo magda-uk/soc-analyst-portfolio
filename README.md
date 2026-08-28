@@ -1,6 +1,6 @@
 
 
-#  SOC Analyst Portfolio
+# 🛡️ SOC Analyst Portfolio
 
 Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, investigations, and Blue Team labs. (Actively maintained, updated daily)
 
@@ -45,7 +45,7 @@ Beginner-friendly labs designed to build core SOC skills:
 * MITRE ATT&CK mapping
 * End-to-end mini investigation
 
-📁 **Stored in:** `7.hands-on/`
+📁 **Stored in:** [`7.hands-on`](7.hands-on/)
 
 ---
 # ✨ Advanced Hands-On Labs (Work in Progress)
@@ -78,15 +78,14 @@ Production-style detection rules written in YAML and KQL for:
 * Sigma (generic format)
 
 Each rule includes MITRE mapping, entity mappings, investigation notes and response guidance.  
-📂 `1.detections/`
+📂 [`1.detections`](1.detections/)
 
 ### 🔎 Investigations
 SOC-style investigations including timelines, triage notes, log evidence and MITRE mapping.  
-📂 `2.investigations/`
-
+📂 [`2.investigations`](2.investigations/)
 ### 📊 Log Analysis
 Hands-on log analysis exercises covering Sysmon, PowerShell, authentication patterns and credential access behaviour.  
-📂 `3.log-analysis/`
+📂 [`3.log-analysis`](3.log-analysis/)
 
 ### 🕵️ Threat Hunting
 Behavioural hunting playbooks, anomaly detection and pattern-based hunting.  
@@ -98,11 +97,11 @@ Each hunting case includes:
 * MITRE mapping
 * Triage notes
 * Investigation guidance  
-📂 `4.hunting/`
+📂 [`4.hunting`](4.hunting/)
 
 ### 🧩 Security Labs
 Larger SOC projects designed to build practical skills in detection engineering, log analysis, KQL and incident documentation.  
-📂 `5.projects/` *(Current project: Sysmon Lab Environment)*
+📂 [`5.projects`](5.projects/) *(Current project: Sysmon Lab Environment)*
 
 ### 📝 SOC Documentation
 Operational documentation used in real SOC teams:
@@ -112,11 +111,11 @@ Operational documentation used in real SOC teams:
 * Alert severity framework
 * Response playbooks
 * Runbooks  
-📂 `6.documents/`
+📂 [`6.documents`](6.documents/)
 
 ### 🧰 Hands-On Labs
 Practical SOC exercises including Sysmon baseline, suspicious activity, ScriptBlock logging, authentication triage, MITRE mapping and end-to-end investigations.  
-📂 `7.hands-on/` *(Updated daily)*
+📂 [`7.hands-on`](7.hands-on/) *(Updated daily)*
 
 ---
 

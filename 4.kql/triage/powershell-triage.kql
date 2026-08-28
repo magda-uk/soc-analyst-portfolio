@@ -1,6 +1,0 @@
-// Triage: Encoded PowerShell Command
-DeviceProcessEvents
-| where FileName =~ "powershell.exe"
-| where ProcessCommandLine has_any ("-enc", "-EncodedCommand")
-| project Timestamp, DeviceName, InitiatingProcessFileName, ProcessCommandLine, AccountName
-| order by Timestamp desc

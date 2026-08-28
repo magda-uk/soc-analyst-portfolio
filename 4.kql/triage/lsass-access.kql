@@ -1,6 +1,0 @@
-// Triage: LSASS Access Attempt
-DeviceProcessEvents
-| where FileName =~ "lsass.exe"
-| where InitiatingProcessFileName !~ "wininit.exe"
-| project Timestamp, DeviceName, InitiatingProcessFileName, ProcessCommandLine, AccountName
-| order by Timestamp desc

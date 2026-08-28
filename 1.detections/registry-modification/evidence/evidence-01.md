@@ -65,7 +65,7 @@ This entry adds a file‑level context‑menu option. The `*\shell\...` path is 
 
 Again, legitimate — but SOC‑relevant.
 
-![EVENT2](screenshots/EVENT2.png)
+![event2](screenshots/EVENT2.png)
 ---
 
 ### Event 3 — McAfee Service ImagePath Modification (SYSTEM‑Level Service Change)
@@ -99,7 +99,7 @@ Attackers use this to:
 
 Although McAfee is legitimate, the behaviour is identical to malicious service hijacking.
 
-![EVENT3](screenshots/EVENT3.png)
+![event3](screenshots/event3.png)
 ---
 
 ### Event 4 : AppCompatFlags Modification (svchost.exe - SYSTEM)

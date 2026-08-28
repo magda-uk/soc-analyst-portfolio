@@ -8,8 +8,7 @@ It includes real Sysmon events, screenshots, and multi-event analyses generated 
 
 ## 📌 Current Status
 The folder is operational and currently includes evidence for:
-
-[registry-modification-multi-event-analysis.md](1.detections/0.hands-on-evidence/registry-modification/registry-modification-multi-event-analysis.md)   
+* [registry-modification-multi-event-analysis.md](registry-modification/registry-modification-multi-event-analysis.md)  
 Multi-event Sysmon analysis and screenshots documenting suspicious registry changes.
 
 Additional evidence for other threat categories will be added progressively as new investigations are completed.

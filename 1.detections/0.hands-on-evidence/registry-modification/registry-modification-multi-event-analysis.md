@@ -153,18 +153,18 @@ These four **Sysmon Event ID 13** entries highlight several important aspects of
 
 **Registry modifications occurring under both `HKU` (user context) and `HKLM` (system context):**  
 This shows how changes can originate from different privilege levels.  
-(Glossary: <a href="../../../0.therory/glossary.md#registry-modification-across-hku-and-hklm" target="_blank">HKU vs HKLM</a>)
+(Glossary: <a href="../../../0.therory/glossary.md#registry-modification-across-hku-and-hklm" target="_blank">HKU vs HKLM</a>↗)
 
 **Clear examples of three distinct registry modification behaviours:**  
 
 Shell extensions added to Explorer context menus  
-(Glossary: <a href="../../../0.therory/glossary.md#shell-extensions" target="_blank">Shell Extensions</a>)
+(Glossary: <a href="../../../0.therory/glossary.md#shell-extensions" target="_blank">Shell Extensions</a>↗)
 
 Service configuration changes via `ImagePath` updates  
-(Glossary: <a href="../../../0.therory/glossary.md#service-configuration-changes" target="_blank">Service Configuration Changes</a>)
+(Glossary: <a href="../../../0.therory/glossary.md#service-configuration-changes" target="_blank">Service Configuration Changes</a>↗)
 
 `AppCompatFlags` entries created by the Compatibility Assistant  
-(Glossary: <a href="../../../0.therory/glossary.md#appcompatflags" target="_blank">AppCompatFlags</a>)
+(Glossary: <a href="../../../0.therory/glossary.md#appcompatflags" target="_blank">AppCompatFlags</a>↗)
 
 **Legitimate software noise:**  
 Legitimate applications can generate registry activity that closely resembles attacker techniques used for persistence, privilege escalation, or evasion.

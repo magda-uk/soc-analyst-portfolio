@@ -65,7 +65,7 @@ This entry adds a file‑level context‑menu option. The `*\shell\...` path is 
 
 Again, legitimate — but SOC‑relevant.
 
-![event2](screenshots/EVENT2.png)
+![event2](screenshots/event2.png)
 ---
 
 ### Event 3 — McAfee Service ImagePath Modification (SYSTEM‑Level Service Change)

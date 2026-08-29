@@ -123,4 +123,9 @@ An effective SOC detection strategy for **T1055.001** should incorporate the fol
 * **Microsoft Learn:** [Sysmon Event ID 8: CreateRemoteThread](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
 * **Microsoft Security:** Windows Error Reporting (WER) Architecture and Diagnostic Routines
 ---
+
+### **Authored by**
+**Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team
+
 ---

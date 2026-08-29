@@ -117,4 +117,10 @@ graph TD
 * **Detection Core:** Target process criticality, `StartFunction` verification, and user integrity alignment serve as the primary filters for hostile activity.
 * **Tuning Rule:** Isolate and allowlist native debugging signatures (`WerFault.exe` + `RtlpQueryProcessDebugInformationRemote`) without broadly suppressing the underlying Event ID 8 telemetry.
 ---
+
+
+### **Authored by**
+**Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team
+
 ---

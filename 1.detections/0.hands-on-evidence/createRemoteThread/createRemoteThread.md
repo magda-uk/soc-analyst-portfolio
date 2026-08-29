@@ -80,4 +80,10 @@ This Sysmon Event ID 8 highlights several important aspects of process-injection
 * **Benign system noise can resemble attacker tradecraft:** SOC analysts must validate process lineage, module origin, and function purpose before escalating.
 * **High-value evidence for detection engineering:** This event can be used to refine detection logic (exclusion filters/tuning) that distinguishes legitimate debugging from suspicious injection patterns.
 ---
+### **Authored by**
+**Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team
+
+---
+
 ---

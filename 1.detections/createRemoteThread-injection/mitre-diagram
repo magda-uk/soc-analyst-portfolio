@@ -1,0 +1,68 @@
+# MITRE Technique Diagram — T1055.001 (Thread Execution / CreateRemoteThread)
+## MITRE ATT&CK Technique Diagram  
+### T1055 — Process Injection  
+### T1055.001 — Thread Execution / CreateRemoteThread
+
+┌──────────────────────────────────────────────────────────────┐
+│                MITRE ATT&CK                                  │
+└──────────────────────────────────────────────────────────────┘
+
+Technique: T1055 — Process Injection
+Sub‑Technique: T1055.001 — Thread Execution / CreateRemoteThread
+
+────────────────────────────────────────────────────────────────
+
+                 ┌──────────────────────────────┐
+                 │   Process Injection (T1055)  │
+                 └──────────────┬───────────────┘
+                                │
+                                ▼
+        ┌──────────────────────────────────────────────┐
+        │  T1055.001 — Thread Execution                │
+        │  CreateRemoteThread                          │
+        └──────────────────────────────────────────────┘
+
+────────────────────────────────────────────────────────────────
+
+**Adversary Objectives**
+
+• Execute malicious code inside trusted processes  
+• Evade AV/EDR detection  
+• Escalate privileges  
+• Access protected memory (e.g., LSASS)  
+• Maintain stealthy persistence  
+
+────────────────────────────────────────────────────────────────
+
+**Common Malicious Targets**
+
+• lsass.exe  
+• winlogon.exe  
+• svchost.exe  
+• explorer.exe  
+• services.exe  
+
+────────────────────────────────────────────────────────────────
+
+**Legitimate Sources (False Positives)**
+
+• WerFault.exe (Windows Error Reporting)  
+• wermgr.exe  
+• Visual Studio Debugger  
+• Windows Telemetry / Diagnostics  
+• Antivirus / EDR engines  
+
+────────────────────────────────────────────────────────────────
+
+**Detection Focus**
+
+• Suspicious StartFunction  
+• Non‑system StartModule  
+• Privilege mismatch (SourceUser ≠ TargetUser)  
+• Unsigned or unknown SourceImage  
+• Memory allocation sequence (VirtualAllocEx → WriteProcessMemory → CreateRemoteThread)
+---
+
+### **Authored by**
+**Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team

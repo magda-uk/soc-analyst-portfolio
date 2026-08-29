@@ -1,0 +1,85 @@
+## Triage Flowchart — CreateRemoteThread (T1055.001)
+
+┌──────────────────────────────────────────────┐
+│   Alert: CreateRemoteThread Detected         │
+└──────────────────────────────────────────────┘
+                     │
+                     ▼
+        ┌──────────────────────────────┐
+        │ Step 1: Check SourceImage    │
+        └──────────────────────────────┘
+                     │
+     ┌───────────────┴──────────────────────────────┐
+     │                                               │
+     ▼                                               ▼
+Is SourceImage a known system debugger,        Unknown / unsigned /
+telemetry service, or WerFault?               suspicious process?
+     │                                               │
+     ▼                                               ▼
+Mark as **likely benign**, continue         Treat as **high‑risk**,
+with contextual checks.                     proceed to Step 2.
+                     │
+                     ▼
+        ┌──────────────────────────────┐
+        │ Step 2: Check TargetImage    │
+        └──────────────────────────────┘
+                     │
+     ┌───────────────┴──────────────────────────────┐
+     │                                               │
+     ▼                                               ▼
+Target is UWP / WinAppRuntime /              Target is LSASS /
+diagnostic process?                          Winlogon / Svchost /
+                                             Explorer / Services?
+     │                                               │
+     ▼                                               ▼
+Lower suspicion, continue                    **Critical alert** —
+to Step 3.                                   escalate immediately.
+                     │
+                     ▼
+        ┌──────────────────────────────┐
+        │ Step 3: Check StartFunction  │
+        └──────────────────────────────┘
+                     │
+     ┌───────────────┴──────────────────────────────┐
+     │                                               │
+     ▼                                               ▼
+StartFunction is a known debugging          StartFunction is unknown /
+routine (e.g., RtlpQueryProcess…)?          suspicious / non‑system?
+     │                                               │
+     ▼                                               ▼
+Benign debugging behaviour.                 Likely malicious injection.
+Continue to Step 4.                         Escalate.
+                     │
+                     ▼
+        ┌──────────────────────────────┐
+        │ Step 4: Check User Context   │
+        └──────────────────────────────┘
+                     │
+     ┌───────────────┴──────────────────────────────┐
+     │                                               │
+     ▼                                               ▼
+SourceUser == TargetUser?                   SourceUser ≠ TargetUser?
+     │                                               │
+     ▼                                               ▼
+No privilege escalation.                    **Privilege escalation**
+Proceed to Step 5.                          → escalate.
+                     │
+                     ▼
+        ┌──────────────────────────────┐
+        │ Step 5: Correlate Events     │
+        └──────────────────────────────┘
+                     │
+                     ▼
+Check for:
+• Event ID 10 (ProcessAccess)  
+• Event ID 7 (ImageLoad)  
+• VirtualAllocEx + WriteProcessMemory  
+                     │
+                     ▼
+If correlated → **Confirmed injection chain**  
+If not → **Investigate further**
+---
+
+### **Authored by**
+**Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team

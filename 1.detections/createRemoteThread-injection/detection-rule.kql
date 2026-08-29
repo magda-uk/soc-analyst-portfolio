@@ -1,5 +1,6 @@
 // Suspicious CreateRemoteThread Injection
 // MITRE: T1055.001 — Thread Execution / CreateRemoteThread
+// Author: Magda Dominguez
 
 DeviceEvents
 | where ActionType == "CreateRemoteThread"
@@ -45,3 +46,5 @@ DeviceEvents
 // Output fields
 | project Timestamp, SourceImage, TargetImage, StartModule, StartFunction,
           AdditionalFields.NewThreadId, SourceUser, TargetUser, DeviceName
+
+

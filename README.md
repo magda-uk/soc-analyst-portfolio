@@ -55,11 +55,22 @@ This section was created to document **more advanced**, **realistic**, and **mul
 
 It is a **work in progress** updated daily as I continue learning and diving deeper into Blue Team operations.
 
-### Current Advanced Lab  
-- **Registry Modification — Multi‑Event Analysis (Sysmon Event ID 13)**  
-  → Evidence: [`registry-modification-multi-event-analysis.md`](1.detections/0.hands-on-evidence/registry-modification/registry-modification-multi-event-analysis.md)  
- → Threat background: [`threat-background.md`](1.detections/registry-modification/threat-background.md)  
+### Current Advanced Labs  
+- **Registry Modification - Multi‑Event Analysis (Sysmon Event ID 13)** 
+
+  → Evidence: [`registry-modification-multi-event-analysis.md`](1.detections/0.hands-on-evidence/registry-modification/registry-modification-multi-event-analysis.md)
+
+  → Threat background: [`threat-background.md`](1.detections/registry-modification/threat-background.md) 
+
   → Detection rule: *coming soon*
+- **Create Remote Thread - Analysis (Sysmon Event ID 8)** 🆕
+
+  → Evidence: [`createRemoteThread.md`](1.detections/0.hands-on-evidence/createRemoteThread/createRemoteThread.md)
+
+  → Threat background: [`background-history.md`](1.detections/createRemoteThread-injection/background-history.md)
+
+  → Detection rule: [`detection-rule.kql`](1.detections/createRemoteThread-injection/detection-rule.kql)
+
 
 > ⚠️ *Advanced labs currently live in their original folders (e.g., detections, investigations).  
 > As more advanced labs are created, they will be consolidated under `7.hands-on/advanced/`.*

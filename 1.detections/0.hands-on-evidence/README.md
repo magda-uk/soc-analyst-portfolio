@@ -10,8 +10,10 @@ It includes real Sysmon events, screenshots, and multi-event analyses generated 
 The folder is operational and currently includes evidence for:
 * [registry-modification-multi-event-analysis.md](registry-modification/registry-modification-multi-event-analysis.md)  
 Multi-event Sysmon analysis and screenshots documenting suspicious registry changes.
+* [createRemoteThread.md](createRemoteThread/createRemoteThread.md)  
+Sysmon Event ID 8 evidence showing legitimate CreateRemoteThread behaviour by WerFault during Windows diagnostics.
 
-Additional evidence for other threat categories will be added progressively as new investigations are completed.
+>Additional evidence for other threat categories will be added progressively as new investigations are completed.
 
 > This section grows over time as more hands-on practice is performed.
 

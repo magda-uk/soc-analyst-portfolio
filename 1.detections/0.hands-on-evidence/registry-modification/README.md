@@ -173,8 +173,9 @@ Legitimate applications can generate registry activity that closely resembles at
 Correlating multiple registry events helps build a clearer understanding of how different processes interact with the registry over time, supporting the development of robust detection logic for suspicious registry activity.
 
 
-
-
-
 ---
 
+### **Authored by**
+**Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team
+---

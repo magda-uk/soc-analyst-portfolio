@@ -63,7 +63,7 @@ It is a **work in progress** updated daily as I continue learning and diving dee
   → Threat background: [`threat-background.md`](1.detections/registry-modification/threat-background.md) 
 
   → Detection rule: *coming soon*
-- **Create Remote Thread - Analysis (Sysmon Event ID 8)** 🆕
+- **Create Remote Thread - Analysis (Sysmon Event ID 8)**  🆕
 
   → Evidence: [`createRemoteThread.md`](1.detections/0.hands-on-evidence/createRemoteThread/createRemoteThread.md)
 

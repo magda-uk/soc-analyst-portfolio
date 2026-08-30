@@ -42,12 +42,22 @@ The following shared process attributes establish the core pivot for cross-event
 * **SOC Context:** This is an internal Windows PowerShell engine artifact generated automatically upon startup to test AppLocker and Execution Policy enforcement (*ConstrainedLanguage* vs *FullLanguage* mode). Documenting this artifact is crucial for baseline noise tuning and distinguishing system tests from malicious script droppers.
 * **Mapping:** **Benign Host Policy Verification Artifact (PowerShell Engine)**.
 
+
 ---
 
 ### **3️⃣ Network Connect (Sysmon Event ID 3)**
 * **Observation:** Outbound IPv6 TCP connection initiated by `powershell.exe` to `[2606:4700:10::6814:179a]:80` (`example.com` via Cloudflare CDN).
 * **SOC Context:** Standard unencrypted HTTP network communication. In enterprise SOC triage, native shell binaries establishing direct external web sockets warrant immediate inspection to rule out C2 beaconing or secondary payload staging (*T1105 - Ingress Tool Transfer*).
 * **Mapping:** **MITRE ATT&CK T1071.001 (Web Protocols)**.
+
+---
+
+### **4️⃣ Network Packet Inspection (Wireshark PCAP Stream)**
+* **Protocol & Verb:** HTTP/1.1 `GET` over TCP port 80 (Cleartext transmission).
+* **Client User-Agent:** `Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.9168`
+* **Target Endpoint:** `example.com` (Cloudflare CDN — Edge Node `LHR`).
+* **Payload Retrieved:** Full standard RFC 2606 HTML body (`HTTP 200 OK`).
+* **Forensic Significance:** Confirms that PowerShell executed an unencrypted outbound web request, leaving an identifiable script-engine signature in the HTTP headers.
 
 ---
 

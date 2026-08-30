@@ -13,7 +13,7 @@ This directory documents seven consecutive days of hands-on exercises, each targ
 
 ## 🎯 Purpose of this Hands-On Block
 This section demonstrates **practical analytical capability** through reproducible telemetry analysis.  
-Across seven days, realistic endpoint and identity attack paths are simulated and investigated using Sysmon, Windows Event Logs, PowerShell ScriptBlock logging, Wireshark, Microsoft Entra ID, and MITRE ATT&CK.
+Across seven days, realistic endpoint and identity attack paths are simulated and investigated using Sysmon, Windows Event Logs, PowerShell ScriptBlock logging, Wireshark, Microsoft Entra ID, and [...]
 
 Each module includes:
 - **Foundational Practice** (baseline telemetry capture and normalisation)
@@ -26,8 +26,8 @@ Each module includes:
 
 | Day | Module / Topic | Status | Link |
 | :--- | :--- | :--- | :--- |
-| **Day 1** | Sysmon Baseline & Telemetry Validation | ✅ `Completed` | [View Lab](./day1-sysmon-basics/) |
-| **Day 2** | Sysmon Suspicious Activity & Wireshark PCAP | ✅ `Completed` | [View Lab](./day2-sysmon-suspicious/) |
+| **Day 1** | Sysmon Event ID 1: Process Creation Baseline | ✅ `Completed` | [📂 View Lab](./day1-sysmon-basics/README.md) |
+| **Day 2** | Sysmon Event Correlation & MITRE Mapping (IDs 1, 3, 11) | ✅ `Completed` | [📂 View Lab](./day2-sysmon-suspicious/README.md) |
 | **Day 3** | PowerShell ScriptBlock Logging & Obfuscation | 🚧 `In Progress / Coming Soon` | — |
 | **Day 4** | Authentication & Identity Telemetry (Entra ID) | ⏳ `Planned` | — |
 | **Day 5** | Process Trees & Attack Chain Reconstruction | ⏳ `Planned` | — |
@@ -35,53 +35,60 @@ Each module includes:
 | **Day 7** | Comprehensive Incident Triage & Reporting | ⏳ `Planned` | — |
 
 
-## 🔍 Day 1: Sysmon Baseline
+## 🔍 Day 1: Sysmon Event ID 1 - Process Creation Baseline
 **Tools:** Sysmon, Windows Event Viewer  
-**Focus:** Understanding normal endpoint behavior and system baseline creation.
+**Focus:** Mastering Process Creation (Event ID 1) telemetry and establishing baseline understanding of normal vs. suspicious execution patterns.
 
 ### ✅ Basic Practice
 - Deploy Sysmon with a modular baseline configuration.
-- Analyze core host events:
-  - **Event ID 1:** Process Creation
-  - **Event ID 3:** Network Connection
-  - **Event ID 11:** File Create
-- Document normal system binaries, default execution paths, and standard command-line parameters.
+- Capture and analyze **Event ID 1: Process Creation** events.
+- Understand core telemetry fields:
+  - **Image:** Process executable path
+  - **CommandLine:** Execution arguments and command parameters
+  - **ParentImage & ParentCommandLine:** Parent-child process relationships
+  - **User & IntegrityLevel:** Execution context and privilege level
+  - **Hashes:** MD5, SHA256, IMPHASH for malware identification
+- Document normal system binaries, default execution paths, and standard command-line parameters for your baseline OS.
 
 ### 🚀 Advanced Practice
 - Identify deviations from verified operational baselines.
 - Detect abnormal parent-child process relationships (e.g., non-standard processes spawned by system shells).
 - Spot unquoted service paths and binaries executing from non-standard user directories (`Temp`, `AppData`).
+- Develop proficiency in distinguishing **legitimate administrative PowerShell execution** from **obfuscated or malicious PowerShell commands**.
 
 ###  Learning Outcome
-Establish the ability to distinguish **normal administrative noise from genuine suspicious activity**, the core skill in SOC triage.
+Establish the ability to distinguish **normal administrative noise from genuine suspicious activity** through deep analysis of process creation events—the core skill in SOC triage.
 
 ### 🛡️ Why it Matters for Blue Team
-Fast, high-fidelity alert triage relies entirely on understanding what normal operating system activity looks like.
+Fast, high-fidelity alert triage relies entirely on understanding what normal operating system activity looks like. **Event ID 1 is the foundational telemetry source for detecting execution-based attacks.**
 
 ---
 
-## 🦈 Day 2: Sysmon Suspicious Activity & Network Correlation
-**Tools:** Sysmon, Event Viewer, Wireshark  
-**Focus:** Detecting suspicious execution and correlating host telemetry with packet-level network data.
+## 🦈 Day 2: Sysmon Event Correlation & MITRE ATT&CK Mapping
+**Tools:** Sysmon (Event IDs 1, 3, 11), Windows Event Viewer, Wireshark, MITRE ATT&CK Framework  
+**Focus:** Correlating multi-stage Sysmon events across host and network layers, then mapping to standardized adversary tactics.
 
 ### ✅ Basic Practice
-- Identify suspicious PowerShell command executions and parameters.
-- Inspect outbound socket establishments across atypical ports and LOLBins.
-- Capture network traffic using Wireshark to observe handshake mechanics (TCP SYN, HTTP, TLS).
+- Capture and analyze **Event ID 11: File Creation** (temporary scripts, staged payloads).
+- Capture and analyze **Event ID 3: Network Connection** (outbound sockets, TCP/IPv6 connections).
+- Identify suspicious PowerShell command executions and obfuscation techniques.
+- Inspect outbound socket establishments across atypical ports and LOLBins (Living-off-the-Land Binaries).
+- Capture network traffic using Wireshark to observe HTTP request details (User-Agent headers, GET/POST verbs, response codes).
 
 ### 🚀 Advanced Practice
-- Execute a correlated multi-stage telemetry chain:
-  - Process Launch (`Event ID 1`)
-  - Runtime Engine Validation (`Event ID 11`)
-  - Outbound Egress (`Event ID 3`)
-- Correlate Sysmon socket events with full Wireshark PCAP HTTP streams (`GET`, `User-Agent`, `Server Header`).
-- Distinguish legitimate OS runtime artifacts from malicious tool staging.
+- Execute a **correlated multi-stage telemetry investigation** using a single ProcessGuid pivot:
+  - **Event ID 1:** Process Launch (PowerShell with Invoke-WebRequest)
+  - **Event ID 11:** Runtime Engine Validation (temporary script file creation)
+  - **Event ID 3:** Outbound Egress (TCP/IPv6 network connection to external host)
+- Correlate Sysmon socket events with **full Wireshark PCAP HTTP streams** (GET/POST verbs, User-Agent strings, Server headers, HTTP response codes).
+- Map observed telemetry to **MITRE ATT&CK tactics & techniques** (e.g., T1059.001 PowerShell, T1071.001 Web Protocols).
+- Distinguish **legitimate OS runtime artifacts** (AppLocker policy test files, PowerShell engine validation) from **genuine malicious tool staging**.
 
 ###  Learning Outcome
-Reconstruct suspicious execution chains end-to-end using host-level telemetry and network-level packet verification.
+Reconstruct suspicious execution chains **end-to-end** using host-level telemetry (Sysmon Events 1, 3, 11) and network-level packet verification (Wireshark), while maintaining defensive context through MITRE ATT&CK framework mapping.
 
 ### 🛡️ Why it Matters for Blue Team
-Bridging endpoint logs with network captures eliminates blind spots, validates potential C2/staging beacons, and confirms whether network payloads were successfully delivered.
+Bridging endpoint logs with network captures eliminates blind spots and validates potential C2/staging beacons. Adding MITRE ATT&CK mapping transforms raw telemetry into standardized, actionable intelligence that security teams can act upon immediately.
 
 ---
 

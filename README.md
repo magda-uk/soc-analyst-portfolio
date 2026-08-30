@@ -58,7 +58,7 @@ It is a **work in progress** updated daily as I continue learning and diving dee
 ### Current Advanced Labs  
 - **Registry Modification - Multi‑Event Analysis (Sysmon Event ID 13)** 
 
-  → Evidence: [`registry-modification-multi-event-analysis.md`](1.detections/0.hands-on-evidence/registry-modification/registry-modification-multi-event-analysis.md)
+  → Evidence: [`registry-modification`](registry-modification/README.md)
 
   → Threat background: [`threat-background.md`](1.detections/registry-modification/threat-background.md) 
 

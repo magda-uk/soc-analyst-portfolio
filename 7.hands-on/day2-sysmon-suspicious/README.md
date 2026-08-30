@@ -65,6 +65,10 @@ The following shared process attributes establish the core pivot for cross-event
 ### **Correlation Table**
 ![Correlation Table](images/sysmon-table.png)
 
+### **Network Packet Capture (Wireshark HTTP Stream)**
+![Wireshark HTTP Stream](images/wireshark-http.png)
+
+
 ---
 
 ## 🏁 Conclusion

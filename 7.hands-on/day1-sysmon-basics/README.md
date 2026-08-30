@@ -1,4 +1,4 @@
-## Day 1  Sysmon Basics  -- ![Sysmon](https://img.shields.io/badge/Sysmon-Event_Telemetry-B48CFF?style=flat-square&logo=windows&logoColor=white)
+## Day 1  Sysmon Basics  - ![Sysmon](https://img.shields.io/badge/Sysmon-Event_Telemetry-B48CFF?style=flat-square&logo=windows&logoColor=white)
 ### 1. What is Sysmon?
 
 Sysmon is a component of the Sysinternals suite that provides high‑fidelity telemetry about process creation, network activity, registry modifications, driver loading, and other system behaviour.

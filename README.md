@@ -2,7 +2,7 @@
 
 # 🛡️ SOC Analyst Portfolio
 
-Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, investigations, and Blue Team labs. (Actively maintained, updated daily)
+Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, investigations, and Blue Team labs. 
 
 <p align="left">
   <img src="https://img.shields.io/badge/Blue%20Team-SOC%20Analyst-blue?style=flat-square" alt="Blue Team SOC Analyst">
@@ -19,19 +19,31 @@ Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, inv
 
 ## 📌 Central Hub : From Zero to Hero
 
-This repository documents my practical learning path toward becoming a **SOC Analyst L1**.  
-It contains hands-on labs, detection engineering, log analysis, hunting playbooks, KQL queries, investigations and SOC documentation; all aligned with real Blue Team workflows.
+- ✨ *Regular Content:* New detections, analysis and practical cases each week
+- 📈 *Gradual Evolution:* Empty folders you see will be filled with real evidence and practical exercises
+- 🔗 *MITRE Mapping:* Each detection mapped to MITRE ATT&CK techniques
+- 🛡️ *Real Tools:* Based on Sysmon, Microsoft Sentinel, Elastic Stack, Wazuh
+- 📚 *Comprehensive Documentation:* From theory through to practical investigation
 
-The project is actively maintained and updated daily as I continue learning and deepening my understanding of SOC operations.
+> This is a *live project* in constant evolution. New content, practical cases, detections and analysis are added regularly as I progress in my training as a SOC Analyst. 
 
----
-
-## 🎓 Learning Path
-
-I am currently preparing for **Microsoft SC-200: Security Operations Analyst**.  
-This portfolio supports my learning with practical exercises across detection engineering, KQL, log analysis and investigation workflows.
+> *Last updated:* August 2026
 
 ---
+## 📊 Project Status
+
+| Section | Status | Progress |
+|---------|--------|----------|
+| 📚 [Theory](./0.therory) | ✅ Foundation | Glossary completed |
+| 🧪 [Detection Engineering](./1.detections) | 🔄 Active | Structure + theory, practical cases in development |
+| 🔎 [Investigations](./2.investigations) | 🔄 Active | 3 documented cases |
+| 📊 [Log Analysis](./3.log-analysis) | 🔄 Active | Analysis of 3 threat types |
+| 🕵️ [Threat Hunting](./4.hunting) | ⏳ Coming Soon | Structure ready, content in development |
+| 🧩 [Security Labs](./5.projects) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
+| 📝 [SOC Documentation](./6.documents) | ✅ Foundation | Guides, methodology and checklists |
+| 🧰 [Hands-On Labs](./7.hands-on) | 🔄 Active | 8-day exercises, evidence being gathered |
+---
+
 
 ## 🛣️ Foundation Roadmap (7 Days)
 

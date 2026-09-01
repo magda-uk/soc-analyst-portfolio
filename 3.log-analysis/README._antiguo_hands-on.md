@@ -8,7 +8,7 @@ It includes real Sysmon events, screenshots, and multi-event analyses generated 
 
 ## 📌 Current Status
 The folder is operational and currently includes evidence for:
-* [registry-modification](registry-modification/README.md)
+* [registry-modification](/1.detections/0.hands-on-evidence/registry-modification/README.md)
 Multi-event Sysmon analysis and screenshots documenting suspicious registry changes.
 * [createRemoteThread.md](createRemoteThread/createRemoteThread.md)  
 Sysmon Event ID 8 evidence showing legitimate CreateRemoteThread behaviour by WerFault during Windows diagnostics.

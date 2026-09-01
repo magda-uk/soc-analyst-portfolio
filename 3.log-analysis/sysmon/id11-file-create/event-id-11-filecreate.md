@@ -9,11 +9,16 @@ This file is generated automatically by PowerShell as part of its internal mecha
 It does not contain malicious content and is not executed.
 
 ## 🔹 Evidence Extract  
+
+![EVENT 11](/3.log-analysis/sysmon/id11-file-create/screenshots/powershell.png)
+
 - Image: `powershell.exe`  
 - TargetFilename: `__PSScriptPolicyTest_q1hvaqtf.xlg.ps1`  
 - User: `Azul_Fifty\magda`  
 - Location: `AppData\Local\Temp`  
 - Timestamp: `2026‑08‑28 22:59:50.604`
+
+
 
 ## 🟩 Why It’s Benign  
 - The filename matches the official pattern used by PowerShell’s Script Policy Test  

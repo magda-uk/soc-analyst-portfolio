@@ -9,7 +9,7 @@ The behaviour is entirely legitimate and expected when VS Code initialises or up
 
 ## 🔹 Evidence Extract  
 
-![EVENT-ID-11-VS](/1.detections/0.hands-on-evidence/benign-process-explained/screenshots/EVENT-11-VS.png)
+![EVENT-ID-11-VS](/3.log-analysis/sysmon/id11-file-create/screenshots/EVENT-11-VS.png)
 
 - Image: `Code.exe`  
 - TargetFilename: `copilot.bat`  

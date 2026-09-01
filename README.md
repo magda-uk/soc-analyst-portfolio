@@ -34,14 +34,14 @@ Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, inv
 
 | Section | Status | Progress |
 |---------|--------|----------|
-| 📚 [Theory](./0.therory) | ✅ Foundation | Glossary completed |
-| 🧪 [Detection Engineering](./1.detections) | 🔄 Active | Structure + theory, practical cases in development |
-| 🔎 [Investigations](./2.investigations) | 🔄 Active | 3 documented cases |
-| 📊 [Log Analysis](./3.log-analysis) | 🔥 Highly Active | Sysmon (IDs 1, 8, 13, 22), PowerShell (4104) & Auth triage |
-| 🕵️ [Threat Hunting](./4.hunting) | ⏳ Coming Soon | Structure ready, content in development |
-| 🧩 [Security Labs](./5.projects) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
-| 📝 [SOC Documentation](./6.documents) | ✅ Foundation | Guides, methodology and checklists |
-| 🧰 [Hands-On Labs](./7.hands-on) | 🔄 Active | 🟩🟩⬜⬜⬜⬜⬜⬜ (2/8 Completed) |
+| 📚 [Theory](./0.therory/glossary.md) | ✅ Foundation | Glossary completed |
+| 🧪 [Detection Engineering](./1.detections/README.md) | 🔄 Active | Structure + theory, practical cases in development |
+| 🔎 [Investigations](.//2.investigations/powershell-encoded.md) | 🔄 Active | 3 documented cases |
+| 📊 [Log Analysis](./3.log-analysis/README.md) | 🔥 Highly Active | Sysmon (IDs 1, 8, 13, 22), PowerShell (4104) & Auth triage |
+| 🕵️ [Threat Hunting](./4.hunting/README.md) | ⏳ Coming Soon | Structure ready, content in development |
+| 🧩 [Security Labs](./5.projects/README.md) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
+| 📝 [SOC Documentation](./6.documents/2.incident-response-workflow.md) | ✅ Foundation | Guides, methodology and checklists |
+| 🧰 [Hands-On Labs](./7.hands-on/README.md) | 🔄 Active | 🟩🟩⬜⬜⬜⬜⬜⬜ (2/8 Completed) |
 
 ---
 

@@ -1,4 +1,4 @@
-# Case Study: Sysmon Event ID 22 — DNS Query Analysis & Threat Triage
+# Case Study: Sysmon Event ID 22. DNS Query Analysis & Threat Triage
 
 ## Telemetry Summary
 * **Event Type:** Sysmon Event ID 22 (DNSEvent)
@@ -13,7 +13,7 @@
 
 ## Log Evidence & Artifact Breakdown
 
-![Sysmon Event 22 Analysis](/1.detections/0.hands-on-evidence/benign-process-explained/screenshots/EVENT22-CODE-EXE.png)
+![Sysmon Event 22 Analysis](/3.log-analysis/sysmon/id22-dns-queries/screenshots/EVENT22-CODE-EXE.png)
 
 > **Key Forensic Highlights:**
 > * 🟪 **Process Identifiers (Purple):** `ProcessGuid` & `ProcessId` used to chain telemetry back to parent execution (Event ID 1) and network connections (Event ID 3).
@@ -53,3 +53,6 @@
 * **Classification:** Benign Positive (Legitimate Developer Telemetry)
 * **Risk Rating:** Informational (Low)
 * **Action:** No escalation required. Added to local baseline observations.
+---
+### ♟️ **Authored by:** **Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team

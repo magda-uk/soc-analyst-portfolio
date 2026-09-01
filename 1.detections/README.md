@@ -26,6 +26,7 @@ There are currently **five threat detection categories**, each named after the a
 * `authentication-anomalies/`
 * `powershell-encoded/`
 * `registry-modification/`
+* `createRemoteThread-injection/`
 
 Within each folder, you may find some or all of the following:
 

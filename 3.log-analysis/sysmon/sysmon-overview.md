@@ -1,11 +1,12 @@
 # 🛡️ Full Sysmon Investigation Compendium
-### Complete SOC Analyst Portfolio — Behavioural Analysis, DNS, OEM Noise & MITRE Mapping
+## Complete SOC Analyst Portfolio 
+###  Behavioural Analysis, DNS, OEM Noise & MITRE Mapping
 
 This document consolidates **Sysmon** telemetry investigations, covering process creation events (**ProcessCreate**), name resolution queries (**DNS Query**), alternate data streams (**ADS / FileStreamCreated**), and the OEM noise baseline. Designed as an operational reference for **Blue Team and SOC Triage**.
 
 ---
 
-## 🗺️ 1. Sysmon Event Map — SOC Priority Matrix
+## 🗺️ 1. Sysmon Event Map - SOC Priority Matrix
 
 | Priority | Event ID | Event Name | Main Detection Use Case |
 | :--- | :--- | :--- | :--- |
@@ -25,7 +26,7 @@ This document consolidates **Sysmon** telemetry investigations, covering process
 
 ---
 
-## 📄 2. Sysmon Event ID 15 — Alternate Data Stream (ADS) Analysis
+## 📄 2. Sysmon Event ID 15: Alternate Data Stream (ADS) Analysis
 
 **Event Summary:** The `chrome.exe` process generated an attached alternate data stream named `:Zone.Identifier` when downloading a PDF file. This operation corresponds to the standard **Mark-of-the-Web (MOTW)** assignment imposed by modern browsers to restrict the execution of external files.
 
@@ -45,7 +46,7 @@ This document consolidates **Sysmon** telemetry investigations, covering process
 
 ---
 
-## 🌐 3. Sysmon Event ID 22 — WPAD Resolution Attempt
+## 🌐 3. Sysmon Event ID 22 : WPAD Resolution Attempt
 
 **Event Summary:** The operating system executed an automatic DNS query looking for the `wpad` hostname for network proxy autoconfiguration. The resolution returned a non-existent domain error code (`NXDOMAIN`), ruling out an active proxy spoofing attack.
 
@@ -65,7 +66,7 @@ This document consolidates **Sysmon** telemetry investigations, covering process
 
 ---
 
-## 📡 4. Sysmon Event ID 22 — OEM CDN Resolution (Lenovo)
+## 📡 4. Sysmon Event ID 22 : OEM CDN Resolution (Lenovo)
 
 **Event Summary:** The `LenovoSecurityAddin.exe` module generated a query to resolve `filedownload.lenovo.com`. The resolution completed successfully through an **Akamai Edge** global CDN architecture.
 

@@ -1,4 +1,4 @@
-# Threat Background — Suspicious Registry Modification (T1112, T1547, T1031, T1050)
+# Threat Background : Suspicious Registry Modification (T1112, T1547, T1031, T1050)
 
 ## Threat Summary
 Adversaries frequently modify the Windows Registry to achieve persistence, escalate privileges, hijack legitimate services, or manipulate system behaviour. Registry changes are stealthy, blend easily with normal system activity, and often leave artefacts that can be correlated with process execution, service configuration, or user interaction.

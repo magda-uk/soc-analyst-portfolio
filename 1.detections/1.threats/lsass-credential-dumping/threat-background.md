@@ -1,4 +1,4 @@
-# Overview : LSASS Credential Dumping (Mimikatz)
+# LSASS Credential Dumping (Mimikatz)
 
 ## Description
 Credential dumping is the process of extracting authentication secrets directly from LSASS memory. This includes:

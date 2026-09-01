@@ -1,4 +1,4 @@
-# Overview : Suspicious PowerShell Encoded Commands
+#  Suspicious PowerShell Encoded Commands
 
 ## Description
 PowerShell is one of the most powerful administrative tools in Windows, and therefore one of the most abused by threat actors. Encoded commands (`-enc`) are frequently used to conceal malicious activity such as payload execution, reconnaissance, or remote command delivery.

@@ -1,4 +1,4 @@
-# Overview : Authentication Anomalies (Brute Force, Impossible Travel, MFA Fatigue)
+# Authentication Anomalies (Brute Force, Impossible Travel, MFA Fatigue)
 
 ## Description
 Modern attacks frequently target identity rather than endpoints. Threat actors attempt to compromise accounts through:

@@ -9,7 +9,7 @@ In this case, the activity is legitimate and expected.
 
 ## 📸 Evidence Screenshot (EVENT15)
 
-![EVENT15](/1.detections/0.hands-on-evidence/benign-process-explained/screenshots/EVENT15.png)
+![EVENT15](/3.log-analysis/sysmon/id15-image-load/EVENT15.png)
 
 ---
 

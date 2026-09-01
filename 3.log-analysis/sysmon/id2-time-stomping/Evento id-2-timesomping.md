@@ -8,7 +8,7 @@ Although Sysmon flags this behaviour under **MITRE T1099 — Timestomp**, in thi
 
 ## 📸 Evidence Screenshot — Highlighted Indicators of Benign Activity
 
-![EVENT2](./screenshots/EVENT2.png)
+![EVENT2](./EVENT2.png)
 
 ### 🔍 Highlighted Indicators (Why This Event Is Benign)
 

@@ -1,4 +1,4 @@
-# Overview: Suspicious LSASS Access
+# Suspicious LSASS Access
 
 ## Description
 LSASS (Local Security Authority Subsystem Service) is a critical Windows process responsible for storing and managing sensitive authentication material such as:

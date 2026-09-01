@@ -34,16 +34,16 @@ Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, inv
 
 | Section | Status | Progress |
 |---------|--------|----------|
-| 📚 [Theory](./0.therory) | ✅ Foundation | Glossary completed |
-| 🧪 [Detection Engineering](./1.detections) | 🔄 Active | Structure + theory, practical cases in development |
-| 🔎 [Investigations](./2.investigations) | 🔄 Active | 3 documented cases |
-| 📊 [Log Analysis](./3.log-analysis) | 🔄 Active | Analysis of 3 threat types |
-| 🕵️ [Threat Hunting](./4.hunting) | ⏳ Coming Soon | Structure ready, content in development |
-| 🧩 [Security Labs](./5.projects) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
-| 📝 [SOC Documentation](./6.documents) | ✅ Foundation | Guides, methodology and checklists |
-| 🧰 [Hands-On Labs](./7.hands-on) | 🔄 Active | 8-day exercises, evidence being gathered |
----
+| 📚 [Theory](./0.therory/glossary.md) | ✅ Foundation | Glossary completed |
+| 🧪 [Detection Engineering](./1.detections/README.md) | 🔄 Active | Structure + theory, practical cases in development |
+| 🔎 [Investigations](.//2.investigations/powershell-encoded.md) | 🔄 Active | 3 documented cases |
+| 📊 [Log Analysis](./3.log-analysis/README.md) | 🔥 Highly Active | Sysmon (IDs 1, 8, 13, 22), PowerShell (4104) & Auth triage |
+| 🕵️ [Threat Hunting](./4.hunting/README.md) | ⏳ Coming Soon | Structure ready, content in development |
+| 🧩 [Security Labs](./5.projects/README.md) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
+| 📝 [SOC Documentation](./6.documents/2.incident-response-workflow.md) | ✅ Foundation | Guides, methodology and checklists |
+| 🧰 [Hands-On Labs](./7.hands-on/README.md) | 🔄 Active | 🟩🟩⬜⬜⬜⬜⬜⬜ (2/8 Completed) |
 
+---
 
 ## 🛣️ Foundation Roadmap (7 Days)
 
@@ -60,34 +60,42 @@ Beginner-friendly labs designed to build core SOC skills:
 📁 **Stored in:** [`7.hands-on`](7.hands-on/)
 
 ---
-# ✨ Advanced Hands-On Labs (Work in Progress)
+## ✨ Advanced Hands-On Labs & Log Analysis
 
-As I progressed, some topics required deeper investigation than the foundation roadmap allowed.  
-This section was created to document **more advanced**, **realistic**, and **multi‑event** SOC analysis.
+As I progressed, some topics required deeper investigation than the foundation roadmap allowed. This section highlights my most advanced, realistic, and multi-event SOC triage cases.
 
-It is a **work in progress** updated daily as I continue learning and diving deeper into Blue Team operations.
+It is a **highly active** project, updated regularly as I dive deeper into Blue Team operations and telemetry analysis.
 
-### Current Advanced Labs  
-- **Registry Modification - Multi‑Event Analysis (Sysmon Event ID 13)** 
+### 🔥 Featured Advanced Investigations
 
-  → Evidence: [`registry-modification`](/1.detections/0.hands-on-evidence/registry-modification/README.md)
+- **Registry Modification & Persistence (Sysmon Event ID 13)** 
 
-  → Threat background: [`threat-background.md`](1.detections/registry-modification/threat-background.md) 
+  *Triaging registry changes to identify potential malware persistence mechanisms or configuration tampering.*
 
-  → Detection rule: *coming soon*
-- **Create Remote Thread - Analysis (Sysmon Event ID 8)**  🆕
+  → Full Triage: [`multi-event-analysis.md`](./3.log-analysis/sysmon/id13-registry-modification/multi-event-analysis.md)
 
-  → Evidence: [`createRemoteThread.md`](1.detections/0.hands-on-evidence/createRemoteThread/createRemoteThread.md)
+- **False Positive Validation: DWM to CSRSS (Sysmon Event ID 8)**
 
-  → Threat background: [`background-history.md`](1.detections/createRemoteThread-injection/background-history.md)
+  *Documenting the normal behavior of Windows GUI subsystem thread creation to tune out process injection alerts.*
 
-  → Detection rule: [`detection-rule.kql`](1.detections/createRemoteThread-injection/detection-rule.kql)
+  → Full Triage: [`sysmon-8-dwm-csrss.md`](./3.log-analysis/sysmon/id8-multi-event/sysmon-8-dwm-csrss.md)
+
+- **Network Telemetry: DNS Queries & CDN Traffic (Sysmon Event ID 22)**
+
+  *Triaging background DNS requests to differentiate legitimate software traffic from potential C2 beaconing.*
+
+  → Full Triage: [`sysmon-id22-webview2-analysis.md`](./3.log-analysis/sysmon/id22-dns-queries/sysmon-id22-webview2-analysis.md)
+
+- **PowerShell Script Block Logging (Event 4104)** 🚧
+
+  *Deobfuscation and analysis of encoded command executions.*
+
+  → Triage notes: [`event4104-powershell-scriptblock-analysis.md`](./3.log-analysis/powershell/event4104-powershell-scriptblock-analysis.md)
+
+> ⚠️ *Note: As my workflow evolves, advanced investigations are being consolidated into the `3.log-analysis` and `2.investigations` directories for a more streamlined SOC structure.*
 
 
-> ⚠️ *Advanced labs currently live in their original folders (e.g., detections, investigations).  
-> As more advanced labs are created, they will be consolidated under `7.hands-on/advanced/`.*
-
-More advanced labs will be added as I explore LSASS access, PowerShell abuse, authentication anomalies, and network-based hunting.
+> *More advanced labs will be added as I explore LSASS access, PowerShell abuse, authentication anomalies, and network-based hunting.*
 
 
 ---

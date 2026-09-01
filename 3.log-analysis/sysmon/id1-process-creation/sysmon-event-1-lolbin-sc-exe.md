@@ -44,7 +44,19 @@ While `sc.exe` is a dual-use binary frequently abused by adversaries for **Servi
 * [x] **No Intermediate Interpreters:** Executed without chaining through command shells (`cmd.exe /c`, `powershell.exe`).
 
 ---
+## 🛠️ Detection Engineering & SIEM Tuning
+In detection rules targeting `sc.exe` abuse, filtering should focus on verb profiling and known parent relationships rather than broad execution suppression:
 
+Sysmon XML Tuning / Exclusion Rule
+```xml
+<Rule groupRelation="and">
+  <ProcessCreate onmatch="exclude">
+    <ParentImage condition="image">C:\Program Files (x86)\Lenovo\VantageService\</ParentImage>
+    <Image condition="image">C:\Windows\System32\sc.exe</Image>
+    <CommandLine condition="contains">start LenovoSensorFusion</CommandLine>
+  </ProcessCreate>
+</Rule>
+```
 
 
 ## 🗺️ MITRE ATT&CK Mapping

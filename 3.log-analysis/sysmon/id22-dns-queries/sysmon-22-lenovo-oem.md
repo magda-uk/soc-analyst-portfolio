@@ -7,7 +7,7 @@ This evidence captures a **DNS Query** performed by the Lenovo Vantage module **
 
 ## 📸 Evidence Screenshot
 
-![EVENT22-LenovoDNS](/1.detections/0.hands-on-evidence/benign-process-explained/screenshots/EVENT22-LENOVO.png)
+![EVENT22-LenovoDNS](/3.log-analysis/sysmon/id22-dns-queries/screenshots/EVENT22-LENOVO.png)
 
 ---
 
@@ -82,5 +82,5 @@ This case illustrates standard OEM software interaction with global CDN infrastr
 
 ---
 
-**Authored by:** **Magda Dominguez**  
+## ♟️ **Authored by:** **Magda Dominguez**  
 Security Operations • Detection Engineering • Blue Team

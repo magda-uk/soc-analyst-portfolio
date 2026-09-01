@@ -88,6 +88,5 @@ While benign in this instance, WPAD exploitation maps to:
 This case demonstrates how Windows performs automatic WPAD resolution during routine network operations. Understanding these baseline events is critical for differentiating benign network discovery noise from active WPAD poisoning and AiTM techniques in enterprise environments.
 
 ---
-
-**Authored by:** **Magda Dominguez**  
+## ♟️ **Authored by:** **Magda Dominguez**  
 Security Operations • Detection Engineering • Blue Team

@@ -1,4 +1,4 @@
-# 🛡️ Full Sysmon Investigation Compendium
+# 👩🏽‍💻Full Sysmon Investigation Compendium
 ## Complete SOC Analyst Portfolio 
 ###  Behavioural Analysis, DNS, OEM Noise & MITRE Mapping
 

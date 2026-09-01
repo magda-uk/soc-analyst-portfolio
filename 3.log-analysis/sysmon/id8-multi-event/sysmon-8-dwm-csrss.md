@@ -11,7 +11,7 @@ This investigation documents a benign *Sysmon Event ID 8 (CreateRemoteThread)* t
 While `CreateRemoteThread` is heavily monitored as a high-fidelity indicator for *Process Injection (MITRE ATT&CK T1055)*, native Windows OS components routinely leverage low-level inter-process communication for graphics rendering, session boundary management, and window messaging. Documenting this baseline behaviour is essential for detection tuning, SOC triage, and false-positive suppression.
 
 ## 📋 Evidence Extract
-![EVENT 8](.//images/enhanced.png)
+![EVENT 8](./images/dwm-crss.png)
 
 ```text
 Event Type: Sysmon Event ID 8 (CreateRemoteThread detected)

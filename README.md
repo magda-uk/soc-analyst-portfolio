@@ -1,8 +1,11 @@
 
 
-# 🛡️ SOC Analyst Portfolio
+#  SOC Analyst Portfolio
 
-Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, investigations, and Blue Team labs. 
+Hands-on Blue Team operations, multi-source investigations, detection engineering, and SOC-focused log analysis.
+
+*_Translating real-world logistics investigations into Blue Team and SOC practices._*
+
 
 <p align="left">
   <img src="https://img.shields.io/badge/Blue%20Team-SOC%20Analyst-blue?style=flat-square" alt="Blue Team SOC Analyst">
@@ -17,7 +20,7 @@ Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, inv
 
 ---
 
-## 📌 Central Hub : From Zero to Hero
+## 📌 Central Hub : Blue Team & SOC operations
 
 - ✨ *Regular Content:* New detections, analysis and practical cases each week
 - 📈 *Gradual Evolution:* Empty folders you see will be filled with real evidence and practical exercises
@@ -27,7 +30,7 @@ Hands-on SOC Analyst L1 portfolio. Detection engineering, log analysis, KQL, inv
 
 > This is a *live project* in constant evolution. New content, practical cases, detections and analysis are added regularly as I progress in my training as a SOC Analyst. 
 
-> *Last updated:* August 2026
+> *Last updated:* September 2026
 
 ---
 ## 📊 Project Status
@@ -152,29 +155,41 @@ Practical SOC exercises including Sysmon baseline, suspicious activity, ScriptBl
 
 ## 🛠️ Technologies Used
 
-Microsoft Sentinel, Azure AD / Entra ID, Elastic Security, Wazuh, Sysmon, Sigma, KQL, PowerShell Logging, Windows Event Logs.
+**Technologies Used:** Sysmon, Windows Event Logs, Event Viewer, PowerShell, Wireshark, KQL (Microsoft Sentinel), Sigma, Sysmon configuration (SwiftOnSecurity).
+
+**Planned Technologies:** Entra ID (Azure AD), Microsoft Sentinel (full deployment), Wazuh, Elastic Security.
+
 
 ---
 
-## 🎯 Purpose
 
-This portfolio showcases my practical learning path toward becoming a SOC Analyst L1, with real-world aligned workflows and continuous updates.
+## 🎯Purpose
+
+This portfolio brings together my hands-on SOC training and the investigative skills I developed in a high-volume logistics environment. 
+
+The same methods I used to analyse discrepancies, validate multi-source data, and reconstruct timelines now underpin my approach to detection engineering, log analysis, and structured SOC investigations.
+
 
 ---
 
-## 📬 Feedback
 
-If you work in Blue Team, detection engineering or SOC operations, feedback is always welcome.
+## 📬Feedback
+I’m always improving this portfolio as I grow in my SOC Analyst journey. If you have suggestions or ideas that could make it stronger, I’d be glad to hear them.
 
-💼 **LinkedIn:** [linkedin.com/in/magda-d-infosec](https://linkedin.com/in/magda-d-infosec)
+
+
+
+
+🔗 **LinkedIn:** [linkedin.com/in/magda-d-infosec](https://linkedin.com/in/magda-d-infosec)
 
 ---
 
 ## 🪪 Author
 
 **Magda Dominguez**  
-*SOC Analyst (L1-ready)  Bristol, UK*  
-Focused on Blue Team operations, detection engineering and log analysis.
+*SOC Analyst (L1-ready) - Bristol, UK*  
+Blue Team operations | SOC investigations | Logistics-to-SOC analytical mindset
 
 ---
+
 ---

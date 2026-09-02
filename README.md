@@ -40,7 +40,7 @@ Hands-on Blue Team operations, multi-source investigations, detection engineerin
 | 📚 [Theory](./0.therory/glossary.md) | ✅ Foundation | Glossary completed |
 | 🧪 [Detection Engineering](./1.detections/README.md) | 🔄 Active | Structure + theory, practical cases in development |
 | 🔎 [Investigations](.//2.investigations/powershell-encoded.md) | 🔄 Active | 3 documented cases |
-| 📊 [Log Analysis](./3.log-analysis/README.md) | 🔥 Highly Active | Sysmon (IDs 1, 2, 3, 8, 10,11,13,15,22), PowerShell (4104) & Auth triage |
+| 📊 [Log Analysis](./3.log-analysis/README.md) | 🔥 Highly Active | Sysmon (IDs 1, 2, 3, 8, 10,11,13,15,22), Windows Events 4672 |
 | 🕵️ [Threat Hunting](./4.hunting/README.md) | ⏳ Coming Soon | Structure ready, content in development |
 | 🧩 [Security Labs](./5.projects/README.md) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
 | 📝 [SOC Documentation](./6.documents/2.incident-response-workflow.md) | ✅ Foundation | Guides, methodology and checklists |
@@ -89,11 +89,14 @@ It is a **highly active** project, updated regularly as I dive deeper into Blue 
 
   → Full Triage: [`sysmon-id22-webview2-analysis.md`](./3.log-analysis/sysmon/id22-dns-queries/sysmon-id22-webview2-analysis.md)
 
-- **PowerShell Script Block Logging (Event 4104)** 🚧
+- **Special Privileges Assigned (Windows Event ID 4672)**
 
-  *Deobfuscation and analysis of encoded command executions.*
+  *Analysing privileged logon sessions to differentiate legitimate administrative activity from potential escalation or credential abuse.*
 
-  → Triage notes: [`event4104-powershell-scriptblock-analysis.md`](./3.log-analysis/powershell/event4104-powershell-scriptblock-analysis.md)
+  → Full Triage: [`Event-ID-4672.md`](./3.log-analysis/windows-events/Event-ID-4672.md)
+
+
+
 
 > ⚠️ *Note: As my workflow evolves, advanced investigations are being consolidated into the `3.log-analysis` and `2.investigations` directories for a more streamlined SOC structure.*
 

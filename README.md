@@ -140,6 +140,15 @@ Each hunting case includes:
 Larger SOC projects designed to build practical skills in detection engineering, log analysis, KQL and incident documentation.  
 📂 [`5.projects`](5.projects/) *(Current project: Sysmon Lab Environment)*
 
+
+### 📌 Featured Project: Threat Detection & SOC Triage Lab (Wazuh & Sysmon)
+* **Summary:** End-to-end detection engineering lab simulating adversary tactics mapped to MITRE ATT&CK, monitoring host telemetry via Sysmon and Wazuh agent, and writing custom correlation rules.🚧
+
+* **Tech Stack:** Wazuh SIEM, Windows Event Logs, Sysmon, Kali Linux, PowerShell, VirtualBox.🚧
+* **Key Focus:** Threat Triage, Custom Detection Rules (XML), Host Telemetry Correlation.
+* 🔗 [View Full Project Documentation & Telemetry Logs](/5.projects/project3.wazuh-lab/README.md)     
+ > *_Work in progress_*
+
 ### 📝 SOC Documentation
 Operational documentation used in real SOC teams:
 * SOC methodology

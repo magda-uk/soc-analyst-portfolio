@@ -90,3 +90,10 @@ Correlating Sysmon telemetry using `ProcessGuid` `{79317113-17c1-6a90-8e00-01000
 3. **Outbound Egress:** Direct socket establishment over standard HTTP port 80 to remote infrastructure.
 
 This exercise illustrates the end-to-end triaging methodology: mapping observable events to MITRE ATT&CK while correctly distinguishing operating system runtime behavior from genuine adversary techniques.
+
+
+## 🪪 Author
+
+**Magda Dominguez**  
+*SOC Analyst (L1-ready)  Bristol, UK*  
+Focused on Blue Team operations, detection engineering and log analysis.

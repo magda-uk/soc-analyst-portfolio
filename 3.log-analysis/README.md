@@ -9,7 +9,7 @@ This directory showcases my hands-on ability to investigate endpoint logs, diffe
 The investigations are categorised by the primary log source:
 
 *   **[`/sysmon`](./sysmon/)** 🔥 **NEW : Check it out, more analysis has been added!**
-    *   Endpoint visibility using Sysmon. Contains analyses of process creation (ID 1), process injection (ID 8), registry modifications (ID 13), and DNS queries (ID 22).
+    *   Endpoint visibility using Sysmon. Contains analyses of process creation (ID 1), process injection (ID 8), registry modifications (ID 13), and DNS queries (ID 22) among others.
 *   **[`/powershell`](./powershell/)** 🚧 *(Work in Progress)*
     *   Analysis of native PowerShell logs, specifically focusing on Script Block Logging (Event ID 4104) to review suspicious script executions.
 *   **[`/windows-events`](./windows-events/)** 🚧 *(Work in Progress)*
@@ -39,3 +39,6 @@ If you are reviewing this portfolio, I highly recommend starting with these key 
 
 ---
 🔄 *Continuously updated as I analyse new logs and learn new detection techniques.* 
+
+## 👩🏽‍💻 *Authored by: Magda Dominguez*  
+*Security Operations • Detection Engineering • Blue Team*

@@ -131,3 +131,90 @@ It serves as a quick reference for understanding attacker behaviour, log artefac
 ---
   Registry keys used by Windows to track compatibility settings, mitigation flags, and application execution history.  
   **Threat relevance:** Adversaries may tamper with these keys to disable OS mitigations, manipulate execution environments, or evade behavioural detection rules.
+# Electron IPC
+
+**Category:** Application Architecture / Baseline Behaviour  
+**Related Sysmon Events:** 1, 7, 8, 10  
+**Related MITRE Technique:** T1055 (benign lookalike)  
+
+Electron is a framework used by applications such as VS Code, Slack, Teams, and Discord to run desktop apps using:
+* Chromium for UI rendering
+* Node.js for backend logic
+
+*Electron behaves like a small browser packaged as a desktop application.*
+
+## Multi‑Process Architecture
+Electron follows the same model as Chrome:
+* **Main Process** — controls the application
+* **Renderer Processes** — each window/tab
+* **Extension Host** — runs VS Code extensions
+* **GPU Process** — graphics tasks
+
+*Each process has a dedicated role and communicates constantly.*
+
+## Electron IPC 
+IPC = Inter‑Process Communication. It is how Electron processes coordinate:
+* sending messages
+* scheduling tasks
+* sharing state
+* updating UI components
+
+*IPC is normal and expected.*
+
+## Why Electron Creates Remote Threads
+The main process sometimes needs to:
+* start work inside a child process
+* run an extension
+* update UI components
+* coordinate rendering
+
+Electron uses remote thread creation as part of this workflow. **This is not process injection** — it is legitimate application behaviour.
+
+## Why Sysmon Flags It (Event ID 8)
+Sysmon cannot distinguish between:
+* malware injecting into a process
+* Electron coordinating its own processes
+
+Both behaviours generate **Event ID 8 — CreateRemoteThread**.
+
+## How to Recognise Legitimate Electron IPC
+A `CreateRemoteThread` event is likely benign when:
+* `SourceImage == TargetImage`
+* Same user context
+* `StartModule` is legitimate
+* No `RWX` or `MEM_PRIVATE` memory
+* Electron/Chromium application (VS Code, Slack, Teams, Discord)
+
+## When to Investigate Further
+Investigate if:
+* `SourceImage ≠ TargetImage`
+* Privilege escalation occurs
+* `StartModule` points to `RWX` memory
+* Unsigned or unexpected DLLs appear
+* Target process is `SYSTEM` or `LSASS`
+* Application is not Electron‑based
+
+## Recommended Detection Tuning
+```
+SourceImage == TargetImage
+AND Image is a verified Electron/Chromium binary
+```
+This reduces noise from:
+
+- VS Code
+
+- Slack
+
+- Teams
+
+- Discord
+
+- Any Electron‑based tooling
+
+## 📚 References 
+
+
+* [Electron main and renderer processes](https://medium.com/cameron-nokes/deep-dive-into-electrons-main-and-renderer-processes-7a9599d5c9e2)
+*  [Chromium Multi‑Process Modelext](https://www.chromium.org/developers/design-documents/multi-process-architecture/)
+*  [VS Code Architecturet](https://code.visualstudio.com/api/extension-capabilities/overview)
+*  [Why Electron uses multiple processes](https://www.electronjs.org/docs/latest/tutorial/process-model)

@@ -10,6 +10,7 @@
 This investigation details the triage of a blocked network connection on a Windows endpoint. The objective was to correlate a high-priority antivirus alert (invalid SSL certificate) with OS-level network telemetry (Sysmon). The investigation confirmed that highly effective Endpoint Detection and Response (EDR) prevention mechanisms can create "blind spots" in standard logging tools due to early interception.
 
 ## 2. Incident Timeline (UTC)
+*Note: All system logs are recorded in UTC. At the time of the incident, the local endpoint time was British Summer Time (BST / UTC+1), meaning local alerts appear one hour ahead of system telemetry.*
 * **12:21:04 UTC:** The user's browser (`msedge.exe`) attempted an HTTPS connection to `r.msftstatic.com`.
 * **12:21:04 UTC:** EDR module (Kaspersky Safe Browsing) intercepted the TLS handshake, identified an invalid certificate, and instantly severed the connection.
 * **12:21:xx UTC:** OS-level telemetry (Sysmon) failed to register Event ID 3 (Network Connection) because the connection was aborted before the operating system could establish it.

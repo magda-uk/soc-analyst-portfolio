@@ -115,8 +115,14 @@ An effective SOC detection strategy for **T1055.001** should incorporate the fol
   * **Event ID 7 (ImageLoaded):** Track unexpected DLLs loaded into target address space immediately following thread injection.
 
 ---
+## 8. Real-World Telemetry Case Study & Triage
+To see a practical breakdown of how Sysmon Event ID 8 behaves in a real development environment, how to analyze process lineage (`Code.exe → Code.exe`), and how to validate safe multi-process IPC baseline conditions versus hostile injection tradecraft, review the complete analysis: ➡️
+[Sysmon Event ID 8: Electron Multi-Process IPC Thread Creation (Visual Studio Code)](/3.log-analysis/sysmon/id8-electron-ipc-thread/id8-electron-ipc-thread.md#overview) 
 
-## 8. References & Frameworks
+
+---
+
+## 9. References & Frameworks
 
 * **MITRE ATT&CK:** [Technique T1055 — Process Injection](https://attack.mitre.org/techniques/T1055/)
 * **MITRE ATT&CK:** [Sub-technique T1055.001 — Dynamic-link Library Injection](https://attack.mitre.org/techniques/T1055/001/)

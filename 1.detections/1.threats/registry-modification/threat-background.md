@@ -64,7 +64,23 @@ By correlating **Sysmon Event ID 13** with process identity, command lines, targ
 * **T1031** — Modify Existing Service
 * **T1050** — New Service
 
+
+
 ---
+## Practical Application
+
+To see how this threat is detected and analysed in a real-world scenario, please review my hands-on log analysis exercise:
+
+➡️ [**Log Analysis Practice: Suspicious Registry Modification**](/3.log-analysis/sysmon/id13-registry-modification/multi-event-analysis.md#event-1-nordvpn-shell-command-extension-directory-context-menu)
+
+---
+
 
 ## Conclusion
 Registry modification is a versatile and stealthy technique used across multiple stages of an attack. Monitoring **Sysmon Event ID 13** provides critical visibility into persistence, service hijacking, and defense evasion behaviours that would otherwise remain undetected. This threat background supports the detection logic and evidence collected for registry-modification triage.
+
+---
+
+### **Authored by**
+**Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team

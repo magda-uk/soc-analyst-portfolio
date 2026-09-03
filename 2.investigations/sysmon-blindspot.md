@@ -1,6 +1,6 @@
 # 🔎 Investigation: EDR Interception vs. OS Telemetry Gap
 
-**Analyst:** Magdalena Domínguez Escudero  
+**Analyst:** Magdalena Domínguez  
 **Date:** 03 September 2026  
 **Status:** Completed  
 
@@ -16,6 +16,9 @@ While this incident highlights a defensive interception rather than a successful
   * *Context:* The initial trigger was an anomalous, improperly certificated HTTPS connection via a legitimate browser (`msedge.exe`), a common technique for C2 beaconing.
 * **Defense Evasion:** Impair Defenses: Disable or Modify Tools ([T1562.001](https://attack.mitre.org/techniques/T1562/001/))
   * *Context:* This case study illustrates how kernel-level network filtering (WFP) can successfully prevent OS-level telemetry (Sysmon) from generating logs. Advanced adversaries often abuse these same deep-level mechanisms to intentionally create logging blind spots.
+
+* **Further Reading & Offensive Context:**
+  * [EDR Evasion using Windows Filtering Platform (WFP)](https://punggawa.com/edr-evasion-windows-filtering-platform-wfp/): A technical breakdown demonstrating how adversaries weaponise the exact same kernel-level filtering mechanisms observed in this incident to intentionally blind telemetry agents like Sysmon.
 
 ## 3. Incident Timeline (UTC)
 *Note: All system logs are recorded in UTC. At the time of the incident, the local endpoint time was British Summer Time (BST / UTC+1), meaning local alerts appear one hour ahead of system telemetry.*

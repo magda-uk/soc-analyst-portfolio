@@ -37,9 +37,9 @@ Hands-on Blue Team operations, multi-source investigations, detection engineerin
 
 | Section | Status | Progress |
 |---------|--------|----------|
-| 📚 [Theory](./0.therory/glossary.md) | ✅ Foundation | Glossary completed |
+| 📚 [Theory](./0.therory/glossary.md) |  🔄 Active | Glossary completed |
 | 🧪 [Detection Engineering](./1.detections/README.md) | 🔄 Active | Structure + theory, practical cases in development |
-| 🔎 [Investigations](.//2.investigations/powershell-encoded.md) | 🔄 Active | 3 documented cases |
+| 🔎 [Investigations](.//2.investigations/powershell-encoded.md) | 🔄 Active | 1 completed case (3 planned) |
 | 📊 [Log Analysis](./3.log-analysis/README.md) | 🔥 Highly Active | Sysmon (IDs 1, 2, 3, 8, 10,11,13,15,22), Windows Events 4672 |
 | 🕵️ [Threat Hunting](./4.hunting/README.md) | ⏳ Coming Soon | Structure ready, content in development |
 | 🧩 [Security Labs](./5.projects/README.md) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
@@ -69,7 +69,7 @@ As I progressed, some topics required deeper investigation than the foundation r
 
 It is a **highly active** project, updated regularly as I dive deeper into Blue Team operations and telemetry analysis.
 
-### 🔥 Featured Advanced Investigations
+### 📌 Featured Advanced Investigations
 
 - **Registry Modification & Persistence (Sysmon Event ID 13)** 
 
@@ -89,12 +89,18 @@ It is a **highly active** project, updated regularly as I dive deeper into Blue 
 
   → Full Triage: [`sysmon-id22-webview2-analysis.md`](./3.log-analysis/sysmon/id22-dns-queries/sysmon-id22-webview2-analysis.md)
 
+
+- 🆕**EDR Interception & OS Telemetry Blindspots (Sysmon Event ID 3)**  
+
+  *Analysing how kernel-level EDR mechanisms (WFP) can intercept network connections early, blinding OS-level telemetry like Sysmon.*
+
+  → Full Triage: [`edr-interception-gap.md`](./2.investigations/sysmon-blindspot.md#1-executive-summary)
+
 - **Special Privileges Assigned (Windows Event ID 4672)**
 
   *Analysing privileged logon sessions to differentiate legitimate administrative activity from potential escalation or credential abuse.*
 
   → Full Triage: [`Event-ID-4672.md`](./3.log-analysis/windows-events/Event-ID-4672.md)
-
 
 
 

@@ -39,7 +39,7 @@ Hands-on Blue Team operations, multi-source investigations, detection engineerin
 |---------|--------|----------|
 | 📚 [Theory](./0.therory/glossary.md) |  🔄 Active | Glossary completed |
 | 🧪 [Detection Engineering](./1.detections/README.md) | 🔄 Active | Structure + theory, practical cases in development |
-| 🔎 [Investigations](.//2.investigations/powershell-encoded.md) | 🔄 Active | 1 completed case (3 planned) |
+| 🔎 [Investigations](.//2.investigations/powershell-encoded.md) | 🔄 Active | 2 completed case (2 planned) |
 | 📊 [Log Analysis](./3.log-analysis/README.md) | 🔥 Highly Active | Sysmon (IDs 1, 2, 3, 8, 10,11,13,15,22), Windows Events 4672 |
 | 🕵️ [Threat Hunting](./4.hunting/README.md) | ⏳ Coming Soon | Structure ready, content in development |
 | 🧩 [Security Labs](./5.projects/README.md) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |

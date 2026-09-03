@@ -1,13 +1,13 @@
 #  Suspicious PowerShell Encoded Commands
 
-## Description
+## 🔹Description
 PowerShell is one of the most powerful administrative tools in Windows, and therefore one of the most abused by threat actors. Encoded commands (`-enc`) are frequently used to conceal malicious activity such as payload execution, reconnaissance, or remote command delivery.
 
 Attackers rely on Base64 encoding to hide intent, bypass basic detection, and execute fileless malware.
 
 ---
 
-## How the Attack Works
+## 🔹 How the Attack Works
 A typical malicious execution looks like:
 `powershell.exe -enc <base64_payload>`
 
@@ -22,7 +22,7 @@ The decoded payload often includes:
 
 ---
 
-## Why It Is Dangerous
+## 🔹 Why It Is Dangerous
 - Encoded commands hide malicious intent
 - Common in ransomware and APT intrusions
 - Enables fileless execution
@@ -31,14 +31,14 @@ The decoded payload often includes:
 
 ---
 
-## MITRE ATT&CK
+## 🔹 MITRE ATT&CK
 - **T1059.001 — PowerShell**
 - **T1027 — Obfuscated/Encoded Commands**
 - **T1105 — Ingress Tool Transfer**
 
 ---
 
-## Detection Guidance
+## 🔹 Detection Guidance
 Look for the following indicators:
 
 - **Sysmon Event ID 1** (Process Creation)
@@ -51,7 +51,7 @@ Look for the following indicators:
 
 ---
 
-## Investigation Steps
+## 🔹Investigation Steps
 Key questions for analysts:
 
 - What does the Base64 decode to?
@@ -62,7 +62,7 @@ Key questions for analysts:
 
 ---
 
-## Mitigation
+## 🔹 Mitigation
 - Enable PowerShell Script Block Logging
 - Enforce Constrained Language Mode
 - Use AppLocker or WDAC to restrict PowerShell
@@ -71,10 +71,22 @@ Key questions for analysts:
 
 ---
 
-## Evidence to Collect
+## 🔹Evidence to Collect
 - Full command line
 - Decoded script
 - Parent process details
 - Network activity
 - Hashes of downloaded content
 
+---
+
+## 🔹Real-World Case Study & Investigation
+To see a practical, hands-on demonstration of how this threat appears in real host telemetry, how to handle Sysmon Event ID 1 logs, and the step-by-step Base64 payload decoding process, review the completed investigation report:
+➡️ [Investigation Report: Threat Hunting for PowerShell Obfuscation](/2.investigations/powershell-encoded.md#detection-source)
+
+---
+## 🪪 Author
+
+**Magda Dominguez**  
+*SOC Analyst (L1-ready) - Bristol, UK*  
+Blue Team operations | SOC investigations | Logistics-to-SOC analytical mindset

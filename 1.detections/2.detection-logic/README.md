@@ -7,7 +7,8 @@ Instead of relying on platform-specific query languages, these documents break d
 ##  Available Content
 
 - [**Suspicious Executable File Creation**](filecreate.md)
-- [**Encoded PowerShell Execution**](powershell-encoded.md)
+- [**Encoded PowerShell Execution**](/1.detections/2.detection-logic/powershell-encoded.md#objective)
+- [**LSASS Credential Dumping**](/1.detections/2.detection-logic/LSASS-credential-dumping.md#-objective)
 
 ## 🚧 Coming Soon 
 
@@ -16,8 +17,6 @@ I am currently researching, testing, and documenting the detection logic for the
 - ⏳ **Authentication Anomalies** (Brute force & anomalous logons)
 - ⏳ **Process Injection** (CreateRemoteThread / T1055)
 - ⏳ **DNS & WPAD** (Adversary-in-the-Middle techniques)
-- ⏳ **LSASS Memory Access** (Pre-dumping phase)
-- ⏳ **LSASS Credential Dumping** (Memory extraction)
 - ⏳ **Suspicious Registry Modifications** (Persistence mechanisms)
 - ⏳ **Time Stomping** (File attribute manipulation evasion)
 

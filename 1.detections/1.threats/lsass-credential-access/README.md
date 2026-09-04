@@ -59,14 +59,18 @@ Typical rules include:
 
 Hands‑on evidence for LSASS Access and LSASS Dumping will be linked here once `3.log-analysis` is fully organised.
 
-### Placeholders
 
 
-[Placeholder] (Sysmon Event ID 10 — LSASS Access Analysis)
 
-[Placeholder] Sysmon Event ID 11 — LSASS Dumping Analysis
+[LSASS Dumping](/3.log-analysis/sysmon/id10-credential-dumping/id10-credential-dumping-analysis.md#credential-dumping-log-analysis-t1003 )
+
+[LSASS Dumping](/3.log-analysis/sysmon/id11-file-create/event-id-11-filecreate.md#-event-summary )
+
+
+
 
 [Placeholder] Correlation: Access → Dumping
+> *_Coming soon_*
 
 ## 🟩 False Positives & Benign Behaviour
 
@@ -105,20 +109,7 @@ This includes:
   * Credential reset
   * Host isolation
 
-## 🟩 Folder Structure
-```
-lsass-credential-access/
-│
-├── docs/
-│   ├── threat-background.md
-│   ├── lsass-access.md
-│   ├── lsass-dumping.md
-│   ├── mitre-diagram.png
-│   ├── benign-behaviour.md
-│   └── tuning.md
-│
-└── README.md
-```
+
 ## 🟩 Summary
 
 This folder contains only the threat‑specific documentation for LSASS Access and LSASS Credential Dumping.

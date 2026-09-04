@@ -18,6 +18,12 @@ Here are the fully documented cases currently available for review:
 *   **Techniques:** T1059.001 (PowerShell), T1027 (Obfuscated Files or Information).
 *   **Tools:** PowerShell Script Block Logging, Sysmon (Event ID 1), Base64 Decoding.
 
+
+### 3. [False Positive Tuning: Lenovo Vantage OEM Telemetry](/2.investigations/noise-in-detections.md#-lenovo-vantage-noise-analysis)
+
+- **Focus:** Baselining legitimate OEM software behaviour to reduce SIEM false positives and create high-fidelity detection exclusions.
+- **Techniques:** Tuning benign behaviours that mimic T1055 (Process Injection).
+- **Tools:** Microsoft Sysmon (Event IDs 1, 7, 8, 10), KQL Exclusion Logic.
 ---
 
 ## 🚧 Coming Soon (In Progress)

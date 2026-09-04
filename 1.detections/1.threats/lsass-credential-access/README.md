@@ -43,33 +43,33 @@ Both phases form part of the same attack chain, but require different detection 
 
 ---
 
-## 🟩Detection Logic (Global)  
-Detection logic for LSASS Access and LSASS Dumping is centralised in:
-```
-1.detections/2.detection-logic/lsass-access.md
-1.detections/2.detection-logic/lsass-credential-dumping.md
-```
-Typical rules include:
+## 🟩 Detection Logic (Global)
 
-* Sigma: LSASS Access via suspicious OpenProcess calls
-* Sentinel: LSASS Dumping via Procdump
-* Elastic: LSASS Dumping via comsvcs.dll
+Detection logic for LSASS Access and LSASS Dumping is centralised in our logic directory:
+
+ 🛠️ **Completed:** [LSASS Credential Dumping - KQL Logic](../../2.detection-logic/LSASS-credential-dumping.md#detection-logic-lsass-credential-dumping)
+
+ 🛠️ **Pending:** *[Placeholder] LSASS Access - KQL Logic (Coming Soon)*
+
+Typical rules include:
+- **Sigma:** LSASS Access via suspicious OpenProcess calls
+- **Sentinel:** LSASS Dumping via Procdump
+- **Elastic:** LSASS Dumping via comsvcs.dll
 
 ## 🟩 Hands‑On Evidence
 
-Hands‑on evidence for LSASS Access and LSASS Dumping will be linked here once `3.log-analysis` is fully organised.
+The practical triage and log analysis for this threat will be documented here once the simulated attack is completed in the lab environment.
+
+-  [Incident Investigation: LSASS Credential Dumping (T1003.001) - *Coming Soon*]
 
 
 
 
-[LSASS Dumping](/3.log-analysis/sysmon/id10-credential-dumping/id10-credential-dumping-analysis.md#credential-dumping-log-analysis-t1003 )
-
-[LSASS Dumping](/3.log-analysis/sysmon/id11-file-create/event-id-11-filecreate.md#-event-summary )
 
 
 
 
-[Placeholder] Correlation: Access → Dumping
+
 > *_Coming soon_*
 
 ## 🟩 False Positives & Benign Behaviour
@@ -117,4 +117,4 @@ This folder contains only the threat‑specific documentation for LSASS Access a
 Detection logic, rules, and hands‑on evidence are stored in their respective global locations:
 * Detection Logic → `2.detection-logic/`
 * Rules → `3.rules/`
-* Evidence → `3.log-analysis/`
+* Evidence → *_coming soon_*

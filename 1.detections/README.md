@@ -1,8 +1,8 @@
-#  Detection Engineering & Logic
+# ⚙️ Detection Engineering & Logic
 
 Welcome to the Detection Engineering section of my SOC Analyst portfolio. This directory showcases the complete lifecycle of how I research, build, and deploy detection logic for various adversary techniques.
 
-##  Directory Structure
+## 🔗 Directory Structure
 
 To mirror a real-world Security Operations Center (SOC) workflow, this directory is split into three main phases:
 
@@ -15,7 +15,7 @@ To mirror a real-world Security Operations Center (SOC) workflow, this directory
 
 ---
 
-##  Detection Lifecycle Matrix
+## 🔗 Detection Lifecycle Matrix
 
 Below is the master tracking matrix showing the end-to-end development of each detection, from initial research to the final SIEM rule.
 

@@ -19,7 +19,7 @@ Here are the fully documented cases currently available for review:
 *   **Tools:** PowerShell Script Block Logging, Sysmon (Event ID 1), Base64 Decoding.
 
 
-### 3. [False Positive Tuning: Lenovo Vantage OEM Telemetry](/2.investigations/noise-in-detections.md#-lenovo-vantage-noise-analysis)
+### 3. [False Positive Tuning: Lenovo Vantage OEM Telemetry](/2.investigations/sysmon-tuning-lenovo-vantage.md#-lenovo-vantage-noise-analysis)
 
 - **Focus:** Baselining legitimate OEM software behaviour to reduce SIEM false positives and create high-fidelity detection exclusions.
 - **Techniques:** Tuning benign behaviours that mimic T1055 (Process Injection).

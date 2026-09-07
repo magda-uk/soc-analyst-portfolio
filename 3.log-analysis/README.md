@@ -15,6 +15,9 @@ The investigations are categorised by the primary log source:
 *   **[`/windows-events`](./windows-events/)** 🚧 *(Work in Progress)*
     *   Core Windows Security Event Log investigations, focusing on authentication patterns and logon failures.
 
+- **[`/entra-id`]** 🔥 *NEW*
+  - Analysis of Cloud Identity telemetry, focusing on Entra ID SigninLogs and AuditLogs to detect impossible travel, MFA anomalies, and compromised credentials.
+
 ## 🔏 Triage Methodology
 
 For the artifacts analysed in this directory, I follow a simple but effective workflow:

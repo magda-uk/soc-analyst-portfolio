@@ -1,13 +1,18 @@
 # Security Investigation: Event ID 4798 
 # (False Positive - Reconnaissance)
+---
 
 ## 🔹 Incident Summary
 This investigation details the triage of a high-velocity burst of **Windows Security Event ID 4798** (A user's local group membership was enumerated). While this pattern is frequently associated with malicious reconnaissance phases (such as BloodHound/SharpHound execution), our analysis confirmed this specific instance as a **False Positive** triggered by legitimate, automated Anti-Malware activity.
+
+---
 
 ## 🔹 Alert Context & Initial Hypothesis
 During routine log review on the endpoint `Azul_Fifty`, an anomaly was detected: **10 consecutive 4798 events** were generated within the exact same second. 
 
 *   **Initial Threat Hypothesis:** A compromised account or unauthorized script is actively mapping local administrative groups to plan lateral movement or privilege escalation (MITRE ATT&CK: T1069 - Permission Groups Discovery).
+
+---
 
 ## 🔹 Triage & Evidence Analysis
 
@@ -78,11 +83,15 @@ To confirm the legitimacy of the calling process, the investigation pivoted to S
 
 ![Event-id-1 ](/2.investigations/images/event-id-1.png)
 
+---
+
 
 ## 🔹 Resolution & Recommendations
 *   **Verdict:** False Positive (Expected Behavior).
 *   **Action Taken:** No incident response required. The alert is closed.
 *   **Detection Engineering Note:** To reduce alert fatigue, the SIEM/Detection rule for Event 4798 should be tuned to exclude (whitelist) the `MBAMService.exe` process when running strictly under the `SYSTEM` account.
+
+---
 
 ## 🔹 Author 🔹
 

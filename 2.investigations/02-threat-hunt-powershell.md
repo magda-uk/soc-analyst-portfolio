@@ -5,6 +5,8 @@
 **Date:** 03 September 2026  
 **Status:** Completed  
 
+---
+
 ## ▪️ 1. Summary
 
 This investigation analyses a suspicious PowerShell execution involving encoded or obfuscated commands. Such behaviour is commonly associated with malware delivery, credential harvesting, and in-memory execution to bypass basic string-based security controls.

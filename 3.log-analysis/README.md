@@ -31,17 +31,16 @@ For the artifacts analysed in this directory, I follow a simple but effective wo
 
 If you are reviewing this portfolio, I highly recommend starting with these key case studies:
 
-*   🆕 **[Cloud Identity: Impossible Travel & MFA Anomalies](./entra-id/EntraID-Impossible-Travel.md#-case-study-anomalous-cloud-sign-ins)**
+*   🆕 **[Cloud Identity: Impossible Travel & MFA Anomalies](./entra-id/EntraID-Impossible-Travel.md)**
     *   *Focus:* Triaging Entra ID logs for credential compromise, geo-velocity anomalies, and MFA bypass attempts.
 *   🆕 **[Sysmon Event ID 10: LSASS Credential Dumping via Mimikatz](./sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md)**
     *   *Focus:* Analysing unauthorised memory access requests (`PROCESS_VM_READ`) to confirm credential theft.
 *   **[PowerShell Event 4104: Script Block Analysis](./powershell/event4104-powershell-scriptblock-analysis.md)**
     *   *Focus:* Hunting for encoded commands and in-memory execution using native PowerShell logging.
-*   **[Sysmon Event ID 13: Registry Modification Analysis](./sysmon/multi-event-analysis.md)** 
+*   **[Sysmon Event ID 13: Registry Modification Analysis](./sysmon/id13-registry-modification)** 
     *   *Focus:* System Modification & Persistence. Triaging registry changes to identify potential malware persistence mechanisms.
-*   **[Sysmon Event ID 8: DWM to CSRSS Thread Creation](./sysmon/sysmon-id8-dwm-csrss.md)**
-    *   *Focus:* False Positive Validation. Documenting normal Windows GUI subsystem thread creation to tune out process injection alerts.
-
+*   **[Sysmon Event ID 22: DNS Queries & CDN Traffic](./sysmon/id22-dns-queries)**
+    *   *Focus:* Network log triage. Differentiating between legitimate WebView2 background traffic and potential suspicious connections.
 ---
 *🔄 Continuously updated as I analyse new logs and learn new detection techniques.*
 

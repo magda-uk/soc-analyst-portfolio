@@ -63,51 +63,40 @@ Beginner-friendly labs designed to build core SOC skills:
 📁 **Stored in:** [`7.hands-on`](7.hands-on/)
 
 ---
-## ✨ Advanced Hands-On Labs & Log Analysis
 
-As I progressed, some topics required deeper investigation than the foundation roadmap allowed. This section highlights my most advanced, realistic, and multi-event SOC triage cases.
+## 📌 Featured Investigations & Log Analysis
 
-It is a **highly active** project, updated regularly as I dive deeper into Blue Team operations and telemetry analysis.
+*As I progressed beyond the foundation roadmap, some topics required deeper investigation. This section highlights my most realistic and multi-event SOC triage cases.* 
 
-### 📌 Featured Advanced Investigations
+*This is a **highly active** project, updated regularly as I dive deeper into Blue Team operations and telemetry analysis.*
 
-- **Registry Modification & Persistence (Sysmon Event ID 13)** 
+### ⚙️ Threat Hunting & Incident Analysis
+*   🆕 **[Cloud Identity: Impossible Travel & MFA Anomalies](./3.log-analysis/entra-id/EntraID-Impossible-Travel.md)**
+    *Triaging Entra ID Sign-in logs to identify credential compromise, geolocation anomalies, and MFA bypass attempts.*
+*   🆕 **[LSASS Credential Dumping via Mimikatz (Sysmon Event ID 10)](./3.log-analysis/sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md)**
+    *Analysing unauthorised memory access requests (PROCESS_VM_READ) to the LSASS process to confirm credential theft.*
+*   **[Suspicious PowerShell Encoded Command (T1059.001)](./2.investigations/02-threat-hunt-powershell.md)**
+    *Triaging obfuscated PowerShell execution using Base64 encoding and Script Block Logging.*
+*   **[EDR Interception vs. OS Telemetry Gap (Sysmon Blindspot)](./2.investigations/01-sysmon-edr-blindspot.md)**
+    *Analysing how kernel-level EDR mechanisms (WFP) intercept network connections early, blinding OS-level telemetry like Sysmon.*
 
-  *Triaging registry changes to identify potential malware persistence mechanisms or configuration tampering.*
+### ⚙️ Detection Engineering & Tuning
+*   🆕 **[Event ID 4798: High-Velocity Group Enumeration (False Positive)](./2.investigations/04-false-positive-event4798.md)**
+    *Differentiating adversary reconnaissance (BloodHound/SharpHound) from legitimate Anti-Malware activity.*
+*   **[False Positive Tuning: Lenovo Vantage OEM Telemetry](./2.investigations/03-tuning-lenovo-vantage.md)**
+    *Baselining legitimate OEM software behaviour to reduce SIEM false positives and create high-fidelity exclusions.*
+*   **[Registry Modification & Persistence (Sysmon Event ID 13)](multi-event-analysis.md)**
+    *Triaging registry changes to identify potential malware persistence mechanisms or configuration tampering.*
+*   **[Network Telemetry: DNS Queries & CDN Traffic (Sysmon Event ID 22)](sysmon-id22-webview2-analysis.md)**
+    *Triaging background DNS requests to differentiate legitimate software traffic from potential C2 beaconing.*
+*   **[Special Privileges Assigned (Windows Event ID 4672)](Event-ID-4672.md)**
+    *Analysing privileged logon sessions to differentiate legitimate administrative activity from potential escalation or credential abuse.*
 
-  → Full Triage: [`multi-event-analysis.md`](./3.log-analysis/sysmon/id13-registry-modification/multi-event-analysis.md)
+*⚠️ Note: As my workflow evolves, advanced investigations are continuously being consolidated into the `3.log-analysis` and `2.investigations` directories for a more streamlined SOC structure.*
 
-- **False Positive Validation: DWM to CSRSS (Sysmon Event ID 8)**
-
-  *Documenting the normal behavior of Windows GUI subsystem thread creation to tune out process injection alerts.*
-
-  → Full Triage: [`sysmon-8-dwm-csrss.md`](./3.log-analysis/sysmon/id8-multi-event/sysmon-8-dwm-csrss.md)
-
-- **Network Telemetry: DNS Queries & CDN Traffic (Sysmon Event ID 22)**
-
-  *Triaging background DNS requests to differentiate legitimate software traffic from potential C2 beaconing.*
-
-  → Full Triage: [`sysmon-id22-webview2-analysis.md`](./3.log-analysis/sysmon/id22-dns-queries/sysmon-id22-webview2-analysis.md)
-
-
-- 🆕**EDR Interception & OS Telemetry Blindspots (Sysmon Event ID 3)**  
-
-  *Analysing how kernel-level EDR mechanisms (WFP) can intercept network connections early, blinding OS-level telemetry like Sysmon.*
-
-  → Full Triage: [`edr-interception-gap.md`](./2.investigations/sysmon-blindspot.md#1-executive-summary)
-
-- **Special Privileges Assigned (Windows Event ID 4672)**
-
-  *Analysing privileged logon sessions to differentiate legitimate administrative activity from potential escalation or credential abuse.*
-
-  → Full Triage: [`Event-ID-4672.md`](./3.log-analysis/windows-events/Event-ID-4672.md)
+> *My recent hands-on log analysis—covering LSASS credential dumping, PowerShell abuse, and Entra ID authentication anomalies—has been consolidated into the [`3.log-analysis directory`](3.log-analysis/README.md#-current-status)*
 
 
-
-> ⚠️ *Note: As my workflow evolves, advanced investigations are being consolidated into the `3.log-analysis` and `2.investigations` directories for a more streamlined SOC structure.*
-
-
-> *More advanced labs will be added as I explore LSASS access, PowerShell abuse, authentication anomalies, and network-based hunting.*
 
 
 ---

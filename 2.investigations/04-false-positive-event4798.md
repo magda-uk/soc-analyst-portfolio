@@ -26,10 +26,13 @@ No unauthorised account activity, privilege‑escalation attempts, or adversaria
 
 Conclusion: The activity was determined to be a False Positive, triggered by routine, automated Anti‑Malware operations.
 
+---
+
 ## 🔷 Alert Context & Initial Hypothesis
 During routine log review on the endpoint `Azul_Fifty`, an anomaly was detected: **10 consecutive 4798 events** were generated within the exact same second. 
 
 *   **Initial Threat Hypothesis:** A compromised account or unauthorised script may be actively mapping local administrative groups to plan lateral movement or privilege escalation .
+
 **MITRE ATT&CK**: T1069 – Permission Groups Discovery 
 
 
@@ -88,7 +91,7 @@ While all events shared the exact same origin (`MBAMService.exe`), the complete 
 
 To validate the legitimacy of the processes involved in the burst of Windows Security Event ID 4798 events and to rule out Masquerading, the investigation pivoted to Sysmon telemetry. Two relevant Sysmon Event ID 1 entries were identified: one for the auxiliary Malwarebytes helper (`DDSHelper.exe`) and one for the primary Malwarebytes application binary (`Malwarebytes.exe`), both spawned under expected parent processes.
 
----
+
 
 ### 🔹 Sysmon Evidence: DDSHelper.exe
 
@@ -101,7 +104,7 @@ To validate the legitimacy of the processes involved in the burst of Windows Sec
 ![Event-id-1 ](/2.investigations/images/event-id-1.png)
 
 
----
+
 
 ### 🔹 VirusTotal Validation: DDSHelper.exe
 
@@ -109,6 +112,7 @@ The SHA256 hash of `DDSHelper.exe` was submitted to VirusTotal, returning **0/68
 
 
 ![VirusTotal DDSHelper](/2.investigations/images/virus-total.png)
+
 ---
 
 ### 🔹 Sysmon Evidence: Malwarebytes.exe
@@ -123,7 +127,7 @@ The SHA256 hash of `DDSHelper.exe` was submitted to VirusTotal, returning **0/68
 ![Sysmon Malwarebytes.exe](/2.investigations/images/malware.png)
 
 
----
+
 
 ### 🔹 VirusTotal Validation: Malwarebytes.exe
 
@@ -140,14 +144,14 @@ The file was confirmed to be a signed, legitimate Malwarebytes executable, consi
 
 ---
 
-## 🧩 MITRE Mapping (Malicious + Benign)
-### Malicious Hypothesis Mapping
+## 🔷 MITRE Mapping (Malicious + Benign)
+### 🔹 Malicious Hypothesis Mapping
 
 | Behaviour | MITRE Technique |
 | --- | --- |
 | Enumeration of local admin groups | **T1069 – Permission Groups Discovery** |
 
-### Benign AV/EDR Behaviour Mapping
+### 🔹 Benign AV/EDR Behaviour Mapping
 
 | Behaviour | MITRE Technique | Reason |
 | --- | --- | --- |
@@ -194,6 +198,9 @@ The file was confirmed to be a signed, legitimate Malwarebytes executable, consi
                  │ Detection tuning needed  │
                  └──────────────────────────┘
 ```
+
+---
+
 ## 🔷 SOC Timeline
 ```
 [Sequence Start] Multiple Event ID 4798 entries detected in rapid succession
@@ -207,6 +214,8 @@ The file was confirmed to be a signed, legitimate Malwarebytes executable, consi
 [Verdict] FALSE POSITIVE → no incident response required
 
 ```
+
+---
 
 
 ## 🔷 Resolution & Recommendations

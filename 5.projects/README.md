@@ -1,4 +1,4 @@
-### 5. Projects
+# Projects
 This section contains larger, practical SOC projects focused on detection engineering, log analysis, KQL investigations and end‑to‑end incident workflows. These projects are learner‑friendly and part of my ongoing development toward SOC Analyst L1 roles.
 
 

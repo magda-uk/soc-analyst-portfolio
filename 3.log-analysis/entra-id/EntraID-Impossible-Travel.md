@@ -1,4 +1,4 @@
-## 🟪 Case Study 4: Anomalous Cloud Sign-ins & Impossible Travel (Entra ID)
+## 🟪 Case Study: Anomalous Cloud Sign-ins & Impossible Travel (Entra ID)
 
 ![Entra ID Sign-ins](/3.log-analysis/entra-id/images/entra-id.png)
 

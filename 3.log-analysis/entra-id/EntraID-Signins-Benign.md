@@ -3,7 +3,7 @@
 ## 🟪 Summary
 This analysis expands the scope from on-premises endpoint telemetry (such as Event ID 4672) to cloud-based identity monitoring within Microsoft Entra ID (formerly Azure AD). Monitoring sign-in activity and application access is crucial for detecting unauthorised access, compromised credentials, or anomalous behaviour within the cloud infrastructure. 
 
-## 🟪 Case Study 3: Cloud Identity Sign-ins (Account: John Smith)
+## 🟪 Case Study: Cloud Identity Sign-ins (Account: John Smith)
 
 ![KQL Query Results: Entra ID Sign-ins](/3.log-analysis/entra-id/images/azure.png)
 

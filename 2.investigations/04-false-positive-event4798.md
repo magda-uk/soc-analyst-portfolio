@@ -108,7 +108,9 @@ To validate the legitimacy of the processes involved in the burst of Windows Sec
 
 ### 🔹 VirusTotal Validation: DDSHelper.exe
 
-The SHA256 hash of `DDSHelper.exe` was submitted to VirusTotal, returning **0/68 detections**. The file was identified as a signed, legitimate Malwarebytes component with no indicators of compromise.
+The SHA256 hash of `DDSHelper.exe` was submitted to VirusTotal, returning **0/68 detections**. 
+
+The file was identified as a signed, legitimate Malwarebytes component with no indicators of compromise.
 
 
 ![VirusTotal DDSHelper](/2.investigations/images/virus-total.png)
@@ -132,7 +134,7 @@ The SHA256 hash of `DDSHelper.exe` was submitted to VirusTotal, returning **0/68
 ### 🔹 VirusTotal Validation: Malwarebytes.exe
 
 The SHA256 hash of `Malwarebytes.exe` was extracted from Sysmon Event ID 1 and submitted to VirusTotal.  
-**Result:** *Add once you have it (e.g., 0/xx detections)*  
+ 
 The file was confirmed to be a signed, legitimate Malwarebytes executable, consistent with authorised Anti‑Malware activity.
 
 

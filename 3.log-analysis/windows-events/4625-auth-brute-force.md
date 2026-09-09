@@ -5,7 +5,7 @@ This analysis investigates a sequence of Windows Security Event Logs indicative 
 
 ## 🟪 Case Study 1: The Brute Force Phase (Event ID 4625)
 
-![Event 4625 - Failed Logon](/3.log-analysis/windows-events/images/placeholder-4625.png) *(Note: Replace with your screenshot)*
+![Event 4625 - Failed Logon](/3.log-analysis/windows-events/images/3.log-analysis/windows-events/images/placeholder-4625.png) *
 
 During routine monitoring, a high-velocity cluster of **Event ID 4625 (Audit Failure)** logs was detected on the endpoint `Azul_Fifty`. The telemetry revealed an aggressive attempt to authenticate to the built-in `Administrator` account within a 3-minute timeframe. 
 

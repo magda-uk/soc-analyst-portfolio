@@ -39,8 +39,11 @@ It serves as a quick reference for understanding attacker behaviour, log artefac
   Execution of malicious commands or scripts (PowerShell, CMD, Bash).
 * **T1055 — Process Injection:**  
   Injecting code into legitimate processes to evade detection.
-* **T1556 — Modify Authentication Process:**  
+* **T1078 - Valid Accounts:**  
+  When adversaries successfully compromise legitimate credentials (or bypass MFA via tokens), they abuse these valid accounts to blend in with normal administrative or user activity, making detection significantly harder since the user identity itself is authorised.
+* **T1556 — Modify Authentication Process, Phishing & Credential      Harvesting**: 
   Manipulating authentication flows, MFA, or identity systems.
+  The initial vector often responsible for capturing the user's password or triggering MFA prompts in the first place. In advanced scenarios, this evolves into Adversary-in-the-Middle (AiTM) phishing to hijack active sessions rather than just static credentials.
 
 ---
 
@@ -103,118 +106,55 @@ It serves as a quick reference for understanding attacker behaviour, log artefac
   Obfuscated malicious code delivered via scripts or CLI arguments to conceal its actual objective.
   
   ---
-## 🗝️ **Key Registry Concepts & Threat Vectors**
 
- **Registry modification across HKU and HKLM** 
---- 
+## 🗝️ Key Registry Concepts & Threat Vectors
+
+ ### Registry modification across HKU and HKLM
+ ---
+
   Registry changes can occur under `HKU` (`HKEY_USERS`) for user-level actions or `HKLM` (`HKEY_LOCAL_MACHINE`) for system-level actions.  
 
   **Analyst takeaway:** Understanding the difference helps identify whether a modification originated from a standard user process or a privileged/system process.
 
-**User-level vs. SYSTEM-level processes**  
----
+### User-level vs. SYSTEM-level processes
+--- 
+
   Some registry changes are initiated by applications running under a standard user account, while others are performed by processes running as `NT AUTHORITY\SYSTEM`.  
   
   **Impact:** `SYSTEM`-level modifications carry a higher security impact because they can alter core operating system behaviour and system-wide services.
 
-**Shell extensions**  
+### Shell extensions
 ---
   Registry entries that add custom options or handlers to Windows Explorer context menus.  
   **Threat relevance:** Attackers abuse these keys to execute malicious payloads automatically whenever users right-click files or folders.
 
-**Service configuration changes**  
+### Service configuration changes
 ---
   Modifications directly to service registry keys (such as the `ImagePath` value) can change which executable a Windows service runs.  
   **Threat relevance:** Frequently leveraged for **Persistence** (MITRE ATT&CK T1543.003) or **Privilege Escalation** by hijacking legitimate service binaries.
 
-**AppCompatFlags**  
+### AppCompatFlags
 ---
   Registry keys used by Windows to track compatibility settings, mitigation flags, and application execution history.  
   **Threat relevance:** Adversaries may tamper with these keys to disable OS mitigations, manipulate execution environments, or evade behavioural detection rules.
-# Electron IPC
 
-**Category:** Application Architecture / Baseline Behaviour  
-**Related Sysmon Events:** 1, 7, 8, 10  
-**Related MITRE Technique:** T1055 (benign lookalike)  
+---
+## 🎭 Infrastructure, Systems & Masquerading Concepts
 
-Electron is a framework used by applications such as VS Code, Slack, Teams, and Discord to run desktop apps using:
-* Chromium for UI rendering
-* Node.js for backend logic
+* **Masquerading:**  
+  Techniques used by adversaries to make their malicious files, processes, or artifacts appear legitimate (e.g., matching names of trusted OS utilities or changing file extensions) to evade manual review and basic detection rules.
+* **Hostname:**  
+  The unique label assigned to a specific machine or node on a network, used to identify individual endpoints during log triage and endpoint investigations.
+* **Domain:**  
+  An administrative grouping of computers, users, and resources under a single common database and security policy (such as an Active Directory domain or cloud tenant structure).
+* **OEM (Original Equipment Manufacturer):**  
+  The manufacturer of hardware or pre-installed software system components. In threat analysis, identifying OEM binaries or registry paths helps distinguish legitimate vendor background tasks from injected code.
 
-*Electron behaves like a small browser packaged as a desktop application.*
+---
 
-## Multi‑Process Architecture
-Electron follows the same model as Chrome:
-* **Main Process** — controls the application
-* **Renderer Processes** — each window/tab
-* **Extension Host** — runs VS Code extensions
-* **GPU Process** — graphics tasks
+## 🧬 Advanced Adversary Tactics (LotL & LotW)
 
-*Each process has a dedicated role and communicates constantly.*
-
-## Electron IPC 
-IPC = Inter‑Process Communication. It is how Electron processes coordinate:
-* sending messages
-* scheduling tasks
-* sharing state
-* updating UI components
-
-*IPC is normal and expected.*
-
-## Why Electron Creates Remote Threads
-The main process sometimes needs to:
-* start work inside a child process
-* run an extension
-* update UI components
-* coordinate rendering
-
-Electron uses remote thread creation as part of this workflow. **This is not process injection** — it is legitimate application behaviour.
-
-## Why Sysmon Flags It (Event ID 8)
-Sysmon cannot distinguish between:
-* malware injecting into a process
-* Electron coordinating its own processes
-
-Both behaviours generate **Event ID 8 — CreateRemoteThread**.
-
-## How to Recognise Legitimate Electron IPC
-A `CreateRemoteThread` event is likely benign when:
-* `SourceImage == TargetImage`
-* Same user context
-* `StartModule` is legitimate
-* No `RWX` or `MEM_PRIVATE` memory
-* Electron/Chromium application (VS Code, Slack, Teams, Discord)
-
-## When to Investigate Further
-Investigate if:
-* `SourceImage ≠ TargetImage`
-* Privilege escalation occurs
-* `StartModule` points to `RWX` memory
-* Unsigned or unexpected DLLs appear
-* Target process is `SYSTEM` or `LSASS`
-* Application is not Electron‑based
-
-## Recommended Detection Tuning
-```
-SourceImage == TargetImage
-AND Image is a verified Electron/Chromium binary
-```
-This reduces noise from:
-
-- VS Code
-
-- Slack
-
-- Teams
-
-- Discord
-
-- Any Electron‑based tooling
-
-## 📚 References 
-
-
-* [Electron main and renderer processes](https://medium.com/cameron-nokes/deep-dive-into-electrons-main-and-renderer-processes-7a9599d5c9e2)
-*  [Chromium Multi‑Process Modelext](https://www.chromium.org/developers/design-documents/multi-process-architecture/)
-*  [VS Code Architecturet](https://code.visualstudio.com/api/extension-capabilities/overview)
-*  [Why Electron uses multiple processes](https://www.electronjs.org/docs/latest/tutorial/process-model)
+* **Living off the Land (LotL):**  
+  An adversary technique that abuses legitimate, pre-installed administrative tools and binaries native to the operating system (e.g., PowerShell, WMI, Certutil) to perform malicious actions, effectively bypassing traditional signature-based security controls.
+* **Living off the Web (LotW):**  
+  The practice of leveraging trusted cloud services, public code repositories, or legitimate APIs (e.g., GitHub, Discord webhooks, cloud storage buckets) for command and control (C2) communication, payload hosting, or data exfiltration to blend in with normal business traffic.

@@ -65,10 +65,10 @@ Both phases form part of the same attack chain, but require different detection 
 
 Detection logic for LSASS Access and LSASS Dumping is centralised in our logic directory:
 
- 🛠️ **Completed:** [LSASS Credential Dumping - KQL Logic](../../2.detection-logic/LSASS-credential-dumping.md#detection-logic-lsass-credential-dumping)
+ 🛠️ **Completed:** [LSASS Credential Dumping Logic](../../2.detection-logic/LSASS-credential-dumping.md#-objective)
 
- 🛠️ **Pending:** *[Placeholder] LSASS Access - KQL Logic (Coming Soon)*
-
+ 
+ 🛠️ **Completed:** [LSASS Credential Access Logic](../../2.detection-logic/LSASS-access.md#detection-logic-lsass-memory-access-predumping-stage)
 Typical rules include:
 - **Sigma:** LSASS Access via suspicious OpenProcess calls
 - **Sentinel:** LSASS Dumping via Procdump

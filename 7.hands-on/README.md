@@ -120,7 +120,7 @@ Adversaries heavily rely on PowerShell for initial execution, LOLBins exploitati
 **Focus:** Investigating hybrid identity anomalies, ranging from local RDP brute-force attacks to cloud-based impossible travel and compromised session tokens.
 
 ### 📂 Case Studies & Lab Documentation
-* **[Case Study 1: Local Brute Force & Lateral Movement](/3.log-analysis/windows-events/Event-ID-4672.md)** *(Note: Adjust the file name if you renamed your 4625/4624 file)*
+* **[Case Study 1: Local Brute Force & Lateral Movement](/3.log-analysis/windows-events/4625-auth-brute-force.md#-summary)** 
   * Triage of Event IDs 4625 and 4624 to confirm interactive RDP compromise.
 * **[Case Study 2: Cloud Identity Impossible Travel & AiTM](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview)** 🔥
   * KQL-driven investigation of multi-region brute-force spikes and session token compromise.

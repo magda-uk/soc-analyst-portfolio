@@ -31,6 +31,22 @@ Common examples:
 
 Both phases form part of the same attack chain, but require different detection logic and triage workflows.
 
+
+# LSASS Access vs LSASS Credential Dumping
+
+| Aspect | LSASS Access (Pre‑Dumping Stage) | LSASS Credential Dumping (Full Dump) |
+|--------|----------------------------------|---------------------------------------|
+| Description | A process opens a handle to `lsass.exe` with read or query permissions. | The attacker extracts actual credentials from LSASS memory. |
+| Primary Evidence | Sysmon Event ID 10 (`ProcessAccess`). | Dump file creation (`lsass.dmp`, `*.dmp`), MiniDump activity, Mimikatz modules. |
+| Typical Access Rights | `0x0010` (PROCESS_VM_READ), `0x1000` (QUERY_LIMITED_INFORMATION). | `0x1F0FFF` (full access), MiniDumpWriteDump execution. |
+| Common Tools | Mimikatz (initial stage), scripts, LOLBins, malware. | Mimikatz (`sekurlsa`), `procdump.exe`, `comsvcs.dll`, `rundll32.exe`. |
+| Key Indicators | LSASS accessed by non‑system or unsigned processes; suspicious process paths. | Dump file creation, loading of `comsvcs.dll`, credential extraction activity. |
+| Impact | Strong suspicion of credential theft preparation. | Full host compromise; credentials successfully stolen. |
+| MITRE ATT&CK | T1003.001 (early phase). | T1003.001 (complete technique). |
+| SOC Severity | High. | Critical. |
+| Attacker Actions | Testing access to LSASS; preparing for dumping. | Extracting NTLM hashes, Kerberos tickets, plaintext credentials, tokens. |
+| Analyst Actions | Review access rights, process origin, and subsequent behaviour. | Isolate host, rotate credentials, investigate lateral movement and escalation. |
+
 ---
 
 ## 🟩MITRE ATT&CK Mapping  
@@ -42,6 +58,8 @@ Both phases form part of the same attack chain, but require different detection 
 | LSASS Dumping | T1036 | Masquerading (renamed Procdump binaries) |
 
 ---
+
+
 
 ## 🟩 Detection Logic (Global)
 
@@ -100,5 +118,7 @@ This includes:
   * Credential reset
   * Host isolation
 
+### 👩🏽‍💻 Authored by: Magda Dominguez
 
+Security Operations • Detection Engineering • Blue Team
 

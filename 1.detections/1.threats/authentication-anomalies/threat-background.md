@@ -1,6 +1,6 @@
-# Authentication Anomalies (Brute Force, Impossible Travel, MFA Fatigue)
+# ◽ Authentication Anomalies (Brute Force, Impossible Travel, MFA Fatigue)
 
-## Description
+## ◽Description
 Modern attacks frequently target identity rather than endpoints. Threat actors attempt to compromise accounts through:
 
 - Brute force attacks
@@ -13,7 +13,7 @@ These behaviours are extremely common in cloud environments such as Azure AD.
 
 ---
 
-## How the Attack Works
+## ◽How the Attack Works
 Typical attacker workflow:
 
 1. Obtain credentials (phishing, leaks, OSINT)
@@ -25,7 +25,7 @@ Typical attacker workflow:
 
 ---
 
-## Why It Is Dangerous
+## ◽ Why It Is Dangerous
 - Identity compromise leads to full cloud compromise
 - Difficult to distinguish from legitimate user behaviour
 - Enables data exfiltration
@@ -34,14 +34,14 @@ Typical attacker workflow:
 
 ---
 
-## MITRE ATT&CK
+## ◽ MITRE ATT&CK
 - **T1078 — Valid Accounts**
 - **T1110 — Brute Force**
 - **T1556 — Modify Authentication Process**
 
 ---
 
-## Detection Guidance
+## ◽Detection Guidance
 Monitor for:
 
 - Multiple failed logins in short time windows
@@ -54,7 +54,7 @@ Monitor for:
 
 ---
 
-## Investigation Steps
+## ◽ Investigation Steps
 Key questions:
 
 - Does the user recognise the login?
@@ -65,7 +65,7 @@ Key questions:
 
 ---
 
-## Mitigation
+## ◽ Mitigation
 - Enforce MFA for all users
 - Apply Conditional Access policies
 - Block high‑risk countries
@@ -75,10 +75,28 @@ Key questions:
 
 ---
 
-## Evidence to Collect
+## ◽Evidence to Collect
 - IP addresses
 - Geolocation data
 - User Agents
 - MFA logs
 - Timestamps
 - Post‑authentication activity
+
+---
+
+## ◽ Practical Context
+
+For practical context, please see my investigation of anomalous cloud authentication behaviour.
+
+➡️ [**Log Analysis: Anomalous Cloud Sign-ins & Impossible Travel (Entra ID)**](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview) 
+
+This case study demonstrates how identity-based anomalies such as rapid geo-movement, unusual sign-in patterns, and high-risk authentication events can indicate credential compromise or active adversary activity.
+
+---
+
+## ◽ Author
+
+**Magda Dominguez**  
+*SOC Analyst (L1-ready) - Bristol, UK*  
+Blue Team operations | SOC investigations | Logistics-to-SOC analytical mindset

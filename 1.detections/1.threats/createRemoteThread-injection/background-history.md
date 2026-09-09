@@ -116,8 +116,9 @@ An effective SOC detection strategy for **T1055.001** should incorporate the fol
 
 ---
 ## 8. Real-World Telemetry Case Study & Triage
-To see a practical breakdown of how Sysmon Event ID 8 behaves in a real development environment, how to analyze process lineage (`Code.exe → Code.exe`), and how to validate safe multi-process IPC baseline conditions versus hostile injection tradecraft, review the complete analysis: ➡️
-[Sysmon Event ID 8: Electron Multi-Process IPC Thread Creation (Visual Studio Code)](/3.log-analysis/sysmon/id8-electron-ipc-thread/id8-electron-ipc-thread.md#overview) 
+To see a practical breakdown of how Sysmon Event ID 8 behaves in a real development environment, how to analyze process lineage (`Code.exe → Code.exe`), and how to validate safe multi-process IPC baseline conditions versus hostile injection tradecraft, review the complete analysis: 
+
+➡️ [Sysmon Event ID 8: Electron Multi-Process IPC Thread Creation (Visual Studio Code)](/3.log-analysis/sysmon/id8-electron-ipc-thread/id8-electron-ipc-thread.md#overview) 
 
 
 ---
@@ -130,7 +131,7 @@ To see a practical breakdown of how Sysmon Event ID 8 behaves in a real developm
 * **Microsoft Security:** Windows Error Reporting (WER) Architecture and Diagnostic Routines
 ---
 
-### **Authored by**
+## Authored by
 **Magda Dominguez**  
 Security Operations • Detection Engineering • Blue Team
 

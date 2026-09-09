@@ -60,7 +60,7 @@ AND CommandLine CONTAINS_ANY ('-EncodedCommand', '-enc ', '-en ', '-e ')
 
 To see how this detection logic is applied in a real-world scenario, please review my hands-on log analysis exercise for encoded PowerShell execution:
 
-➡️ [**Log Analysis Practice: Encoded PowerShell Execution**](/2.investigations/powershell-encoded.md#threat-hunting-for-powershell-obfuscation-t1059001)
+➡️ [**Log Analysis Practice: Encoded PowerShell Execution**](/2.investigations/02-threat-hunt-powershell.md#investigation-case)
 
 
 ## Author 

@@ -29,7 +29,7 @@ Each module includes:
 | **Day 1** | Sysmon Event ID 1: Process Creation Baseline | ✅ `Completed` | [📂 View Lab](./day1-sysmon-basics/README.md) |
 | **Day 2** | Sysmon Event Correlation & MITRE Mapping (IDs 1, 3, 11) | ✅ `Completed` | [📂 View Lab](./day2-sysmon-suspicious/README.md) |
 | **Day 3** | PowerShell ScriptBlock Logging & Obfuscation | 🚧 `In Progress / Coming Soon` | — |
-| **Day 4** | Authentication & Identity Telemetry (Entra ID) | ⏳ `Planned` | — |
+| **Day 4** | Authentication & Identity Telemetry (Entra ID) | ✅ `Completed` | [🆕 View Lab](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview) |
 | **Day 5** | Process Trees & Attack Chain Reconstruction | ⏳ `Planned` | — |
 | **Day 6** | MITRE ATT&CK Threat Mapping | ⏳ `Planned` | — |
 | **Day 7** | Comprehensive Incident Triage & Reporting | ⏳ `Planned` | — |
@@ -112,29 +112,39 @@ Gain deep analytical proficiency in triage and payload analysis of PowerShell, t
 ### 🛡️ Why it Matters for Blue Team
 Adversaries heavily rely on PowerShell for initial execution, LOLBins exploitation, and fileless persistence. Decoupling obfuscation is mandatory for Tier 1 SOC analysts.
 
+
 ---
 
-## 🔐 Day 4: Authentication & Identity Telemetry
-**Tools:** Windows Security Event Log, Microsoft Entra ID (Azure AD)  
-**Focus:** Investigating identity anomalies, failed authentication sprees, and sign-in telemetry.
+## 🔐 Day 4: Authentication & Identity Telemetry (Hybrid: AD & Entra ID)
+**Tools:** Windows Security Event Log, Microsoft Entra ID (`SigninLogs`), Azure Data Explorer (ADX), KQL  
+**Focus:** Investigating hybrid identity anomalies, ranging from local RDP brute-force attacks to cloud-based impossible travel and compromised session tokens.
 
-### ✅ Basic Practice
-- Audit logon events:
-  - **Event ID 4624:** Successful Logon
-  - **Event ID 4625:** Failed Logon
-- Review Logon Types (e.g., Type 2 - Interactive, Type 3 - Network, Type 10 - RemoteInteractive).
-- Interpret MFA challenge flows and sign-in status codes.
+### 📂 Case Studies & Lab Documentation
+* **[Case Study 1: Local Brute Force & Lateral Movement](/3.log-analysis/windows-events/Event-ID-4672.md)** *(Note: Adjust the file name if you renamed your 4625/4624 file)*
+  * Triage of Event IDs 4625 and 4624 to confirm interactive RDP compromise.
+* **[Case Study 2: Cloud Identity Impossible Travel & AiTM](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview)** 🔥
+  * KQL-driven investigation of multi-region brute-force spikes and session token compromise.
 
-### 🚀 Advanced Practice
-- Detect distributed password spraying patterns vs single-account brute-force attacks.
-- Investigate Impossible Travel alerts using IP geolocation, ISP telemetry, and user-agent metadata.
-- Assess risk levels in Entra ID sign-in telemetry and service principal access.
+### ✅ Basic Practice (On-Premises Identity)
+- **Audit Local Logon Events:** Analyse Windows Security Event logs for interactive authentication attempts:
+  - **Event ID 4625 (Failed Logon):** Identify brute-force activity and analyze sub-status codes (e.g., `0xC000006A` for incorrect passwords).
+  - **Event ID 4624 (Successful Logon):** Correlate with preceding failures to confirm successful compromise.
+- **Logon Type Analysis:** Differentiate access vectors by reviewing Logon Types (e.g., Type 10 - RemoteInteractive for RDP vs. Type 3 - Network).
 
-###  Learning Outcome
-Master identity triage across hybrid on-premises Active Directory and cloud identity providers.
+### 🚀 Advanced Practice (Cloud Identity & KQL)
+- **Cloud Identity Telemetry:** Parse Microsoft Entra ID `SigninLogs` to decode authentication error codes (`50126`, `50140`).
+- **KQL Query Development:** Write and execute Kusto queries in Azure Data Explorer to group sign-in events into 5-minute time bins (`bin`), successfully isolating brute-force spikes and anomalous proxy infrastructure.
+- **Impossible Travel & Geo-Velocity:** Correlate disparate IP addresses and geolocation metadata to uncover distributed credential compromise (e.g., AiTM session hijacking).
+- **Threat Technique Mapping:** Map behaviors to **MITRE ATT&CK** (T1110 Brute Force, T1078 Valid Accounts, T1566 Phishing).
+
+### 🔖 Advanced Practice & Planned Extensions (SOAR / Playbooks)
+* ⏳ **Future Standalone Project (In Planning):** Implementation of an Azure Logic App (SOAR Playbook) to automatically trigger session revocations and user account containment upon detecting high-risk Impossible Travel signals in Entra ID. *(This will be documented in the `/5.projects/` directory once completed).*
+
+### 🎯 Learning Outcome
+Master hybrid identity triage by transitioning seamlessly from traditional Active Directory event log correlation to advanced cloud identity hunting using analytical KQL queries.
 
 ### 🛡️ Why it Matters for Blue Team
-Identity is the modern security perimeter. Most initial compromises leverage credential access or identity misuse.
+Identity is the modern security perimeter. Threat actors frequently pivot from local endpoints to cloud infrastructure (and vice versa). Analyzing both local RDP brute-force attempts and cloud-based proxy infrastructure provides complete, end-to-end visibility for the modern SOC analyst.
 
 ---
 

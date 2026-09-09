@@ -14,7 +14,7 @@ The investigations are categorised by the primary log source:
     *   Endpoint visibility using Sysmon. Contains analyses of unauthorised memory access to LSASS (ID 10), process creation (ID 1), process injection (ID 8), registry modifications (ID 13), and DNS queries (ID 22).
 *   [**/powershell**](/3.log-analysis/powershell/event4104-powershell-scriptblock-analysis.md) 
     *   Analysis of native PowerShell logs, specifically focusing on Script Block Logging (Event ID 4104) to review suspicious and obfuscated script executions.
-*   [**/windows-events**](/3.log-analysis/windows-events/Event-ID-4672.md) 🚧 *(Work in Progress)*
+*   [**/windows-events**](/3.log-analysis/windows-events/Event-ID-4672.md) 
     *   Core Windows Security Event Log investigations, focusing on authentication patterns and logon failures.
 
 ## 🔏 Triage Methodology
@@ -31,7 +31,7 @@ For the artifacts analysed in this directory, I follow a simple but effective wo
 
 If you are reviewing this portfolio, I highly recommend starting with these key case studies:
 
-*   🆕 **[Cloud Identity: Impossible Travel & MFA Anomalies](./entra-id/EntraID-Impossible-Travel.md)**
+*   🆕 **[Cloud Identity: Impossible Travel & MFA Anomalies](./entra-id/EntraID-Impossible-Travel.md#-scenario-overview)**
     *   *Focus:* Triaging Entra ID logs for credential compromise, geo-velocity anomalies, and MFA bypass attempts.
 *   🆕 **[Sysmon Event ID 10: LSASS Credential Dumping via Mimikatz](./sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md)**
     *   *Focus:* Analysing unauthorised memory access requests (`PROCESS_VM_READ`) to confirm credential theft.

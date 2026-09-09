@@ -8,11 +8,11 @@ This analysis explores **Event ID 4624 (Successful Logon)**, a critical Windows 
 
 To investigate logon activity efficiently, PowerShell's `Get-WinEvent` cmdlet was utilized to query the Security log and extract the most recent 4624 events.
 
-![PowerShell Get-WinEvent query for Event 4624](./images/powershell-1.png)
+![PowerShell Get-WinEvent query for Event 4624](./images/powershell-2.png)
 
 By parsing the event data as XML, specific fields (`TargetUserName`, `LogonType`, and `IpAddress`) were extracted for a cleaner analysis:
 
-![PowerShell XML parsing for Logon Type 5](./images/powershell-2.png)
+![PowerShell XML parsing for Logon Type 5](./images/powershell-1.png)
 
 The analysis revealed the following artifacts:
 *   **TargetUserName: SYSTEM:** The highest privileged local account in Windows.

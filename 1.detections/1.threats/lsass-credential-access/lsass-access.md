@@ -1,6 +1,6 @@
-# Suspicious LSASS Access
+# 🟠 Suspicious LSASS Access
 
-## Description
+## 🟠Description
 LSASS (Local Security Authority Subsystem Service) is a critical Windows process responsible for storing and managing sensitive authentication material such as:
 
 - NTLM hashes
@@ -12,7 +12,7 @@ Any attempt by a non‑system process to access LSASS memory is highly suspiciou
 
 ---
 
-## How the Attack Works
+## 🟠How the Attack Works
 Threat actors attempt to:
 
 - Open a handle to `lsass.exe`
@@ -24,7 +24,7 @@ This behaviour typically precedes full credential dumping.
 
 ---
 
-## Why It Is Dangerous
+## 🟠 Why It Is Dangerous
 - Early indicator of credential theft
 - Used by Mimikatz and similar tools
 - Enables privilege escalation
@@ -33,13 +33,13 @@ This behaviour typically precedes full credential dumping.
 
 ---
 
-## MITRE ATT&CK
+## 🟠 MITRE ATT&CK
 - **T1055 — Process Injection**
 - **T1003 — Credential Access (pre‑dumping behaviour)**
 
 ---
 
-## Detection Guidance
+## 🟠 Detection Guidance
 Monitor for:
 
 - **Sysmon Event ID 10 — Process Access**
@@ -51,7 +51,7 @@ Monitor for:
 
 ---
 
-## Investigation Steps
+## 🟠 Investigation Steps
 Key questions:
 
 - Which process accessed LSASS?
@@ -62,7 +62,7 @@ Key questions:
 
 ---
 
-## Mitigation
+## 🟠 Mitigation
 - Enable Windows Defender Credential Guard
 - Block LSASS access for non‑signed binaries
 - Monitor Sysmon Event ID 10 closely
@@ -71,9 +71,23 @@ Key questions:
 
 ---
 
-## Evidence to Collect
+## 🟠 Evidence to Collect
 - Process accessing LSASS
 - Access rights requested
 - Parent process
 - Binary hash and signature
 - Correlated process creation events
+ --
+
+ ## 🟠 Practical Context
+
+For practical context, please see my investigation of LSASS Memory Access via Mimikatz (T1003 - Credential Access)
+
+➡️ [**Incident Investigation: LSASS Memory Access via Mimikatz**](/3.log-analysis/sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md#1-executive-summary) 
+
+---
+## 🟠 Author
+
+**Magda Dominguez**  
+*SOC Analyst (L1-ready) - Bristol, UK*  
+Blue Team operations | SOC investigations | Logistics-to-SOC analytical mindset

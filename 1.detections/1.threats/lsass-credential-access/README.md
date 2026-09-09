@@ -69,10 +69,11 @@ Detection logic for LSASS Access and LSASS Dumping is centralised in our logic d
 
  
  🛠️ **Completed:** [LSASS Credential Access Logic](../../2.detection-logic/LSASS-access.md#detection-logic-lsass-memory-access-predumping-stage)
+ 
 Typical rules include:
-- **Sigma:** LSASS Access via suspicious OpenProcess calls
-- **Sentinel:** LSASS Dumping via Procdump
-- **Elastic:** LSASS Dumping via comsvcs.dll
+- **Sigma:** [LSASS Access](../../3.rules/sigma/suspicious-lsass-access.yaml)
+- **Sentinel:** [LSASS Dumping](../../3.rules/sentinel/lsass-credential-dumping.kql)
+- **Elastic:** [LSASS Dumping](../../3.rules/elastic/lsass-credential-dumping.eql)
 
 ## 🟩 Hands‑On Evidence
 

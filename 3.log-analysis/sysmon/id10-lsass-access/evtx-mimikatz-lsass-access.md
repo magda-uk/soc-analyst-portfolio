@@ -1,12 +1,9 @@
-# 🕵️‍♀️ Incident Investigation: LSASS Credential Dumping via Mimikatz (T1003.001)
+# 🕵️‍♀️ Incident Investigation: LSASS Memory Access via Mimikatz (T1003 - Credential Access)
 
 **Data Source:** [JPCERT EVTX-ATTACK-SAMPLES dataset](https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES/blob/master/Credential%20Access/sysmon_10_lsass_mimikatz_sekurlsa_logonpasswords.evtx/)
 
-**Analyst:** Magda Dominguez
 
-**Status:** Resolved
-
-**MITRE ATT&CK:** [T1003.001 - OS Credential Dumping: LSASS Memory](https://attack.mitre.org/techniques/T1003/001/)
+**MITRE ATT&CK:** [T1003.001 - OS Credential Access: LSASS Memory](https://attack.mitre.org/techniques/T1003/001/)
 
 ## 1. Executive Summary
 A critical security event was detected involving unauthorized access to the Local Security Authority Subsystem Service (`lsass.exe`) process memory. The telemetry indicates the execution of the well-known credential extraction tool, Mimikatz, directly from a user's desktop, successfully requesting memory read access to LSASS. 
@@ -35,3 +32,9 @@ The following telemetry was captured during the triage phase:
 This is a **True Positive** for Credential Access. An attacker successfully executed Mimikatz (specifically utilizing modules like `sekurlsa::logonpasswords` based on the requested access rights) to dump credentials from memory. 
 
 In a real-world scenario, the immediate response would involve isolating the host (PC04.example.corp), resetting the compromised user's credentials (and potentially any service accounts exposed on that host), and initiating a wider hunt for lateral movement originating from this endpoint.
+
+---
+
+### Authored by
+**Magda Dominguez**  
+Security Operations • Detection Engineering • Blue Team

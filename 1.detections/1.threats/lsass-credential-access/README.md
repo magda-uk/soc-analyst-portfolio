@@ -60,23 +60,14 @@ Typical rules include:
 
 The practical triage and log analysis for this threat will be documented here once the simulated attack is completed in the lab environment.
 
--  [Incident Investigation: LSASS Credential Dumping (T1003.001) - *Coming Soon*]
+-  [Incident Investigation: LSASS Credential Access](/3.log-analysis/sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md#1-executive-summary) (T1003.001) 
 
 
-
-
-
-
-
-
-
-> *_Coming soon_*
 
 ## 🟩 False Positives & Benign Behaviour
 
-Detailed documentation is stored in:
-
-1.detections/1.threats/lsass-credential-access/docs/
+Detailed documentation :
+[Lsass triage cheat sheet](/6.documents/lsass-triage-cheat-sheet.md#relevant-event-types) 
 
 This includes:
 * Legitimate processes accessing LSASS
@@ -110,11 +101,4 @@ This includes:
   * Host isolation
 
 
-## 🟩 Summary
 
-This folder contains only the threat‑specific documentation for LSASS Access and LSASS Credential Dumping.
-
-Detection logic, rules, and hands‑on evidence are stored in their respective global locations:
-* Detection Logic → `2.detection-logic/`
-* Rules → `3.rules/`
-* Evidence → *_coming soon_*

@@ -82,7 +82,8 @@ Key questions for analysts:
 
 ## 🔹Real-World Case Study & Investigation
 To see a practical, hands-on demonstration of how this threat appears in real host telemetry, how to handle Sysmon Event ID 1 logs, and the step-by-step Base64 payload decoding process, review the completed investigation report:
-➡️ [Investigation Report: Threat Hunting for PowerShell Obfuscation](/2.investigations/powershell-encoded.md#detection-source)
+
+➡️ [Investigation Report: Threat Hunting for PowerShell Obfuscation](/2.investigations/02-threat-hunt-powershell.md#️-1-summary)
 
 ---
 ## 🪪 Author

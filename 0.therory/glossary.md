@@ -41,7 +41,7 @@ It serves as a quick reference for understanding attacker behaviour, log artefac
   Injecting code into legitimate processes to evade detection.
 * **T1078 - Valid Accounts:**  
   When adversaries successfully compromise legitimate credentials (or bypass MFA via tokens), they abuse these valid accounts to blend in with normal administrative or user activity, making detection significantly harder since the user identity itself is authorised.
-* **T1556 — Modify Authentication Process, Phishing & Credential      Harvesting**: 
+* **T1556 — Modify Authentication Process, Phishing & Credential Harvesting**: 
   Manipulating authentication flows, MFA, or identity systems.
   The initial vector often responsible for capturing the user's password or triggering MFA prompts in the first place. In advanced scenarios, this evolves into Adversary-in-the-Middle (AiTM) phishing to hijack active sessions rather than just static credentials.
 
@@ -150,4 +150,3 @@ It serves as a quick reference for understanding attacker behaviour, log artefac
 * **Living off the Web (LotW):**  
   The practice of leveraging trusted cloud services, public code repositories, or legitimate APIs (e.g., GitHub, Discord webhooks, cloud storage buckets) for command and control (C2) communication, payload hosting, or data exfiltration to blend in with normal business traffic.
 
-  

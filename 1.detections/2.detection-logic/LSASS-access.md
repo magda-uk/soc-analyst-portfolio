@@ -94,6 +94,13 @@ To validate this detection safely:
 * Network activity following the access
 * Memory forensics if needed
 
+## ↘️ Practical Application
+
+To see how this detection logic is applied in a real-world scenario, please review my hands-on log analysis exercise for encoded PowerShell execution:
+
+🆕 [**Log Analysis Practice: LSASS access**](/3.log-analysis/sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md#1-executive-summary)
+
+
 ## ↘️ Author 
 **Magda Dominguez**  
 Security Operations 🔹 Detection Engineering 🔹 Blue Team

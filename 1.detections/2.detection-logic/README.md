@@ -9,6 +9,8 @@ Instead of relying on platform-specific query languages, these documents break d
 - [**Suspicious Executable File Creation**](filecreate.md)
 - [**Encoded PowerShell Execution**](/1.detections/2.detection-logic/powershell-encoded.md#objective)
 - [**LSASS Credential Dumping**](/1.detections/2.detection-logic/LSASS-credential-dumping.md#-objective)
+- [**LSASS Credential Access**](/1.detections/2.detection-logic/LSASS-access.md#objective)
+
 
 ## 🚧 Coming Soon 
 

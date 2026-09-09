@@ -105,38 +105,29 @@ It serves as a quick reference for understanding attacker behaviour, log artefac
 * **Encoded Payload:**  
   Obfuscated malicious code delivered via scripts or CLI arguments to conceal its actual objective.
   
-  ---
+---
 
 ## 🗝️ Key Registry Concepts & Threat Vectors
 
- ### Registry modification across HKU and HKLM
- ---
-
+* **Registry modification across HKU and HKLM:**  
   Registry changes can occur under `HKU` (`HKEY_USERS`) for user-level actions or `HKLM` (`HKEY_LOCAL_MACHINE`) for system-level actions.  
+  *Analyst takeaway:* Understanding the difference helps identify whether a modification originated from a standard user process or a privileged/system process.
 
-  **Analyst takeaway:** Understanding the difference helps identify whether a modification originated from a standard user process or a privileged/system process.
-
-### User-level vs. SYSTEM-level processes
---- 
-
+* **User-level vs. SYSTEM-level processes:**  
   Some registry changes are initiated by applications running under a standard user account, while others are performed by processes running as `NT AUTHORITY\SYSTEM`.  
-  
-  **Impact:** `SYSTEM`-level modifications carry a higher security impact because they can alter core operating system behaviour and system-wide services.
+  *Impact:* `SYSTEM`-level modifications carry a higher security impact because they can alter core operating system behaviour and system-wide services.
 
-### Shell extensions
----
+* **Shell extensions:**  
   Registry entries that add custom options or handlers to Windows Explorer context menus.  
-  **Threat relevance:** Attackers abuse these keys to execute malicious payloads automatically whenever users right-click files or folders.
+  *Threat relevance:* Attackers abuse these keys to execute malicious payloads automatically whenever users right-click files or folders.
 
-### Service configuration changes
----
+* **Service configuration changes:**  
   Modifications directly to service registry keys (such as the `ImagePath` value) can change which executable a Windows service runs.  
-  **Threat relevance:** Frequently leveraged for **Persistence** (MITRE ATT&CK T1543.003) or **Privilege Escalation** by hijacking legitimate service binaries.
+  *Threat relevance:* Frequently leveraged for **Persistence** (MITRE ATT&CK T1543.003) or **Privilege Escalation** by hijacking legitimate service binaries.
 
-### AppCompatFlags
----
+* **AppCompatFlags:**  
   Registry keys used by Windows to track compatibility settings, mitigation flags, and application execution history.  
-  **Threat relevance:** Adversaries may tamper with these keys to disable OS mitigations, manipulate execution environments, or evade behavioural detection rules.
+  *Threat relevance:* Adversaries may tamper with these keys to disable OS mitigations, manipulate execution environments, or evade behavioural detection rules.
 
 ---
 ## 🎭 Infrastructure, Systems & Masquerading Concepts
@@ -158,3 +149,5 @@ It serves as a quick reference for understanding attacker behaviour, log artefac
   An adversary technique that abuses legitimate, pre-installed administrative tools and binaries native to the operating system (e.g., PowerShell, WMI, Certutil) to perform malicious actions, effectively bypassing traditional signature-based security controls.
 * **Living off the Web (LotW):**  
   The practice of leveraging trusted cloud services, public code repositories, or legitimate APIs (e.g., GitHub, Discord webhooks, cloud storage buckets) for command and control (C2) communication, payload hosting, or data exfiltration to blend in with normal business traffic.
+
+  

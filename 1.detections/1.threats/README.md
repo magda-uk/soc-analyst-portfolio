@@ -24,7 +24,7 @@ Navigate through the folders below to read the research and context behind each 
 | **Obfuscated PowerShell (Base64)** | [T1059.001 / T1027](/1.detections/1.threats/powershell-encoded/threat-background.md) | 🟢 Completed | [View Case](../../2.investigations/02-threat-hunt-powershell.md#threat-hunting-for-powershell-obfuscation-t1059001) |
 | **Registry Modification** | [T1112](/1.detections/1.threats/registry-modification/threat-background.md) | 🟢 Completed | [View Case](/3.log-analysis/sysmon/id13-registry-modification/multi-event-analysis.md#combined-multievent-analysis-shell-extensions-service-modification--appcompatflags) |
 | **LSASS Credential Access** | [T1003.001](/1.detections/1.threats/lsass-credential-access/README.md#-overview) | 🟢 Completed| [View Case](/3.log-analysis/sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md#️️-incident-investigation-lsass-memory-access-via-mimikatz-t1003---credential-access) |
-| **Authentication Anomalies** | [T1078 / T1110](/1.detections/1.threats/authentication-anomalies/threat-background.md) | 🟡 In Progress| *Coming Soon* |
+| **Authentication Anomalies** | [T1078 / T1110](/1.detections/1.threats/authentication-anomalies/threat-background.md) | 🟢 Completed| [ View Case 🆕 ](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview) |
 
 
 

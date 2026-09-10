@@ -26,6 +26,11 @@ Below is the master tracking matrix showing the end-to-end development of each d
 | **Registry Modification** | T1112 | 📖 [Research](./1.threats/registry-modification/threat-background.md#threat-background--suspicious-registry-modification-t1112-t1547-t1031-t1050) | 🛠️ [ Logic](./2.detection-logic/registry-modification.md)  |  *Pending* | 🟡 Dev |
 | **LSASS Credential Access & Dumping** | T1003.001 | 📖 [Research](./1.threats/lsass-credential-access/README.md/) | 🛠️ [ Logic](./2.detection-logic/LSASS-credential-dumping.md#detection-logic-lsass-credential-dumping) [ Logic](./2.detection-logic/LSASS-access.md#-objective)| [KQL Rule](./3.rules/sentinel/lsass-credential-dumping.kql) [EQL Rule](/1.detections/3.rules/elastic/lsass-credential-dumping.eql) |  🟢 Done |
 | **Authentication Anomalies** | T1078/T1110 | 📖 [Research](.//1.threats/authentication-anomalies/threat-background.md#authentication-anomalies-brute-force-impossible-travel-mfa-fatigue) | 🛠️ *Pending* |  *Pending* | ⚪ Planned |
+**Suspicious File Creation (Temp/Public/ProgramData)** | **T1204.002** | 📖 [Research](./1.threats/suspicious-file-creation/threat-background.md#overview) |  🛠️ *Pending*  | *Pending* | ⚪ Planned |
 
 ---
 *Note: For the practical triage, log analysis, and incident response of these threats, please visit the [3.log analysis](/3.log-analysis/README.md#-log-analysis--threat-triage) and [2.investigations](/2.investigations/README.md#️-investigations--threat-hunting) directory .*
+
+
+
+-----

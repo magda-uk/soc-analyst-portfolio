@@ -1,0 +1,7 @@
+SysmonEvent
+| where EventID == 13
+| where TargetObject has @"\Software\Microsoft\Windows\CurrentVersion\Run"
+    or TargetObject has @"\Software\Microsoft\Windows\CurrentVersion\RunOnce"
+| extend RegistryValue = tostring(Details)
+| where RegistryValue has ".exe" or RegistryValue has ".dll" or RegistryValue has ".bat" or RegistryValue has ".ps1"
+| project TimeGenerated, Computer, Image, TargetObject, RegistryValue

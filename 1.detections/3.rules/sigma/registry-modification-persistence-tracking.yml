@@ -1,0 +1,29 @@
+title: Suspicious Run Key Modification (Startup Persistence)
+id: 7f2c9e3a-1112-runkey
+status: experimental
+description: Detects modification of Run/RunOnce registry keys commonly abused for persistence.
+author: Magda Dominguez
+date: 2026/09/10
+references:
+  - https://attack.mitre.org/techniques/T1112/
+logsource:
+  product: windows
+  category: registry_event
+detection:
+  selection:
+    EventID: 13
+    TargetObject|contains:
+      - '\Software\Microsoft\Windows\CurrentVersion\Run'
+      - '\Software\Microsoft\Windows\CurrentVersion\RunOnce'
+  condition: selection
+fields:
+  - Image
+  - TargetObject
+  - Details
+falsepositives:
+  - Legitimate software installers
+  - OEM telemetry
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1112

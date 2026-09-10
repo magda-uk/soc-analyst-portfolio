@@ -45,7 +45,7 @@ AND TargetFilename ENDSWITH ('.exe', '.dll', '.bat', '.ps1', '.vbs', '.js')
 
 ## 💠 Basic Triage Steps
 
-1️⃣ **Analyze the Parent Process:** What process created this file? (e.g., if `winword.exe` drops an `.exe` in `Temp`, it is highly suspicious).
+1️⃣ **Analyse the Parent Process:** What process created this file? (e.g., if `winword.exe` drops an `.exe` in `Temp`, it is highly suspicious).
 
 2️⃣ **Examine the File:** Check the file hash against Threat Intelligence (like VirusTotal) and verify if the file is digitally signed by a trusted publisher.
 

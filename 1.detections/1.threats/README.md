@@ -1,4 +1,4 @@
-# Threat Intelligence & Context
+# 🔰 Threat Intelligence & Context
 
 Welcome to the **Threat Intelligence** phase of my Detection Engineering lifecycle. 
 
@@ -25,9 +25,12 @@ Navigate through the folders below to read the research and context behind each 
 | **Registry Modification** | [T1112](/1.detections/1.threats/registry-modification/threat-background.md) | 🟢 Completed | [View Case](/3.log-analysis/sysmon/id13-registry-modification/multi-event-analysis.md#combined-multievent-analysis-shell-extensions-service-modification--appcompatflags) |
 | **LSASS Credential Access** | [T1003.001](/1.detections/1.threats/lsass-credential-access/README.md#-overview) | 🟢 Completed| [View Case](/3.log-analysis/sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md#️️-incident-investigation-lsass-memory-access-via-mimikatz-t1003---credential-access) |
 | **Authentication Anomalies** | [T1078 / T1110](/1.detections/1.threats/authentication-anomalies/threat-background.md) | 🟢 Completed| [ View Case 🆕 ](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview) |
+| **Suspicious File Creation (Temp/Public/ProgramData)** | [T1204.002](/1.detections/1.threats/suspicious-file-creation/threat-background.md#overview) | 🟢 Completed | [View Case 🆕](/3.log-analysis/sysmon/id11-file-create/event-id-11-filecreate.md#-event-summary) |
 
+
+---
 
 
 *Once the threat is understood, the actual detection code is developed in the [2.detection-logic](/1.detections/2.detection-logic/README.md) directory.*
 
----
+

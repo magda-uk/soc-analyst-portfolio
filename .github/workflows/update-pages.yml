@@ -15,6 +15,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+          fetch-tags: true
 
       - name: Fetch github-pages branch
         run: |

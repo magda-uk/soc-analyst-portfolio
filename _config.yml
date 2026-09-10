@@ -1,0 +1,17 @@
+title: SOC Analyst Portfolio
+description: Blue Team Operations, Detection Engineering & Log Analysis
+theme: jekyll-theme-hacker
+baseurl: /soc-analyst-portfolio
+url: https://magda-uk.github.io
+
+author: Magda Dominguez
+email: contact@example.com
+
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - .gitignore
+  - README.md

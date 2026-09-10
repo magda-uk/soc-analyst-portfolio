@@ -9,6 +9,7 @@ These rules are written in native SIEM query languages and standard formats to d
 ### 🟦 Microsoft Sentinel (KQL)
 - [**LSASS Credential Dumping**](sentinel/lsass-credential-dumping.kql)
 - [**CreateRemoteThread Process Injection**](sentinel/create-remote-thread-injection.kql)
+- [**Suspicious Registry Modification (Persistence Tracking)**](sentinel/suspicious-registrymodification.kql)
 
 ### 🟩 Elastic Security (EQL)
 - [**LSASS Credential Dumping**](elastic/lsass-credential-dumping.eql)
@@ -16,6 +17,7 @@ These rules are written in native SIEM query languages and standard formats to d
 ### 🟨 Sigma (YAML)
 - [**Suspicious LSASS Access**](sigma/suspicious-lsass-access.yaml)
 - [**Suspicious PowerShell Execution**](sigma/suspicious-powershell-execution.yaml)
+- [**Registry Modification -Run Key Persistence**](sigma/registry-modification-persistence-tracking.yml)
 
 ## 🚧 Coming Soon (Work in Progress)
 
@@ -25,7 +27,7 @@ More queries and rule definitions are currently being translated from the detect
 
 ⏳ **Authentication Anomalies** (Sentinel/KQL Analytics Rules)
 
-⏳ **Registry Modifications** (Sigma rules for persistence tracking)
+⏳ **Registry Modifications** (Additional Sigma rules: Service Hijacking, Shell Extensions)
 
 ⏳ **Time Stomping Evasion** (EQL queries)
 

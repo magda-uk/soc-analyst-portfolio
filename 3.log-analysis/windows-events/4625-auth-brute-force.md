@@ -1,40 +1,45 @@
-# Security Event Analysis: Local Brute Force Attack (Event ID 4625 & 4624)
+# Security Event Analysis: Endpoint Authentication & Session Telemetry (Event ID 4625 & 4624)
 
 ## 🟪 Summary
-This analysis investigates a sequence of Windows Security Event Logs indicative of a credential brute-force attack. By examining **Event ID 4625 (Failed Logon)** and subsequent **Event ID 4624 (Successful Logon)**, this document outlines how threat actors attempt to systematically guess passwords to gain unauthorized access to endpoints, typically via Remote Desktop Protocol (RDP) or SMB.
+This analysis investigates Windows Security Event Logs associated with authentication attempts and session states on the endpoint `AZUL_FIFTY`. 
 
-## 🟪 Case Study 1: The Brute Force Phase (Event ID 4625)
+By examining **Event ID 4625 (Failed Logon)** and subsequent **Event ID 4624 (Successful Logon)**, this document outlines how security monitoring detects credential testing and maps the operational logon types (Interactive, Network, Service, Unlock, and Cached) to understand system activity and access vectors.
 
-![Event 4625 - Failed Logon](/3.log-analysis/windows-events/images/3.log-analysis/windows-events/images/placeholder-4625.png) *
+## 🟪 Case Study 1: Analysing Authentication Failures (Event ID 4625)
+ 
+![Event 4625 - Failed Logon](/3.log-analysis/windows-events/images/4625-4.png)
+![Event 4625 - Failed Logon](/3.log-analysis/windows-events/images/4625-1.png) 
+![Event 4625 - Failed Logon](/3.log-analysis/windows-events/images/4625-3.png)
+![Event 4625 - Failed Logon](/3.log-analysis/windows-events/images/4625-2.png) 
 
-During routine monitoring, a high-velocity cluster of **Event ID 4625 (Audit Failure)** logs was detected on the endpoint `Azul_Fifty`. The telemetry revealed an aggressive attempt to authenticate to the built-in `Administrator` account within a 3-minute timeframe. 
 
-A detailed review of the event properties highlighted the following critical artifacts:
-*   **Logon Type: 10 (RemoteInteractive):** This confirms the attack was taking place over Remote Desktop Protocol (RDP), a common target for brute force. *(Note: If Logon Type was 3, it would indicate a Network/SMB attack).*
-*   **Target Account Name:** `Administrator` (The attacker is targeting highly privileged default accounts).
-*   **Source Network Address:** `192.168.10.45` (An unauthorized internal IP, suggesting an already compromised pivot machine on the network).
-*   **Failure Reason / Sub Status:** `0xC000006A` (User name is correct, but the password is wrong). This specific sub-status confirms the attacker is actively guessing passwords against a valid account.
+*(Note: Highlight fields: Logon Type, Account For Which Failed, Sub Status `0xC000006A` / `0xC0000064`, and Source Network Address)*
 
-## 🟪 Case Study 2: The Successful Compromise (Event ID 4624)
+During baseline security monitoring and local testing on the endpoint `AZUL_FIFTY`, clusters of **Event ID 4625 (Audit Failure)** were observed. 
 
-![Event 4624 - Successful Logon](/3.log-analysis/windows-events/images/placeholder-4624.png) *(Note: Replace with your screenshot)*
+A detailed review of the event properties highlighted critical forensic artifacts:
+*   **Logon Types Observed:** Captured under **Logon Type 2 (Interactive)** and **Logon Type 3 (Network)**, representing local authentication attempts and network/SMB probing respectively. *(Note: Environment constraints on Windows Home editions inherently restrict Remote Desktop Server roles, omitting Logon Type 10, which provides realistic context on OS-level boundary hardening).*
+*   **Target Account Name:** Validated against local and Microsoft-linked user profiles (e.g., trying inputs like `magxxxxx@outlook.com` or local user profiles).
+*   **Failure Reason / Sub Status:** Ranging from `0xC0000064` (User name does not exist) on local interactive vectors to `0xC000006A` (Bad password / user name correct) on network/NTLM vectors, highlighting how Windows handles status reporting across different subsystem calls.
 
-Immediately following the barrage of failure events, a single **Event ID 4624 (Audit Success)** was generated. 
+## 🟪 Case Study 2: Correlating Legitimate Session States (Event ID 4624)
 
-*   **Correlation:** The `Target Account` and `Source Network Address` matched exactly with the previous 4625 events.
-*   **Verdict:** This sequence confirms that the threat actor successfully guessed the password and established an interactive remote session on `Azul_Fifty`. At this point, the brute force attack escalated into a full system compromise. 
-*   **Context:** Following this 4624 event, we would expect to see an **Event ID 4672 (Special Privileges Assigned)**, as documented in previous analyses, confirming the attacker now holds administrative control.
+![Event 4624 - Successful Logon](/3.log-analysis/windows-events/images/4624-1.png)  
 
-## 🟪 Security Recommendations & Incident Response
 
-Detecting a successful brute force attack requires immediate incident response procedures:
+In parallel with monitoring failure conditions, successful **Event ID 4624 (Audit Success)** records were analyzed to map baseline user behavior and system state transitions on the endpoint. Focusing on system-level telemetry, the environment exhibited operational integrity through events such as:
 
-1.  **Containment:** Isolate the compromised endpoint (`Azul_Fifty`) and the source machine (`192.168.10.45`) from the corporate network immediately to prevent further lateral movement.
-2.  **Credential Revocation:** Force a password reset for the `Administrator` account and any other accounts accessed from the attacker's IP.
-3.  **Remediation (Hardening):**
-    *   Implement and enforce **Account Lockout Policies** (e.g., lock the account for 30 minutes after 5 failed attempts) to mitigate future brute force efficiency.
-    *   Disable the default `Administrator` account if not strictly required, or rename it.
-    *   Restrict RDP access (Port 3389) at the firewall level, requiring VPN access or implementing MFA for remote sessions.
+*   **Logon Type 5 (Service):** Captured when background Windows services (such as `services.exe` utilizing `SYSTEM` credentials under an **Elevated Token: Yes**) initialized or executed. 
+*   **Operational Session Mapping:** Correlating system background execution with standard workstation states (such as active service processing) allows blue teams to distinguish between background administrative integrity and external anomalies.
+*   **Verdict & Correlation:** Correlating these events allows blue teams to verify that core OS components and administrative controls operate within expected parameters while managing authentication requests.
+
+## 🟪 Security Recommendations & Hardening
+
+Securing endpoints against unauthorized credential access and maintaining robust visibility involves several core hardening practices:
+
+1.  **Enforce Account Lockout Policies:** Configure thresholds to temporarily lock endpoints after a specified number of consecutive failed authentication attempts (Event ID 4625), mitigating automated password guessing.
+2.  **Audit Policy Tuning:** Ensure advanced audit configurations actively monitor both success and failure states for account logon and logon/logoff categories to maintain high fidelity in SIEM/Log analysis.
+3.  **Network Boundary Restrictions:** Restrict unnecessary inbound SMB (Port 445) and remote management ports at the host firewall level to reduce the local attack surface.
 
 ## 🪪 Author
 

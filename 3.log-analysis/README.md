@@ -1,20 +1,20 @@
-# 🎯 Log Analysis & Threat Triage
+# 🔷 Log Analysis & Threat Triage
 
 Welcome to the **Log Analysis** section of my SOC Analyst portfolio.
 
 This directory showcases my hands-on ability to investigate endpoint and cloud logs, differentiate between malicious activity and legitimate system noise, and apply a structured triage process. The focus here is not just on finding bad actors, but on understanding normal behaviours to reduce alert fatigue.
 
-## 📌 Current Status
+##
 
 The investigations are categorised by the primary log source:
 
-*   [**/entra-id**](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md) 🔥 *NEW*
+*   [**/entra-id**](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md) 
     *   Analysis of Cloud Identity telemetry, focusing on Entra ID SigninLogs and AuditLogs to detect impossible travel, MFA anomalies, and compromised credentials.
-*   [**/sysmon**](/3.log-analysis/sysmon/) 🔥 *UPDATED*
+*   [**/sysmon**](/3.log-analysis/sysmon/sysmon-overview.md) 
     *   Endpoint visibility using Sysmon. Contains analyses of unauthorised memory access to LSASS (ID 10), process creation (ID 1), process injection (ID 8), registry modifications (ID 13), and DNS queries (ID 22).
 *   [**/powershell**](/3.log-analysis/powershell/event4104-powershell-scriptblock-analysis.md) 
     *   Analysis of native PowerShell logs, specifically focusing on Script Block Logging (Event ID 4104) to review suspicious and obfuscated script executions.
-*   [**/windows-events**](/3.log-analysis/windows-events/Event-ID-4672.md) 
+*   [**/windows-events**](/3.log-analysis/windows-events/README.md) 
     *   Core Windows Security Event Log investigations, focusing on authentication patterns and logon failures.
 
 ## 🔏 Triage Methodology

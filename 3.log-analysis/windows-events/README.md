@@ -19,8 +19,10 @@ The goal of this module is to build a professional, SOC‑ready reference of Win
 | File | Description |
 | :--- | :--- |
 | `README.md` | Overview of the Windows Security Events analysis module. |
-| `4672-special-privileges-assigned.md` | Analysis of Event ID 4672: Special Privileges Assigned. |
-| *(Upcoming additions)* | `4624`/`4625` Logon, `4688` Process Creation, `4697` Service Installation, etc. |
+| `Special-privileges-assigned` | `4672` Special Privileges Assigned. |
+| `Endpoint Authentication` | `4624` `4625`|
+| ` Authentication successful` | `4624` |
+| *(Upcoming additions)* |  `4688` Process Creation, `4697` Service Installation, etc. |
 
 ## ◾Current Event Analysis Included
 

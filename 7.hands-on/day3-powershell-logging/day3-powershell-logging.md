@@ -1,4 +1,5 @@
-# Security Event Analysis
+# Security Event Analysis ![PowerShell Logging](https://img.shields.io/badge/PowerShell_Logging-1A0066?style=flat-square&logo=powershell&logoColor=white)
+
 # PowerShell ScriptBlock Logging & De-obfuscation
 
 ## ◾ Summary

@@ -6,16 +6,18 @@
 **Focus:** Investigating hybrid identity anomalies, ranging from local RDP brute-force attacks to cloud-based impossible travel and compromised session tokens.
 
 ### 📂 Case Studies & Lab Documentation
-* **[Case Study 1: Local Brute Force & Lateral Movement](/3.log-analysis/windows-events/4625-auth-brute-force.md#security-event-analysis-local-brute-force-attack-event-id-4625--4624)** 
+* **[Case Study 1: Endpoint Brute-Force & Authentication Analysis.](/3.log-analysis/windows-events/endpoint-authentication-analysis.md#security-event-analysis-endpoint-authentication--session-telemetry-event-id-4625--4624)** 
   * Triage of Event IDs 4625 and 4624 to confirm interactive RDP compromise.
 * **[Case Study 2: Cloud Identity Impossible Travel & AiTM](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview)** 🔥
   * KQL-driven investigation of multi-region brute-force spikes and session token compromise.
 
-### ✅ Basic Practice (On-Premises Identity)
-- **Audit Local Logon Events:** Analyse Windows Security Event logs for interactive authentication attempts:
-  - **Event ID 4625 (Failed Logon):** Identify brute-force activity and analyze sub-status codes (e.g., `0xC000006A` for incorrect passwords).
-  - **Event ID 4624 (Successful Logon):** Correlate with preceding failures to confirm successful compromise.
-- **Logon Type Analysis:** Differentiate access vectors by reviewing Logon Types (e.g., Type 10 - RemoteInteractive for RDP vs. Type 3 - Network).
+
+## ✅ Basic Practice (On-Premises Identity)
+
+- **Audit Local Logon Events:** Analyse Windows Security Event logs for interactive and network authentication attempts:
+  - **Event ID 4625 (Failed Logon):** Identify credential probing and analyze sub-status codes (e.g., `0xC000006A` for incorrect passwords and `0xC0000064` for invalid usernames).
+  - **Event ID 4624 (Successful Logon):** Correlate with preceding events to validate expected system sessions (e.g., Service logons) or identify anomalous access.
+- **Logon Type Analysis:** Differentiate access vectors by reviewing Logon Types (e.g., Type 2 - Interactive for physical access vs. Type 3 - Network for SMB probes), while understanding environment constraints (e.g., Type 10 - RemoteInteractive restrictions).
 
 ### 🚀 Advanced Practice (Cloud Identity & KQL)
 - **Cloud Identity Telemetry:** Parse Microsoft Entra ID `SigninLogs` to decode authentication error codes (`50126`, `50140`).

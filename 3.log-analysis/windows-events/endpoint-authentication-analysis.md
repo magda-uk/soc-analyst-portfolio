@@ -40,6 +40,7 @@ Securing endpoints against unauthorized credential access and maintaining robust
 1.  **Enforce Account Lockout Policies:** Configure thresholds to temporarily lock endpoints after a specified number of consecutive failed authentication attempts (Event ID 4625), mitigating automated password guessing.
 2.  **Audit Policy Tuning:** Ensure advanced audit configurations actively monitor both success and failure states for account logon and logon/logoff categories to maintain high fidelity in SIEM/Log analysis.
 3.  **Network Boundary Restrictions:** Restrict unnecessary inbound SMB (Port 445) and remote management ports at the host firewall level to reduce the local attack surface.
+4. **MITRE ATT&CK Mapping:** Align detection engineering and incident response playbooks with the MITRE ATT&CK framework by mapping these authentication anomalies directly to **T1110 (Brute Force)** and the potential risk of **T1078 (Valid Accounts)**.
 
 ## 🪪 Author
 

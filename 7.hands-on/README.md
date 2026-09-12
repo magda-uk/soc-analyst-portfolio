@@ -31,7 +31,7 @@ Each module includes:
 | **Day 3** | PowerShell ScriptBlock Logging & Obfuscation | 🚧 `In Progress / Coming Soon` | — |
 | **Day 4** | Authentication & Identity Telemetry (Entra ID) | ✅ `Completed` | [🆕 View Lab](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview) |
 | **Day 5** | Process Trees & Attack Chain Reconstruction | ⏳ `Planned` | — |
-| **Day 6** | MITRE ATT&CK Threat Mapping | ⏳ `Planned` | — |
+| **Day 6** | MITRE ATT&CK Threat Mapping | ✅ `Completed` | [🆕 View Lab](/7.hands-on/day6-mitre-mapping/day6-mitre-mapping.md)|
 | **Day 7** | Comprehensive Incident Triage & Reporting | ⏳ `Planned` | — |
 
 

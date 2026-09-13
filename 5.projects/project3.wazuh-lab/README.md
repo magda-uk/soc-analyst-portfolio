@@ -1,3 +1,5 @@
+#  🚧 *_Coming soon_* 🚧
+
 # Wazuh Lab Environment
 
 ## Objective

@@ -1,5 +1,5 @@
 # Security Event Analysis
-# Active Defense & Cyber Deception (Honeytokens)
+# Active Defence & Cyber Deception (Honeytokens)
 
 ## 🔻Summary
 Traditional Security Operations often rely on reactive detection mechanisms, which can suffer from high false-positive rates and alert fatigue. This case study explores a proactive **Active Defence** approach using cyber deception, specifically the deployment of a *Honeytoken*. 
@@ -8,13 +8,16 @@ By strategically placing a tracked, fictitious asset (a decoy document) within a
 
 ---
 
+
 ## 🔻Phase 1: Decoy Deployment & Strategy
 
 **Analysis:**
-To simulate an attractive target for an adversary or a malicious insider, a macro-less Microsoft Word document was generated using Canarytokens. 
 
-*   **Asset Naming Convention:** The file was deliberately named `Confidential_Salaries_2026.docx` to exploit attacker curiosity and automated data-discovery scripts. 
-*   **Placement Strategy:** In a real-world enterprise environment, such files are strategically placed in accessible, yet rarely used, SharePoint directories, unprotected file shares, or dummy user desktops. Legitimate users have no business rationale to interact with this file.
+To simulate an attractive target for an adversary or a malicious insider, a Web Bug / URL Canarytoken was generated. 
+
+*   **Asset Naming Convention:** The decoy URL was embedded within a plain text file named `intranet_admin_portal.txt` to exploit attacker curiosity and credential-harvesting techniques. 
+
+*   **Placement Strategy:** In a real-world enterprise environment, such files or deceptive links are strategically placed in internal wikis, accessible but unmonitored SharePoint directories, or dummy user desktops. Legitimate users have no business rationale to interact with this specific link.
 
 ---
 
@@ -24,10 +27,12 @@ To simulate an attractive target for an adversary or a malicious insider, a macr
 
 
 **Analysis:**
-Upon opening the decoy document, a hidden web bug (a tracking pixel) embedded within the file structure executed a DNS/HTTP request to the Canarytoken server, immediately generating a high-priority alert.
+
+Upon accessing the decoy URL contained within the text file, a hidden web bug (a tracking pixel) embedded within the file structure executed a DNS/HTTP request to the Canarytoken server, immediately generating a high-priority alert.
 
 *   **Telemetry Captured:** The alert instantly provided critical triage information, including the source IP address, the timestamp of the interaction, and user-agent details.
-*   **Incident Response Value:** Because interaction with this file is strictly prohibited by its very nature, the SOC can immediately escalate this alert to a critical incident, bypassing the standard triage and verification queues. It definitively confirms that an entity is actively browsing the file system for sensitive data.
+
+*   **Incident Response Value:** Because interaction with this file is strictly prohibited by its very nature, the SOC can immediately escalate this alert to a critical incident, bypassing the standard triage and verification queues. It definitively confirms that an entity is actively browsing the file system for sensitive access points.
 
 ---
 
@@ -41,4 +46,8 @@ Upon opening the decoy document, a hidden web bug (a tracking pixel) embedded wi
 ## 🔻Author
 **Magda Dominguez**  
 *SOC Analyst (L1-ready) Bristol, UK*  
-Focused on Blue Team operations, detection engineering and log analysis.
+Focused on Blue Team operations, detection engineering and log analysis. 
+
+
+---
+

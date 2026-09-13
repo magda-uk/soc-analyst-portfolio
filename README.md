@@ -37,7 +37,7 @@ Hands-on Blue Team operations, multi-source investigations, detection engineerin
 
 | Section | Status | Progress |
 |---------|--------|----------|
-| 📚 [Theory](./0.therory/glossary.md) | ✅ Done  | Glossary completed |
+| 📚 [Theory](./0.theory/glossary.md) | ✅ Done  | Glossary completed |
 | 🧪 [Detection Engineering](./1.detections/README.md) | 🔥 Highly Active | Structure + theory, practical cases in development |
 | 🔎 [Investigations](/2.investigations/README.md) | 🔥 Highly Active | 4 completed cases (Threat Hunting & False Positive Tuning) |
 | 📊 [Log Analysis](./3.log-analysis/README.md) | ✅ Done  | Sysmon , Windows Events, PowerShell, Entra ID |

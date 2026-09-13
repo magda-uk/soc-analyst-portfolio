@@ -1,4 +1,4 @@
-# Windows Security Events  ![Windows Events](https://img.shields.io/badge/Windows_Events-A974FF?style=flat-square&logo=windows&logoColor=white)
+# Windows Security Events  ![Windows Event Logs](https://img.shields.io/badge/Windows_Event_Logs-Event_IDs-A974FF?style=flat-square&logo=windows&logoColor=white)
 
 
 This directory contains structured analyses of key Windows Security Log events relevant to authentication, privilege escalation, administrative activity, and early detection of malicious behaviour. Each entry provides a clear explanation of the event, its operational context, and recommended correlation with additional telemetry used in SOC investigations.

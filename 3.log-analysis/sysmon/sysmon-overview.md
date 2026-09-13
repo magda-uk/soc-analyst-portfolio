@@ -1,6 +1,6 @@
 # 👩🏽‍💻Full Sysmon Investigation Compendium
 ## Complete SOC Analyst Portfolio 
-###  Behavioural Analysis, DNS, OEM Noise & MITRE Mapping
+###  Behavioural Analysis, DNS, OEM Noise & MITRE Mapping  <img src="https://img.shields.io/badge/Sysmon-Event%20Analysis-purple?style=flat-square" alt="Sysmon Event Analysis">
 
 This document consolidates **Sysmon** telemetry investigations, covering process creation events (**ProcessCreate**), name resolution queries (**DNS Query**), alternate data streams (**ADS / FileStreamCreated**), and the OEM noise baseline. Designed as an operational reference for **Blue Team and SOC Triage**.
 

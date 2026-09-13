@@ -1,20 +1,21 @@
-# Security Event Analysis
+# Security Event Analysis ![Process Trees](https://img.shields.io/badge/Analysis-Process_Trees-orange?style=flat-square)
+
 # Process Trees & Attack Chain Reconstruction 
 
-## 🟪 Attack Simulation (Red Team Perspective)
+## 🔸 Attack Simulation (Red Team Perspective)
 To generate the telemetry for this investigation, a simulated fileless staging attack was executed via the command line, attempting to bypass local execution policies and download an external payload.
 
 ![PowerShell Execution](./images/Screenshot%202026-09-12%20040127.png)
 
 
-## 🟪 Summary
+## 🔸 Summary
 This analysis demonstrates the reconstruction of an endpoint attack chain using Sysmon telemetry. By pivoting on a single `ProcessGuid`, this case study tracks a suspicious PowerShell execution from its initial launch (Event ID 1), through its outbound network communication (Event ID 3), to the creation of local artefacts on disk (Event ID 11). 
 
 Correlating these events allows SOC analysts to build a comprehensive timeline of adversary behaviour, eliminating blind spots between host execution and network staging.
 
 ---
 
-## 🟪 Phase 1: Initial Execution & Evasion (Event ID 1)
+## 🔸Phase 1: Initial Execution & Evasion (Event ID 1)
 
 ![Sysmon Event ID 1 - Process Creation](./images/event-id-1.png)
 
@@ -27,7 +28,7 @@ The attack chain begins with **Event ID 1 (Process Creation)**, revealing a susp
 
 ---
 
-## 🟪 Phase 2: Command & Control / Staging (Event ID 3)
+## 🔸Phase 2: Command & Control / Staging (Event ID 3)
 
 ![Sysmon Event ID 3 - Network Connection](./images/Event-id-3.png)
 
@@ -40,7 +41,7 @@ Following the execution, **Event ID 3 (Network Connection)** captured the outbou
 
 ---
 
-## 🟪 Phase 3: Artefact Creation on Disk (Event ID 11)
+## 🔸Phase 3: Artefact Creation on Disk (Event ID 11)
 
 ![Sysmon Event ID 11 - File Creation](./images/event-id-11.png)
 
@@ -53,13 +54,13 @@ The final stage of this execution sequence was captured by **Event ID 11 (File C
 
 ---
 
-## 🟪 MITRE ATT&CK Mapping
+## 🔸MITRE ATT&CK Mapping
 This correlated execution chain maps directly to the following adversary techniques:
 *   **[T1059.001](https://attack.mitre.org/techniques/T1059/001/) Command and Scripting Interpreter: PowerShell** (Initial execution and policy bypass).
 *   **[T1105](https://attack.mitre.org/techniques/T1105/) Ingress Tool Transfer** (Attempting to download external payloads via `Invoke-WebRequest`).
 *   **[T1071.001](https://attack.mitre.org/techniques/T1071/001/) Application Layer Protocol: Web Protocols** (Outbound HTTP staging).
 
-## 🪪 Author
+## 🔸Author
 **Magda Dominguez**  
 *SOC Analyst (L1-ready) Bristol, UK*  
-Focused on Blue Team operations, detection engineering and log analysis.
+Focused on 🔸Blue Team operations 🔸Detection engineering 🔸Log analysis.

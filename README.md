@@ -37,14 +37,14 @@ Hands-on Blue Team operations, multi-source investigations, detection engineerin
 
 | Section | Status | Progress |
 |---------|--------|----------|
-| 📚 [Theory](./0.therory/glossary.md) |  🔄 Active | Glossary completed |
+| 📚 [Theory](./0.therory/glossary.md) | ✅ Done  | Glossary completed |
 | 🧪 [Detection Engineering](./1.detections/README.md) | 🔥 Highly Active | Structure + theory, practical cases in development |
 | 🔎 [Investigations](/2.investigations/README.md) | 🔥 Highly Active | 4 completed cases (Threat Hunting & False Positive Tuning) |
-| 📊 [Log Analysis](./3.log-analysis/README.md) | 🔥 Highly Active | Sysmon (IDs 1, 2, 3, 8, 10,11,13,15,22), Windows Events 4672 |
+| 📊 [Log Analysis](./3.log-analysis/README.md) | ✅ Done  | Sysmon , Windows Events, PowerShell, Entra ID |
 | 🕵️ [Threat Hunting](./4.hunting/README.md) | 🔥 Highly Active | Playbooks for LSASS access, PowerShell abuse, and Cloud Identity |
 | 🧩 [Security Labs](./5.projects/README.md) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
 | 📝 [SOC Documentation](./6.documents/2.incident-response-workflow.md) | ✅ Foundation | Guides, methodology and checklists |
-| 🧰 [Hands-On Labs](./7.hands-on/README.md) | 🔄 Active | 🟩🟩🟩🟩⬜⬜⬜⬜ (4/8 Completed) |
+| 🧰 [Hands-On Labs](./7.hands-on/README.md) | 🔄 Active | 🟩🟩🟩🟩🟩🟩⬜⬜ (6/8 Completed) |
 
 ---
 

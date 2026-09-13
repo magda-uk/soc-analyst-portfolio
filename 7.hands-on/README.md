@@ -28,9 +28,9 @@ Each module includes:
 | :--- | :--- | :--- | :--- |
 | **Day 1** | Sysmon Event ID 1: Process Creation Baseline | ✅ `Completed` | [📂 View Lab](./day1-sysmon-basics/README.md) |
 | **Day 2** | Sysmon Event Correlation & MITRE Mapping (IDs 1, 3, 11) | ✅ `Completed` | [📂 View Lab](./day2-sysmon-suspicious/README.md) |
-| **Day 3** | PowerShell ScriptBlock Logging & Obfuscation | 🚧 `In Progress / Coming Soon` | — |
+| **Day 3** | PowerShell ScriptBlock Logging & Obfuscation |  ✅ `Completed` | [📂 View Lab](./day3-powershell-logging/day3-powershell-logging.md) |
 | **Day 4** | Authentication & Identity Telemetry (Entra ID) | ✅ `Completed` | [🆕 View Lab](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview) |
-| **Day 5** | Process Trees & Attack Chain Reconstruction | ⏳ `Planned` | — |
+| **Day 5** | Process Trees & Attack Chain Reconstruction | ✅ `Completed`  | [📂 View Lab](./day5-process-trees/day5-process-trees.md) |
 | **Day 6** | MITRE ATT&CK Threat Mapping | ✅ `Completed` | [🆕 View Lab](/7.hands-on/day6-mitre-mapping/day6-mitre-mapping.md)|
 | **Day 7** | Comprehensive Incident Triage & Reporting | ⏳ `Planned` | — |
 

@@ -36,6 +36,8 @@ Upon opening the decoy document, a hidden web bug (a tracking pixel) embedded wi
 *   **ATT&CK - [T1083](https://attack.mitre.org/techniques/T1083/) File and Directory Discovery:** Detects automated scripts or manual enumeration of local files.
 *   **D3FEND - [D3-DO](https://d3fend.mitre.org/technique/d3f:DecoyObject/) Decoy Object:** The employment of a deceptive digital object to elicit adversary interaction.
 
+---
+
 ## 🔻Author
 **Magda Dominguez**  
 *SOC Analyst (L1-ready) Bristol, UK*  

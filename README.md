@@ -44,7 +44,7 @@ Hands-on Blue Team operations, multi-source investigations, detection engineerin
 | 🕵️ [Threat Hunting](./4.hunting/README.md) | 🔥 Highly Active | Playbooks for LSASS access, PowerShell abuse, and Cloud Identity |
 | 🧩 [Security Labs](./5.projects/README.md) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
 | 📝 [SOC Documentation](./6.documents/2.incident-response-workflow.md) | ✅ Foundation | Guides, methodology and checklists |
-| 🧰 [Hands-On Labs](./7.hands-on/README.md) | 🔄 Active | 🟩🟩🟩🟩🟩🟩⬜⬜ (6/8 Completed) |
+| 🧰 [Hands-On Labs](./7.hands-on/README.md) | 🔄 Active | 🟩🟩🟩🟩🟩🟩⬜ (6/7 Completed) |
 
 ---
 

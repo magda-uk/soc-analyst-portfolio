@@ -3,7 +3,11 @@
 # Final Incident Response Report
 
 ## 🔺 Executive Summary
-Between 11 September and 13 September 2026, the Security Operations Centre (SOC) detected and contained a coordinated cyber intrusion targeting the corporate environment. The threat actor successfully compromised user credentials to gain initial access, subsequently utilising Living-off-the-Land (LotL) techniques via PowerShell to bypass static defenses. The attack was definitively identified and halted when the adversary interacted with a proactively deployed Cyber Deception asset (URL Honeytoken). No legitimate sensitive data was exfiltrated.
+Between 11 September and 13 September 2026, the Security Operations Centre (SOC) detected and contained a coordinated cyber intrusion targeting the corporate environment. 
+
+The threat actor successfully compromised user credentials to gain initial access, subsequently utilising Living-off-the-Land (LotL) techniques via PowerShell to bypass static defenses. 
+
+The attack was definitively identified and halted when the adversary interacted with a proactively deployed Cyber Deception asset (URL Honeytoken). No legitimate sensitive data was exfiltrated.
 
 ## 🔺 Incident Timeline
 *   **11 September 2026 - Initial Access:** 
@@ -37,5 +41,7 @@ To prevent recurrence, the Incident Response team recommends the following immed
 
 ## 🔺 Author
 **Magda Dominguez**
+
 SOC Analyst (L1-ready) Bristol, UK
+
 Focused on Blue Team operations, detection engineering and log analysis.

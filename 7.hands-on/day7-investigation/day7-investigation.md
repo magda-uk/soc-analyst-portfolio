@@ -35,7 +35,7 @@ To prevent recurrence, the Incident Response team recommends the following immed
 
 3.  **Hardening:** Enforce strict Conditional Access policies requiring MFA for all administrative portals and maintain Script Block Logging (Event ID 4104) across all endpoints.
 
-##🔺 Author
+## 🔺 Author
 **Magda Dominguez**
 SOC Analyst (L1-ready) Bristol, UK
 Focused on Blue Team operations, detection engineering and log analysis.

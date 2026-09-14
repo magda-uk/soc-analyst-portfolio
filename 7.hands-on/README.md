@@ -32,7 +32,7 @@ Each module includes:
 | **Day 4** | Authentication & Identity Telemetry (Entra ID) | ✅ `Completed` | [🆕 View Lab](/3.log-analysis/entra-id/EntraID-Impossible-Travel.md#-scenario-overview) |
 | **Day 5** | Process Trees & Attack Chain Reconstruction | ✅ `Completed`  | [📂 View Lab](./day5-process-trees/day5-process-trees.md) |
 | **Day 6** | MITRE ATT&CK Threat Mapping | ✅ `Completed` | [🆕 View Lab](/7.hands-on/day6-mitre-mapping/day6-mitre-mapping.md)|
-| **Day 7** | Comprehensive Incident Triage & Reporting | ⏳ `Planned` | — |
+| **Day 7** | Comprehensive Incident Triage & Reporting | ✅ `Completed` | [🆕 View Lab](/7.hands-on/day7-investigation/day7-investigation.md)|
 
 
 ## 🔍 Day 1: Sysmon Event ID 1 - Process Creation Baseline

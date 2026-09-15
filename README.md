@@ -44,7 +44,7 @@ Hands-on Blue Team operations, multi-source investigations, detection engineerin
 | 🕵️ [Threat Hunting](./4.hunting/README.md) | 🔥 Highly Active | Playbooks for LSASS access, PowerShell abuse, and Cloud Identity |
 | 🧩 [Security Labs](./5.projects/README.md) | ⏳ Getting Started | Sysmon Lab, Elastic Stack, Wazuh Lab |
 | 📝 [SOC Documentation](./6.documents/2.incident-response-workflow.md) | ✅ Foundation | Guides, methodology and checklists |
-| 🧰 [Hands-On Labs](./7.hands-on/README.md) | 🔄 Active | 🟩🟩🟩🟩🟩🟩⬜ (6/7 Completed) |
+| 🧰 [Hands-On Labs](./7.hands-on/README.md) | ✅ Done  | 🟩🟩🟩🟩🟩🟩🟩 (7/7 Completed) |
 
 ---
 
@@ -85,11 +85,11 @@ Beginner-friendly labs designed to build core SOC skills:
     *Differentiating adversary reconnaissance (BloodHound/SharpHound) from legitimate Anti-Malware activity.*
 *   **[False Positive Tuning: Lenovo Vantage OEM Telemetry](./2.investigations/03-tuning-lenovo-vantage.md)**
     *Baselining legitimate OEM software behaviour to reduce SIEM false positives and create high-fidelity exclusions.*
-*   **[Registry Modification & Persistence (Sysmon Event ID 13)](multi-event-analysis.md)**
+*   **[Registry Modification & Persistence (Sysmon Event ID 13)](/3.log-analysis/sysmon/id13-registry-modification/multi-event-analysis.md)**
     *Triaging registry changes to identify potential malware persistence mechanisms or configuration tampering.*
-*   **[Network Telemetry: DNS Queries & CDN Traffic (Sysmon Event ID 22)](sysmon-id22-webview2-analysis.md)**
+*   **[Network Telemetry: DNS Queries & CDN Traffic (Sysmon Event ID 22)](/3.log-analysis/sysmon/id22-dns-queries/sysmon-22-webview2-appassets.md)**
     *Triaging background DNS requests to differentiate legitimate software traffic from potential C2 beaconing.*
-*   **[Special Privileges Assigned (Windows Event ID 4672)](Event-ID-4672.md)**
+*   **[Special Privileges Assigned (Windows Event ID 4672)](/3.log-analysis/windows-events/4672-privilege-special-assigned.md)**
     *Analysing privileged logon sessions to differentiate legitimate administrative activity from potential escalation or credential abuse.*
 
 *⚠️ Note: As my workflow evolves, advanced investigations are continuously being consolidated into the `3.log-analysis` and `2.investigations` directories for a more streamlined SOC structure.*

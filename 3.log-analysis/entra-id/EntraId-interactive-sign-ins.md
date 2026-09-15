@@ -1,4 +1,5 @@
-# Cloud Identity Analysis: Entra ID Interactive Sign-ins
+# Log Analysis & Event Triage
+## Entra ID Interactive Sign-ins
 
 ## 🟪 Summary
 

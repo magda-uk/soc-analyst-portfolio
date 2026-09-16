@@ -1,15 +1,33 @@
-# Security Investigation: Event ID 4798 
+# Log Analysis & Correlation
 # (False Positive - Reconnaissance)
----
+
+
+![Windows Security Logs](https://img.shields.io/badge/Windows%20Security%20Logs-0078D6?style=flat-square&logo=windows&logoColor=white)
+![Sysmon](https://img.shields.io/badge/Sysmon%20Telemetry-4B275F?style=flat-square&logo=sysinternals&logoColor=white)
+![VirusTotal](https://img.shields.io/badge/VirusTotal-394EFF?style=flat-square&logo=virustotal&logoColor=white)
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT&CK%C2%AE-ff66b3?style=flat-square)
+![Hashing](https://img.shields.io/badge/Hashing%20(SHA256)-80bfff?style=flat-square)
+![False Positive](https://img.shields.io/badge/Verdict-False%20Positive-d8b4ff?style=flat-square)
+
 
 ## 📌 Executive Summary
-During routine endpoint monitoring, a high‑velocity burst of Windows Security Event ID 4798 was detected, typically associated with reconnaissance activity. The pattern — 10 consecutive group‑enumeration events occurring within the same second — initially suggested potential lateral‑movement preparation or privilege‑escalation reconnaissance.
+During routine endpoint monitoring, a high‑velocity burst of Windows Security Event ID 4798 was detected, typically associated with reconnaissance activity. 
 
-A structured triage confirmed the behaviour was benign and originated from the endpoint’s authorised Anti‑Malware solution (Malwarebytes). Sysmon correlation validated the integrity of the executing binaries (cryptographically signed, VirusTotal 0/74). No indicators of compromise, unauthorised enumeration, or adversarial tooling (e.g., BloodHound/SharpHound) were identified.
+The pattern (10 consecutive group‑enumeration events occurring within the same second) initially suggested potential lateral‑movement preparation or privilege‑escalation reconnaissance.
 
-Verdict: False Positive
-Impact: None
-Action: No incident response required. Detection rule should be tuned to exclude MBAMService.exe when executed under SYSTEM to reduce alert fatigue.
+A structured triage confirmed the behaviour was benign and originated from the endpoint’s authorised Anti‑Malware solution (Malwarebytes). 
+
+Sysmon correlation validated the integrity of the executing binaries (cryptographically signed, VirusTotal 0/74). 
+
+No indicators of compromise, unauthorised enumeration, or adversarial tooling (e.g., BloodHound/SharpHound) were identified.
+
+- Verdict: False Positive
+
+- Impact: None
+
+- Action: No incident response required. 
+
+- Detection rule should be tuned to exclude MBAMService.exe when executed under SYSTEM to reduce alert fatigue.
 
 
 

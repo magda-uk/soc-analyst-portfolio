@@ -45,7 +45,8 @@ ParentCommandLine: "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 ## ▪️5. Analysis & Triage Steps
 
- ### 1. **Command Line Inspection:** Reviewed the process creation telemetry (Sysmon Event ID 1) to identify the presence of the `-EncodedCommand` argument.
+ ### 1. **Command Line Inspection:** 
+ Reviewed the process creation telemetry (Sysmon Event ID 1) to identify the presence of the `-EncodedCommand` argument.
 
 ![PowerShell Console execution](/2.investigations/images/investigation-2.png)
 
@@ -53,15 +54,22 @@ ParentCommandLine: "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 
 
-### 2. **Payload Decoding:** Decoded the observed Base64 string (`VwByAGkAdABl...`) to reveal the underlying plaintext execution payload.
- **Decoded content:** `Write-Host 'SOC Analyst Portfolio Test - T1059.001'`
+### 2. **Payload Decoding:**
+Decoded the observed Base64 string (`VwByAGkAdABl...`) to reveal the underlying plaintext execution payload.
+
+This was performed locally within a PowerShell terminal to avoid relying on external web tools for potentially sensitive payloads.
+
+ **Decoded content:** 
+ 
+ `Write-Host 'SOC Analyst Portfolio Test - T1059.001'`
 
 ![PowerShell Console execution](/2.investigations/images/investigation-2.5.png)
 
 > *Figure 4: PowerShell console demonstrating the decoding of the Base64 string to reveal the plaintext payload.*
 
 
-### 3. **Parent-Child Process Correlation:** Traced the process lineage, confirming an interactive parent instance spawning an encoded child process.
+### 3. **Parent-Child Process Correlation:** 
+Traced the process lineage, confirming an interactive parent instance spawning an encoded child process.
 
 ![PowerShell Console execution](/2.investigations/images/parent%204.3.png)
 
@@ -82,3 +90,10 @@ The detected activity aligns with adversarial PowerShell abuse patterns.
 
 * **Telemetry Enhancement:** Ensure PowerShell Script Block Logging (Event ID 4104) is globally enabled to capture decrypted script contents regardless of command-line obfuscation.
 * **Remediation:** Investigate the parent process lineage and verify user authorization for executing administrative scripting tools.
+
+
+## ▪️ Author 
+
+**Magda Dominguez**  
+*SOC Analyst (L1-ready) Bristol, UK*  
+Focused on Blue Team operations, detection engineering and log analysis.

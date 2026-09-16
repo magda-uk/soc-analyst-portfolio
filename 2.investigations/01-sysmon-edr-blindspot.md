@@ -1,4 +1,10 @@
-# 🔎 Investigation: EDR Interception vs. OS Telemetry Gap
+#  Investigation: EDR Interception vs. OS Telemetry Gap
+![EDR](https://img.shields.io/badge/EDR-Interception-00A88E?style=flat-square)
+![Sysmon](https://img.shields.io/badge/Sysmon-Telemetry%20Gap-4B275F?style=flat-square&logo=sysinternals&logoColor=white)
+![WFP](https://img.shields.io/badge/Windows%20Filtering%20Platform-Architecture-0078D6?style=flat-square&logo=windows&logoColor=white)
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT&CK%C2%AE-FF6600?style=flat-square)
+
+
 
 **Analyst:** Magdalena Domínguez  
 **Date:** 03 September 2026  

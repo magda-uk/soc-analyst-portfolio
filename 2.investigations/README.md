@@ -15,6 +15,11 @@ Focuses on identifying and analyzing anomalous behaviours, bypassing techniques,
     *   *Focus:* Triage and analysis of obfuscated PowerShell execution using Base64 encoding.
     *   *Techniques:* T1059.001 (PowerShell), T1027 (Obfuscated Files or Information).
     *   *Tools:* PowerShell Script Block Logging, Sysmon (Event ID 1), Base64 Decoding.
+
+*   **[True Positive: Suspicious PowerShell via MS Word](./05-true-positive-powershell.md)**
+    *   *Focus:* Triage of a malicious spear-phishing attachment spawning LotL binaries to download an external payload, leading to endpoint isolation.
+    *   *Techniques:* T1566.001 (Spearphishing Attachment), T1059.001 (PowerShell), T1105 (Ingress Tool Transfer).
+    *   *Tools:* Microsoft Sysmon (Event IDs 1, 3, 11), VirusTotal.
 *   **[EDR Interception vs. OS Telemetry Gap (Sysmon Blindspot)](./01-sysmon-edr-blindspot.md)**
     *   *Focus:* Understanding telemetry gaps caused by kernel-level EDR prevention (Windows Filtering Platform).
     *   *Techniques:* T1071.001 (Web Protocols), T1562.001 (Impair Defenses).

@@ -13,17 +13,17 @@
 
 
 
-## 🟥 Hunt Hypothesis
+# 🟥 Hunt Hypothesis
 Threat actors are attempting to bypass perimeter defences by targeting legitimate cloud identities. We assume that compromised credentials, password spraying, or brute-force tactics are actively being used against our Entra ID environment to establish an initial foothold.
 
-## 🟥 Attack Vector & Execution
+# 🟥 Attack Vector & Execution
 Instead of exploiting technical vulnerabilities, modern adversaries often prefer to simply "log in" using valid accounts. Authentication anomalies are frequently the first indicator of this behaviour, as attackers rely on:
 * Validating stolen credentials against corporate directories.
 * Executing low-and-slow password spraying to avoid automated lockouts.
 * Conducting aggressive brute-force attacks from obfuscated infrastructure.
 * Moving laterally or escalating privileges immediately following a successful breach.
 
-## 🟦 Detection Logic & Telemetry
+# 🟦 Detection Logic & Telemetry
 To validate the hypothesis, we establish a baseline of Entra ID sign-in telemetry to surface accounts experiencing a high volume of failed authentications from specific IP addresses.
 
 ```q
@@ -35,7 +35,7 @@ SigninLogs
 > This query surfaces accounts experiencing a disproportionate volume of failed sign-ins from specific IP addresses, providing a starting point for deeper investigation.
 ---
 
-## 🕵🏻‍♀️ Investigation Workflow 
+# 🕵🏻‍♀️ Investigation Workflow 
 
 ### 1️⃣. Identify Brute Force Patterns
 
@@ -186,7 +186,7 @@ For a practical demonstration of triaging these events and reducing false positi
 
 
 
-## 🟥 Indicators of Compromise (Summary)
+# 🟥 Indicators of Compromise (Summary)
 
 A consolidated list of red flags indicating a potential identity compromise across cloud and endpoint environments:
 
@@ -199,7 +199,7 @@ A consolidated list of red flags indicating a potential identity compromise acro
 
 ---
 
-## 🛡️ Recommended Actions (Containment & Response)
+# 🛡️ Recommended Actions (Containment & Response)
 
 If the above IoCs are confirmed, the following containment procedures should be executed immediately:
 
@@ -212,7 +212,7 @@ If the above IoCs are confirmed, the following containment procedures should be 
 
 ---
 
-## 📘 Analyst Notes
+# 📘 Analyst Notes
 
 > **Analyst Tip:** Authentication anomalies are one of the strongest early indicators of credential compromise. Treat any unusual login pattern as a potential account takeover (ATO) until proven otherwise. Trust the telemetry, verify the context, and act swiftly to contain the threat.
 

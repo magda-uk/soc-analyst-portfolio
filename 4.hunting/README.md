@@ -89,7 +89,8 @@ These documents can be used as:
 
 ## 📘 Analyst Notes
 
-> **Portfolio Context:** This directory is part of my SOC Analyst Portfolio, designed to highlight hands-on skills in:
+ **Portfolio Context:** 
+This directory is part of my SOC Analyst Portfolio, designed to highlight hands-on skills in:
 > * KQL (Kusto Query Language)
 > * Microsoft Sentinel
 > * Microsoft Defender for Endpoint
@@ -97,5 +98,5 @@ These documents can be used as:
 > * Threat Hunting & Active Defence
 > * Incident Response workflows
 > * MITRE ATT&CK / D3FEND mapping
->
-> *More hunting playbooks and deception techniques can be added over time to expand the portfolio.*
+
+More playbooks and deception techniques can be added over time to expand the portfolio.

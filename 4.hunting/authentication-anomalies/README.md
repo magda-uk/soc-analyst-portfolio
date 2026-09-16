@@ -1,6 +1,6 @@
 
 ---
-## **Authentication Anomalies Playbook** 
+# **Authentication Anomalies Playbook** 
  ![Entra ID](https://img.shields.io/badge/Entra_ID-B48CFF?style=flat-square&logo=microsoftazure&logoColor=white)
  ![Sentinel](https://img.shields.io/badge/Microsoft_Sentinel-SIEM-6f42c1?style=flat-square&logo=microsoftazure&logoColor=white)
  ![Sysmon](https://img.shields.io/badge/Sysmon-Event_Telemetry-CFA0FF?style=flat-square&logo=windows&logoColor=white)
@@ -11,6 +11,7 @@
 **MITRE ATT&CK:** T1078 : Valid Accounts  
 **Category:** Threat Hunting / Identity & Access  
 
+---
 
 
 # 🟥 Hunt Hypothesis

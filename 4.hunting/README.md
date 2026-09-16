@@ -1,19 +1,20 @@
-# 4. Hunting - SOC Analyst Investigation Playbooks
 
-This directory contains a collection of professional threat-hunting playbooks, designed to demonstrate practical SOC Analyst (Blue Team) skills using Microsoft Defender, Microsoft Sentinel, Sysmon telemetry, and MITRE ATT&CK mapping.
+# 4. Hunting & Active Defence - SOC Analyst Playbooks
 
-Each hunting playbook provides:
+This directory contains a collection of professional threat-hunting playbooks and cyber deception (honeytoken) strategies, designed to demonstrate practical SOC Analyst (Blue Team) skills using Microsoft Defender, Microsoft Sentinel, Sysmon telemetry, and MITRE frameworks (ATT&CK / D3FEND).
 
-* 🎯 **A clear investigation objective**
-* 🧠 **A "Why This Matters" section** explaining the attack impact
-* 🔍 **A primary KQL query**
-* 🕵️ **A structured SOC investigation workflow**
-* 🔴 **Indicators of compromise**
-* 🛡️ **Recommended response actions**
-* 📘 **Analyst notes**
+Rather than following a rigid template, these documents adapt to the specific nature of the threat—whether proactively hunting for compromised cloud identities or deploying active defence decoys on an endpoint. 
 
-These documents showcase not only technical capability, but also analytical reasoning, investigative maturity, and real-world SOC methodology.
+Across this directory, you will find a combination of:
 
+* 🎯 **Hunt Hypotheses & Clear Objectives:** Defining what we are looking for or trapping.
+* 🧠 **Attack Vectors & Impact:** Understanding how the adversary operates.
+* 🔍 **Detection Logic & Decoy Setup:** Using KQL to surface anomalies or configuring high-fidelity SIEM alerts.
+* 🕵️ **Investigation Workflows:** Step-by-step event triage, proof of concepts, and log correlation.
+* 🔴 **Red Flags & IoCs:** Key indicators of malicious behaviour or active compromise.
+* 🛡️ **Containment Procedures:** Recommended SOC response actions to isolate the threat.
+
+---
 ---
 
 ## 📂 Contents
@@ -48,25 +49,35 @@ These documents showcase not only technical capability, but also analytical reas
   * Endpoint activity correlation
   * Indicators of account compromise
 
+### 4. Active Defence: Honeytokens & Cyber Deception
+* **MITRE D3FEND:** `D3-DO Decoy Object`
+* **Overview:** Demonstrates the deployment of file-based honeytokens (decoy files) to generate high-fidelity, zero-false-positive alerts in Microsoft Sentinel when adversaries attempt to access sensitive directories or exfiltrate data.
+* **This playbook includes:**
+  * Honeytoken generation and strategic placement
+  * Sentinel correlation and alert logic
+  * Telemetry validation
+  * Active Defence methodology
+
 ---
 
-## 🎯 Purpose of This Directory
+## 🎯 Purpose of This Directory: The Analytical Mindset
 
-This directory demonstrates my ability to:
+This directory bridges my professional background in high-volume logistics with Blue Team operations. 
 
-* Conduct manual threat-hunting investigations
-* Correlate identity, process, network, and file telemetry
-* Apply MITRE ATT&CK in real investigations
-* Document findings clearly and professionally
-* Think like a SOC Analyst.
+In my daily work as a Perpetual Inventory and Systems Specialist within a fast-paced distribution centre, my core responsibility is investigating complex discrepancies. This involves correlating events across multiple enterprise systems (such as WMS and ERPs), validating multi-source data, and reconstructing operational timelines to identify the root cause of an anomaly.
 
-It shows that I'm ready to go beyond writing queries and investigate, interpret, and respond to real attack behaviours.
+I have directly translated this analytical methodology into my SOC workflow. The same methodical approach I use to triage system anomalies and resolve critical discrepancies is what I apply here to:
+
+* Conduct proactive threat-hunting investigations.
+* Correlate identity, process, network, and file telemetry to uncover hidden adversary behaviours.
+* Implement active defence mechanisms (honeytokens) to generate high-fidelity alerts.
+* Document findings with the clarity, precision, and operational focus required in a real-world environment.
 
 ---
 
 ## 🧩 How to Use These Playbooks
 
-These hunting documents can be used as:
+These documents can be used as:
 
 * Investigation guides
 * Study material
@@ -83,8 +94,8 @@ These hunting documents can be used as:
 > * Microsoft Sentinel
 > * Microsoft Defender for Endpoint
 > * Sysmon telemetry
-> * Threat Hunting & Incident Triage
+> * Threat Hunting & Active Defence
 > * Incident Response workflows
-> * MITRE ATT&CK framework mapping
+> * MITRE ATT&CK / D3FEND mapping
 >
-> *More hunting playbooks can be added over time to expand the portfolio.*
+> *More hunting playbooks and deception techniques can be added over time to expand the portfolio.*

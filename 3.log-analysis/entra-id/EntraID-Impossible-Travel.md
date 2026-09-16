@@ -2,7 +2,7 @@
 
 ## 📌 Scenario Overview
 * **Event Source:** Microsoft Entra ID (Sign-in Logs)
-* **Techniques:** [T1110](/0.therory/glossary.md#-mitre-attck-techniques-common-in-this-portfolio) (Brute Force), [T1078](/0.therory/glossary.md#-mitre-attck-techniques-common-in-this-portfolio) (Valid Accounts), [T1566](/0.therory/glossary.md#-mitre-attck-techniques-common-in-this-portfolio) Phishing - Potential AiTM
+* **Techniques:** [T1110](/0.theory/glossary.md#-mitre-attck-techniques-common-in-this-portfolio) (Brute Force), [T1078](/0.theory/glossary.md#-mitre-attck-techniques-common-in-this-portfolio) (Valid Accounts), [T1566](/0.theory/glossary.md#-mitre-attck-techniques-common-in-this-portfolio) Phishing - Potential AiTM
 * **Objective:** Detect, investigate, and hunt anomalous authentication patterns targeting a corporate logistics account using Kusto Query Language (KQL).
 
 ---

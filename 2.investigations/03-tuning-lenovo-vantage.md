@@ -1,4 +1,9 @@
 # 🧩 Lenovo Vantage Noise Analysis
+![Sysmon](https://img.shields.io/badge/Sysmon%20Telemetry-4B275F?style=flat-square&logo=sysinternals&logoColor=white)
+![Baselining](https://img.shields.io/badge/Environment-Baselining-005571?style=flat-square)
+![Detection Engineering](https://img.shields.io/badge/Detection%20Engineering-FF9900?style=flat-square)
+![KQL](https://img.shields.io/badge/KQL%20Logic-0072C6?style=flat-square&logo=microsoft&logoColor=white)
+![Noise Reduction](https://img.shields.io/badge/Tuning-Noise%20Reduction-success?style=flat-square)
 
 **Understanding OEM Noise in Sysmon Telemetry**
 

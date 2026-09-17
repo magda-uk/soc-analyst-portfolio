@@ -11,6 +11,11 @@ Each investigation outlines the initial alert, triage steps, evidence gathering 
 ### ⚙️ Threat Hunting & Incident Analysis
 Focuses on identifying and analyzing anomalous behaviours, bypassing techniques, and malicious executions.
 
+*   **[Threat Hunting: OS Credential Dumping & Data Exfiltration](./06-true-positive-procdump-exfiltration.md)**
+    *   *Focus:* Triage of a multi-stage attack involving the abuse of Procdump to extract memory from `explorer.exe` (bypassing LSASS restrictions) and subsequent data exfiltration via PowerShell.
+    *   *Techniques:* T1003 (OS Credential Dumping), T1048 (Exfiltration Over Alternative Protocol).
+    *   *Tools:* Microsoft Sysmon (Event IDs 1, 3, 11), KQL Threat Hunting Logic.
+
 *   **[Suspicious PowerShell Encoded Command](./02-threat-hunt-powershell.md)**
     *   *Focus:* Triage and analysis of obfuscated PowerShell execution using Base64 encoding.
     *   *Techniques:* T1059.001 (PowerShell), T1027 (Obfuscated Files or Information).
@@ -43,7 +48,6 @@ Focuses on alert triage, reducing SIEM fatigue, and baselining legitimate system
 
 The following investigations are currently in the lab and will be published soon:
 
-*   **Potential Credential Dumping:** Investigating unauthorized access to LSASS memory (T1003) and analyzing suspicious DLL injections.
 *   **Authentication Anomalies:** Threat hunting for lateral movement and compromised credentials using Windows Security Event logs.
 
 *Return to the [Main Portfolio Repository](https://github.com/magda-uk/soc-analyst-portfolio).*

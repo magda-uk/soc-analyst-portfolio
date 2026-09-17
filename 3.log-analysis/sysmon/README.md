@@ -6,6 +6,20 @@ This document consolidates **Sysmon** telemetry investigations, covering process
 
 ---
 
+## 🏗️  Lab Environment & Telemetry Generation
+To generate high-fidelity logs and validate detection rules, a local learner-friendly Windows telemetry lab was utilised to capture both normal system noise and adversarial behaviour.
+
+* **Setup & Infrastructure:** 
+  * Windows 10/11 virtual machine.
+  * Sysmon v14+ configured with a custom SwiftOnSecurity baseline.
+* **Adversary Simulation:** 
+  * Executed benign and suspicious PowerShell commands, including obfuscated/encoded payloads.
+  * Generated LSASS access events via credential dumping simulation (Procdump/Mimikatz).
+  * Ran scripts via PowerShell and CMD to observe parent-child process lineage.
+* **Outcome:** The resulting telemetry (Event IDs 1, 3, 7, 10) was used to differentiate normal OS behaviour from malicious activity and to validate custom Sigma, Sentinel, and Elastic correlation rules.
+
+---
+
 ## 🗺️ 1. Sysmon Event Map - SOC Priority Matrix
 
 | Priority | Event ID | Event Name | Main Detection Use Case |

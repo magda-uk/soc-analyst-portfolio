@@ -71,6 +71,9 @@ Beginner-friendly labs designed to build core SOC skills:
 *This is a **highly active** project, updated regularly as I dive deeper into Blue Team operations and telemetry analysis.*
 
 ### ⚙️ Threat Hunting & Incident Analysis
+
+*   🆕 **[Threat Hunting: OS Credential Dumping & Data Exfiltration (T1003 & T1048)](./2.investigations/06-true-positive-procdump-exfiltration.md)**
+    *Triaging a multi-stage attack involving the abuse of Procdump to extract memory from `explorer.exe` (bypassing LSASS restrictions) and subsequent data exfiltration via PowerShell.*
 *   🆕 **[Cloud Identity: Impossible Travel & MFA Anomalies](./3.log-analysis/entra-id/EntraID-Impossible-Travel.md)**
     *Triaging Entra ID Sign-in logs to identify credential compromise, geolocation anomalies, and MFA bypass attempts.*
 *   🆕 **[LSASS Credential Dumping via Mimikatz (Sysmon Event ID 10)](./3.log-analysis/sysmon/id10-lsass-access/evtx-mimikatz-lsass-access.md)**
@@ -81,6 +84,8 @@ Beginner-friendly labs designed to build core SOC skills:
     *Analysing how kernel-level EDR mechanisms (WFP) intercept network connections early, blinding OS-level telemetry like Sysmon.*
 
 ### ⚙️ Detection Engineering & Tuning
+*   🆕 **[Special Privileges Assigned (Windows Event ID 4672)](./3.log-analysis/windows-events/4672-privilege-special-assigned.md)**
+    *Analysing privileged logon sessions to differentiate legitimate administrative activity from potential escalation or credential abuse.*
 *   🆕 **[Event ID 4798: High-Velocity Group Enumeration (False Positive)](./2.investigations/04-false-positive-event4798.md)**
     *Differentiating adversary reconnaissance (BloodHound/SharpHound) from legitimate Anti-Malware activity.*
 *   **[False Positive Tuning: Lenovo Vantage OEM Telemetry](./2.investigations/03-tuning-lenovo-vantage.md)**
@@ -89,8 +94,7 @@ Beginner-friendly labs designed to build core SOC skills:
     *Triaging registry changes to identify potential malware persistence mechanisms or configuration tampering.*
 *   **[Network Telemetry: DNS Queries & CDN Traffic (Sysmon Event ID 22)](/3.log-analysis/sysmon/id22-dns-queries/sysmon-22-webview2-appassets.md)**
     *Triaging background DNS requests to differentiate legitimate software traffic from potential C2 beaconing.*
-*   **[Special Privileges Assigned (Windows Event ID 4672)](/3.log-analysis/windows-events/4672-privilege-special-assigned.md)**
-    *Analysing privileged logon sessions to differentiate legitimate administrative activity from potential escalation or credential abuse.*
+
 
 *⚠️ Note: As my workflow evolves, advanced investigations are continuously being consolidated into the `3.log-analysis` and `2.investigations` directories for a more streamlined SOC structure.*
 

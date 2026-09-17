@@ -70,6 +70,14 @@ Sysmon_Event_1_Table // (Adjust table name based on specific SIEM schema)
 | project TimeGenerated, Account, PrivilegeList, Image, CommandLine, ParentImage
 ```
 
+## 🟪 Practical Application & Incident Response
+While Event 4672 is often benign, it is a prerequisite for high-impact attacks like OS Credential Dumping. 
+
+To see a complete, step-by-step forensic investigation where a privileged session (Event 4672) was abused to dump `explorer.exe` memory and exfiltrate data, please review my full incident report here:
+
+👉 **[Investigation Case: Threat Hunting - OS Credential Dumping & Data Exfiltration](/2.investigations/06-true-positive-procdump-exfiltration.md)**
+
+
 ## 🟪 Security Recommendations & Conclusion
 Individual Event ID 4672 entries are rarely malicious on their own but are critical indicators of elevated capability. 
 

@@ -48,7 +48,7 @@ The adversary initially executed `procdump.exe` targeting the Local Security Aut
 ![Event ID 1](./images/06/sysmon-1.png)
 > *Figure 1: Sysmon Event ID 1 capturing the execution of Procdump targeting explorer.exe.*
 
----
+
 
 ### 🔻 Phase 2: Memory Dump Creation Validation
 Following the execution, Sysmon telemetry was analysed to confirm if the memory dump was successfully written to disk. Event ID 11 confirms the successful extraction of the process memory, indicating a bypass of initial credential dumping restrictions.
@@ -63,7 +63,7 @@ Following the execution, Sysmon telemetry was analysed to confirm if the memory 
 
 *Note on Telemetry Gaps: Sysmon Event ID 10 (Process Access) was not generated during the dumping of explorer.exe due to standard Sysmon configuration exclusions designed to reduce log fatigue. However, the attack chain was successfully reconstructed by correlating Event IDs 1 and 11.*
 
----
+
 
 ### 🔻 Phase 3: Data Exfiltration
 Forensic analysis of the PowerShell history (via the `PSReadLine` hidden history file) revealed the execution of `Invoke-WebRequest` to send data via HTTP POST to an external Command and Control (C2) server.
@@ -84,7 +84,7 @@ Correlation with Sysmon Event ID 3 confirmed the outgoing connection from the Po
 
 ---
 
-## ▪️ Threat Hunting Logic (KQL)
+## ▪️4. Threat Hunting Logic (KQL)
 To proactively detect this attack chain in Microsoft Sentinel or Defender, the following Kusto Query Language (KQL) logic correlates the execution of `procdump` with subsequent outbound network connections from PowerShell within a 15-minute window.
 
 ```q
@@ -104,7 +104,10 @@ Sysmon_Event_3_Table
 | project AttackTime = TimeGenerated, Computer, User, DumpTime, DestinationIp, DestinationPort
 ```
 
-## ▪️ 4. Conclusion & Response Actions
+![KQL Detection Results](./images/06/KQL-2.png)
+> *Figure 4: KQL query execution confirming the correlation between the credential dumping attempt and the subsequent PowerShell exfiltration.*
+
+## ▪️ 5. Conclusion & Response Actions
 
 The detected activity confirms a successful credential dumping and exfiltration operation. The adversary successfully bypassed endpoint defences, dumped the memory of `explorer.exe`, and established an outbound HTTP connection to exfiltrate the payload.
 
@@ -113,3 +116,11 @@ The detected activity confirms a successful credential dumping and exfiltration 
 1.  **Network Controls:** Implement strict egress filtering to block outbound connections on non-standard HTTP ports (e.g., 8080) from standard user endpoints to untrusted internal or external subnets.
 2.  **Endpoint Controls (EDR):** Enhance detection rules to trigger high-severity alerts when `procdump.exe` or `procdump64.exe` are executed targeting critical system processes (including `explorer.exe` and `winlogon.exe`, not just `lsass.exe`).
 3.  **PowerShell Visibility:** Enforce PowerShell Constrained Language Mode to restrict the use of web cmdlets (`Invoke-WebRequest`) by non-administrative accounts, mitigating script-based data exfiltration.
+
+
+
+## ▪️6. Author 
+
+**Magda Dominguez**  
+*SOC Analyst (L1-ready) Bristol, UK*  
+Focused on Blue Team operations, detection engineering and log analysis.

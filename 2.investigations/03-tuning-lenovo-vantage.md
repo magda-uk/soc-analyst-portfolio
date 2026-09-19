@@ -101,7 +101,7 @@ OEM software creates high-volume telemetry noise in production enterprise enviro
 ## 🔹 Suggested Detection Exclusion Logic
 
 To tune detection rules (such as SIEM KQL or Sigma rules) without creating blind spots:
-```
+```q
 // Filter by execution path or parent process lineage
 (
     Image startswith @"C:\Program Files (x86)\Lenovo\VantageService\"

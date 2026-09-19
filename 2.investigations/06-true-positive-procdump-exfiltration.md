@@ -32,7 +32,7 @@ Following the successful memory dump, the adversary utilized native Windows bina
 
 ---
 
-## ▪️ 3. Triage & Evidence Analysis
+## ▪️3. Triage & Evidence Analysis
 
 The investigation followed a chronological analysis of Sysmon telemetry and host-based artifacts to reconstruct the attack chain.
 

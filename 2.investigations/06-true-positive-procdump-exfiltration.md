@@ -107,6 +107,8 @@ Sysmon_Event_3_Table
 ![KQL Detection Results](./images/06/KQL-2.png)
 > *Figure 4: KQL query execution confirming the correlation between the credential dumping attempt and the subsequent PowerShell exfiltration.*
 
+---
+
 ## ▪️ 5. Conclusion & Response Actions
 
 The detected activity confirms a successful credential dumping and exfiltration operation. The adversary successfully bypassed endpoint defences, dumped the memory of `explorer.exe`, and established an outbound HTTP connection to exfiltrate the payload.
@@ -117,7 +119,7 @@ The detected activity confirms a successful credential dumping and exfiltration 
 2.  **Endpoint Controls (EDR):** Enhance detection rules to trigger high-severity alerts when `procdump.exe` or `procdump64.exe` are executed targeting critical system processes (including `explorer.exe` and `winlogon.exe`, not just `lsass.exe`).
 3.  **PowerShell Visibility:** Enforce PowerShell Constrained Language Mode to restrict the use of web cmdlets (`Invoke-WebRequest`) by non-administrative accounts, mitigating script-based data exfiltration.
 
-
+---
 
 ## ▪️6. Author 
 

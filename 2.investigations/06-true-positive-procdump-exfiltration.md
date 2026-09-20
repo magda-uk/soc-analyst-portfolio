@@ -7,6 +7,9 @@
 ![Sysmon](https://img.shields.io/badge/Sysmon%20Telemetry-4B275F?style=flat-square&logo=sysinternals&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell%20Forensics-5391FE?style=flat-square&logo=powershell&logoColor=white)
 ![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT&CK%C2%AE-FF6600?style=flat-square)
+![Microsoft Sentinel](https://img.shields.io/badge/Microsoft%20Sentinel-0078D4?style=flat-square&logo=microsoft&logoColor=white)
+![KQL](https://img.shields.io/badge/KQL-00509E?style=flat-square&logo=microsoft&logoColor=white)
+![SOAR (Logic Apps)](https://img.shields.io/badge/SOAR%20(Logic%20Apps)-5C2D91?style=flat-square&logo=azure&logoColor=white)
 ![True Positive](https://img.shields.io/badge/Verdict-True%20Positive-E50000?style=flat-square)
 
 ---
@@ -126,12 +129,12 @@ To reduce alert fatigue and accelerate L1 triage, a Microsoft Sentinel SOAR play
 
 When the KQL analytic rule triggers, the playbook extracts the incident parameters and automatically dispatches an enriched notification to the SOC analysts, ensuring immediate visibility and prompting rapid containment of the compromised endpoint.
 
-**Playbook Workflow:** `Sentinel Incident Trigger` ➔ `Extract Dynamic Variables` ➔ `Automated Triage Email (Gmail API)`
+**Playbook Workflow:** `Sentinel Incident Trigger` ➔ `Extract Dynamic Variables` ➔ `Automated Triage Email (Outlook)`
 
 ![SOAR Playbook Configuration](/2.investigations/images/06/SOAR.png)
 > *Figure 5: Azure Logic App designer showing the dynamic content injection for the automated SOC alert.*
 
-
+---
 
 ## ▪️7. Author 
 

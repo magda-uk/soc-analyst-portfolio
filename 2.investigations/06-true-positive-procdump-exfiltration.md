@@ -121,7 +121,19 @@ The detected activity confirms a successful credential dumping and exfiltration 
 
 ---
 
-## ▪️6. Author 
+## ▪️ 6. Automated Incident Response (SOAR)
+To reduce alert fatigue and accelerate L1 triage, a Microsoft Sentinel SOAR playbook (Logic App) was engineered to automatically respond to this specific threat detection. 
+
+When the KQL analytic rule triggers, the playbook extracts the incident parameters and automatically dispatches an enriched notification to the SOC analysts, ensuring immediate visibility and prompting rapid containment of the compromised endpoint.
+
+**Playbook Workflow:** `Sentinel Incident Trigger` ➔ `Extract Dynamic Variables` ➔ `Automated Triage Email (Gmail API)`
+
+![SOAR Playbook Configuration](/2.investigations/images/06/SOAR.png)
+> *Figure 5: Azure Logic App designer showing the dynamic content injection for the automated SOC alert.*
+
+
+
+## ▪️7. Author 
 
 **Magda Dominguez**  
 *SOC Analyst (L1-ready) Bristol, UK*  

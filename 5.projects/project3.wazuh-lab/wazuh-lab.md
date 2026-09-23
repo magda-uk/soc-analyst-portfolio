@@ -1,6 +1,8 @@
 # SOC Lab Investigation: RDP Brute Force & NLA Evasion (T1110.001)
 
-**Objective:** To simulate, detect, and analyse an unauthorised Remote Desktop Protocol (RDP) access attempt. The simulation demonstrates pivoting from standard brute-force tools blocked by Network Level Authentication (NLA) to native RDP clients, and the subsequent detection of Event ID 4625 using Wazuh SIEM.
+**Objective:** To simulate, detect, and analyse an unauthorised Remote Desktop Protocol (RDP) access attempt. 
+
+The simulation demonstrates pivoting from standard brute-force tools blocked by Network Level Authentication (NLA) to native RDP clients, and the subsequent detection of Event ID 4625 using Wazuh SIEM.
 
 ## Red Team: Reconnaissance & Simulation
 The investigation began with active reconnaissance against the target endpoint to identify open services, specifically checking for RDP availability.
@@ -12,6 +14,7 @@ The investigation began with active reconnaissance against the target endpoint t
 
 
 Initial brute-force attempts using `ncrack` failed to negotiate the connection because the target enforced Network Level Authentication (NLA). 
+![ncrack](/5.projects/project3.wazuh-lab/screenshots/ncrack-p.png)
 
 To successfully generate authentication traffic and bypass this restriction, a native RDP client (`xfreerdp`) was utilised to simulate a targeted credential attack.
 
@@ -28,7 +31,7 @@ The endpoint's Wazuh agent successfully captured the authentication failure and 
 
 * **Rule Triggered:** Windows: Logon Failure
 * **Event ID:** 4625 (An account failed to log on)
-* **Target Account:** Administrator
+* **Target Account:** Administrador
 * **Source IP Address:** 192.168.1.8 (Kali Linux Attacker)
 
 

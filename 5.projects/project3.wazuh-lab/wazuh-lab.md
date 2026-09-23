@@ -11,15 +11,19 @@ The investigation began with active reconnaissance against the target endpoint t
 ![nmap results](/5.projects/project3.wazuh-lab/screenshots/nmap-1.png)
 
 
-Initial brute-force attempts using `ncrack` failed to negotiate the connection because the target enforced Network Level Authentication (NLA). To successfully generate authentication traffic and bypass this restriction, a native RDP client (`xfreerdp`) was utilised to simulate a targeted credential attack.
+Initial brute-force attempts using `ncrack` failed to negotiate the connection because the target enforced Network Level Authentication (NLA). 
+
+To successfully generate authentication traffic and bypass this restriction, a native RDP client (`xfreerdp`) was utilised to simulate a targeted credential attack.
 
 * Executed the authentication attempt bypassing NLA restrictions.
 * Forced a deliberate logon failure to trigger the security telemetry.
 
-<!-- PLACEHOLDER 2: Insert Kali terminal xfreerdp screenshot here -->
+
 ![xfreerdp command execution and authentication failure](/5.projects/project3.wazuh-lab/screenshots/Ncrack.png)
 
 ## Blue Team: Detection & Telemetry Analysis
+
+![Wazuh SIEM dashboard displaying Event ID 4625 details](/5.projects/project3.wazuh-lab/screenshots/wazuh-0.png)
 The endpoint's Wazuh agent successfully captured the authentication failure and forwarded the telemetry to the SIEM, triggering a high-severity alert.
 
 * **Rule Triggered:** Windows: Logon Failure
@@ -28,11 +32,9 @@ The endpoint's Wazuh agent successfully captured the authentication failure and 
 * **Source IP Address:** 192.168.1.8 (Kali Linux Attacker)
 
 
-![Wazuh SIEM dashboard displaying Event ID 4625 details](/5.projects/project3.wazuh-lab/screenshots/wazuh-0.png)
 
 ![Wazuh SIEM dashboard displaying Event ID 4625 details](/5.projects/project3.wazuh-lab/screenshots/wazuh-1.png)
 
-![Wazuh SIEM dashboard displaying Event ID 4625 details](/5.projects/project3.wazuh-lab/screenshots/wazuh-2.png)
 
 ## Triage & Incident Response Recommendations
 Upon verifying this alert in a live production environment, the following immediate containment and remediation actions are recommended:

@@ -14,6 +14,7 @@ The investigation began with active reconnaissance against the target endpoint t
 
 
 Initial brute-force attempts using `ncrack` failed to negotiate the connection because the target enforced Network Level Authentication (NLA). 
+
 ![ncrack](/5.projects/project3.wazuh-lab/screenshots/ncrack-p.png)
 
 To successfully generate authentication traffic and bypass this restriction, a native RDP client (`xfreerdp`) was utilised to simulate a targeted credential attack.

@@ -41,3 +41,7 @@ Upon verifying this alert in a live production environment, the following immedi
 2. **Network Containment:** Block the malicious source IP address (`192.168.1.8`) at the perimeter firewall.
 3. **Hardening:** Ensure account lockout policies are strictly enforced via Active Directory Group Policy to mitigate sustained brute-force campaigns.
 4. **Access Control:** Restrict RDP access to VPN users or dedicated management subnets only.
+
+##  Author
+**Magda Dominguez**  
+*Security Operations 🔸 Detection Engineering 🔸 Blue Team*

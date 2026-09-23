@@ -10,12 +10,12 @@ The investigation began with active reconnaissance against the target endpoint t
 * Executed a stealth TCP SYN scan using `nmap` while bypassing ICMP blocks (`-Pn`).
 * Identified port 3389 (ms-wbt-server) as open and actively listening.
 
-![nmap results](/5.projects/project3.wazuh-lab/screenshots/nmap-1.png)
+![nmap results](/5.projects/wazuh-lab/screenshots/nmap-1.png)
 
 
 Initial brute-force attempts using `ncrack` failed to negotiate the connection because the target enforced Network Level Authentication (NLA). 
 
-![ncrack](/5.projects/project3.wazuh-lab/screenshots/ncrack-p.png)
+![ncrack](/5.projects/wazuh-lab/screenshots/ncrack-p.png)
 
 To successfully generate authentication traffic and bypass this restriction, a native RDP client (`xfreerdp`) was utilised to simulate a targeted credential attack.
 
@@ -23,11 +23,11 @@ To successfully generate authentication traffic and bypass this restriction, a n
 * Forced a deliberate logon failure to trigger the security telemetry.
 
 
-![xfreerdp command execution and authentication failure](/5.projects/project3.wazuh-lab/screenshots/Ncrack.png)
+![xfreerdp command execution and authentication failure](/5.projects/wazuh-lab/screenshots/Ncrack.png)
 
 ## Blue Team: Detection & Telemetry Analysis
 
-![Wazuh SIEM dashboard displaying Event ID 4625 details](/5.projects/project3.wazuh-lab/screenshots/wazuh-0.png)
+![Wazuh SIEM dashboard displaying Event ID 4625 details](/5.projects/wazuh-lab/screenshots/wazuh-0.png)
 The endpoint's Wazuh agent successfully captured the authentication failure and forwarded the telemetry to the SIEM, triggering a high-severity alert.
 
 * **Rule Triggered:** Windows: Logon Failure
@@ -37,7 +37,7 @@ The endpoint's Wazuh agent successfully captured the authentication failure and 
 
 
 
-![Wazuh SIEM dashboard displaying Event ID 4625 details](/5.projects/project3.wazuh-lab/screenshots/wazuh-1.png)
+![Wazuh SIEM dashboard displaying Event ID 4625 details](/5.projects/wazuh-lab/screenshots/wazuh-1.png)
 
 
 ## Triage & Incident Response Recommendations

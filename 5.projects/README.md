@@ -6,6 +6,7 @@
 ![Microsoft Sentinel](https://img.shields.io/badge/Microsoft_Sentinel-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
 ![KQL](https://img.shields.io/badge/KQL-0050EF?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 ![MITRE ATT&CK](https://img.shields.io/badge/MITRE_ATT%26CK-EF3B24?style=for-the-badge)
+
 Welcome to the core projects section of my portfolio. 
 
 This directory contains end-to-end laboratory environments, detection engineering use cases, and comprehensive threat investigations. 
@@ -18,13 +19,13 @@ This methodology allows me to demonstrate not just how a technical attack works,
 
 ## 🔻 Current & Upcoming Investigations
 
-### 🔻 [Enterprise SOC & Threat Triage (Wazuh + Sysmon)](./wazuh-lab/README.md/)
+### 🔻 [Enterprise SOC & Threat Triage (Wazuh + Sysmon)](./wazuh-lab/README.md)
 A fully configured detection environment designed to ingest host-level telemetry, validate correlation rules, and execute complete Blue Team triage.
 * **Simulated Threats:** RDP Brute Force, Network Level Authentication (NLA) Evasion, Local Account Persistence.
 * **Core Technologies:** Wazuh SIEM, Sysmon (SwiftOnSecurity baseline), Windows Security Event Logs.
 * **Outcomes:** High-fidelity alert correlation, MITRE ATT&CK mapping, and actionable Incident Response (IR) reporting.
 
-### 🔻 Ransomware Simulation & File Integrity Monitoring (FIM) *(In Progress)*
+### 🔻 [Ransomware Simulation & File Integrity Monitoring (FIM)](./wazuh-ransomware-fim/README.md)
 An active detection engineering project focusing on data destruction and integrity monitoring within a simulated corporate network.
 * **Data Engineering Preparation:** Utilising Python to dynamically generate a realistic volume of logistics data, mimicking an active warehouse environment.
 * **Threat Emulation:** Executing a custom ransomware encryption routine to trigger mass modification alerts.

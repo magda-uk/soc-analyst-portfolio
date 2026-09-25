@@ -1,9 +1,5 @@
-# 🛡️ SOC Analyst Portfolio 
-## (Continuous Learning & Operations)
-
-Hands-on Blue Team operations, multi-source investigations, detection engineering, and SOC-focused log analysis.
-
-*_Translating real-world logistics investigations into Blue Team and SOC practices._*
+#  SOC Analyst Portfolio 
+## ➡️ Continuous Learning & Operations
 
 <p align="left">
   <img src="https://img.shields.io/badge/Blue%20Team-SOC%20Analyst-blue?style=flat-square" alt="Blue Team SOC Analyst">
@@ -14,7 +10,19 @@ Hands-on Blue Team operations, multi-source investigations, detection engineerin
   <img src="https://img.shields.io/badge/KQL-Queries-green?style=flat-square&logo=azuredataexplorer" alt="KQL Queries">
 </p>
 
-> ⚠️ **Recruiters & Hiring Managers:** Looking for an executive summary of my best work? Please visit my curated **[Blue Team & SOC Analyst Showcase](https://github.com/magda-uk/soc-analyst-showcase)**.
+Hands-on Blue Team operations, multi-source investigations, detection engineering, and SOC-focused log analysis.
+
+Translating real-world logistics investigations into Blue Team and SOC practices.
+This portfolio brings together my hands-on SOC training and the investigative skills I developed in a high-volume logistics environment. 
+
+The same methodology I used to analyse perpetual inventory discrepancies, validate multi-source data, and reconstruct supply chain timelines now underpins my approach to detection engineering, log analysis, and structured SOC investigations.
+
+
+
+> ⚠️ **Recruiters & Hiring Managers:** Looking for an executive summary of my best work? 
+Please visit my curated ➡️     **[Blue Team & SOC Analyst Showcase](https://github.com/magda-uk/soc-analyst-showcase)**.
+
+
 
 ---
 
@@ -43,7 +51,8 @@ This repository serves as my living knowledge base. While my *Showcase* highligh
 
 ---
 
-## ▫️Featured Enterprise Lab: Wazuh SIEM & Sysmon Operations
+## ▫️Featured Enterprise Lab 
+### ➡️ Wazuh SIEM & Sysmon Operations
 * **Summary:** An end-to-end detection engineering lab simulating adversary tactics mapped to MITRE ATT&CK. I built the architecture to monitor host telemetry via Sysmon and the Wazuh agent, writing custom correlation rules for active attacks.
 * **Tech Stack:** Wazuh Server (Ubuntu), Windows 10/11 Endpoint, Kali Linux, PowerShell, Ncrack, xfreerdp.
 * **Executed Scenarios:**
@@ -73,34 +82,34 @@ This repository serves as my living knowledge base. While my *Showcase* highligh
 
 ---
 
+
+
 ## ▫️Technology & Tools Stack
 
-**SIEM & Telemetry:** 
-Wazuh, Microsoft Sentinel, Elastic Security, Sysmon (SwiftOnSecurity Baseline), Windows Event Logs, Sysmon Event ID correlation.
+**SIEM & Telemetry**  
+![Wazuh](https://img.shields.io/badge/Wazuh-00AEEF?style=flat-square&logo=wazuh&logoColor=white)
+![Microsoft Sentinel](https://img.shields.io/badge/Microsoft_Sentinel-0078D4?style=flat-square&logo=microsoft&logoColor=white)
+![Sysmon](https://img.shields.io/badge/Sysmon-8A2BE2?style=flat-square&logo=windows&logoColor=white)
+![Windows Event Logs](https://img.shields.io/badge/Windows_Event_Logs-1E90FF?style=flat-square&logo=windows&logoColor=white)
 
-**Identity & Cloud:** 
-Azure AD / Microsoft Entra ID (Sign-in logs, Audit logs, MFA analysis).
+**Identity & Cloud**  
+![Entra ID / Azure AD](https://img.shields.io/badge/Entra_ID_|_Azure_AD-00BFFF?style=flat-square&logo=microsoftazure&logoColor=white)
+![Identity Analysis](https://img.shields.io/badge/Identity_Analysis-4169E1?style=flat-square)
 
-**Analysis & Querying:** 
-Kusto Query Language (KQL), Sigma Rules, Wireshark, Event Viewer.
+**Analysis & Querying**  
+![KQL](https://img.shields.io/badge/KQL-00CED1?style=flat-square&logo=azuredataexplorer&logoColor=white)
+![Sigma Rules](https://img.shields.io/badge/Sigma_Rules-FF8C00?style=flat-square)
+![Wireshark](https://img.shields.io/badge/Wireshark-1E90FF?style=flat-square&logo=wireshark&logoColor=white)
+![Event Viewer](https://img.shields.io/badge/Event_Viewer-9370DB?style=flat-square)
 
-**Offensive / Emulation (Red to Blue):** 
-Kali Linux, Nmap, Ncrack, xfreerdp, PowerShell ScriptBlock Execution, Custom Python Payloads (Ransomware FIM emulation).
+**Offensive / Emulation (Red to Blue)**  
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-FF4500?style=flat-square&logo=kali-linux&logoColor=white)
+![Nmap](https://img.shields.io/badge/Nmap-FF1493?style=flat-square&logo=nmap&logoColor=white)
+![Ncrack & xfreerdp](https://img.shields.io/badge/Ncrack_%26_xfreerdp-DC143C?style=flat-square)
+![PowerShell](https://img.shields.io/badge/PowerShell-00BFFF?style=flat-square&logo=powershell&logoColor=white)
+![Python Payloads](https://img.shields.io/badge/Python_Payloads-FFD700?style=flat-square&logo=python&logoColor=black)
 
----
 
-## ▫️Purpose & Methodology
-
-This portfolio brings together my hands-on SOC training and the investigative skills I developed in a high-volume logistics environment. 
-
-The same methodology I used to analyse perpetual inventory discrepancies, validate multi-source data, and reconstruct supply chain timelines now underpins my approach to detection engineering, log analysis, and structured SOC investigations.
-
----
-
-## ▫️Connect with me
-I’m always improving this portfolio as I grow in my SOC Analyst journey. If you have suggestions or ideas that could make it stronger, I’d be glad to hear them.
-
-🔗 **LinkedIn:** [linkedin.com/in/magda-d-infosec](https://linkedin.com/in/magda-d-infosec)
 
 ---
 
@@ -109,3 +118,4 @@ I’m always improving this portfolio as I grow in my SOC Analyst journey. If yo
 **Magda Dominguez**  
 *SOC Analyst (L1) - Bristol, UK*  
 Blue Team operations | SOC investigations | Logistics-to-SOC analytical mindset
+🔗 **LinkedIn:** [linkedin.com/in/magda-d-infosec](https://linkedin.com/in/magda-d-infosec)

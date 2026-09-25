@@ -16,7 +16,7 @@ These rules are written in native SIEM query languages and standard formats to d
 
 ### 🟨 Sigma (YAML)
 - [**Suspicious LSASS Access**](sigma/suspicious-lsass-access.yaml)
-- [**Suspicious PowerShell Execution**](sigma/suspicious-powershell-execution.yaml)
+- [**Suspicious PowerShell Execution**](sigma/suspicious-powershell-execution.yml)
 - [**Registry Modification -Run Key Persistence**](sigma/registry-modification-persistence-tracking.yml)
 
 ## 🚧 Coming Soon (Work in Progress)

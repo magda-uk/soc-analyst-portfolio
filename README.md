@@ -118,4 +118,5 @@ This repository serves as my living knowledge base. While my *Showcase* highligh
 **Magda Dominguez**  
 *SOC Analyst (L1) - Bristol, UK*  
 Blue Team operations | SOC investigations | Logistics-to-SOC analytical mindset
+
 🔗 **LinkedIn:** [linkedin.com/in/magda-d-infosec](https://linkedin.com/in/magda-d-infosec)

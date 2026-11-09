@@ -172,6 +172,13 @@ Red Flags:
 5. **Scope the Blast Radius:** Hunt for the extracted IoCs and lateral movement artifacts across the broader environment to ensure no other endpoints have been compromised.
 6. **Escalation:** Escalate to Incident Response (L3/DFIR) if a malicious second stage is executed, hands-on-keyboard activity is detected, or if data exfiltration is suspected. Provide them with the decoded payload and your timeline.
 
+## 🔸 Practical Demonstrations (PoCs)
+
+For hands-on examples of applying this triage workflow to real-world Sysmon telemetry, refer to the associated investigation case studies in this portfolio:
+
+🔗 **[Investigation Case 1: Threat Hunting for PowerShell Obfuscation (Base64 Decoding)](/2.investigations/02-threat-hunt-powershell.md)**  
+🔗 **[Investigation Case 2: Phishing via MS Word & PowerShell Execution (True Positive)](/2.investigations/05-true-positive-powershell.md)**  
+
 
 ## 🔸 Analyst Notes
 

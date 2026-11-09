@@ -14,20 +14,21 @@ Across this directory, you will find a combination of:
 * 🔴 **Red Flags & IoCs:** Key indicators of malicious behaviour or active compromise.
 * 🛡️ **Containment Procedures:** Recommended SOC response actions to isolate the threat.
 
----
+
 ---
 
 ## 📂 Contents
 
-### 1. PowerShell Encoded Command Hunting
-* **MITRE ATT&CK:** `T1059.001 — Command and Scripting Interpreter: PowerShell`
-* **Overview:** Detects the use of Base64-encoded PowerShell commands, a common technique for hiding malicious payloads, downloading remote scripts, executing C2 stagers, and evading basic logging.
-* **This playbook includes:**
-  * Payload decoding guidance
-  * Timeline reconstruction
-  * Sysmon and Defender correlation
-  * Indicators of malicious execution
-  * Containment and remediation steps
+### 1.🔗 **[PowerShell Encoded Command Hunting](powershell-encoded/hunting.md)**
+- **MITRE ATT&CK:** `T1059.001 — Command and Scripting Interpreter: PowerShell`
+- **Tactics:** `TA0002 — Execution` | `TA0005 — Defence Evasion`
+- **Overview:** Proactively detects Base64-encoded commands and execution policy bypasses. This playbook targets high-signal behaviours used by advanced threat actors and C2 frameworks (e.g., Cobalt Strike) for fileless execution, payload delivery, and log evasion.
+- **This playbook includes:**
+  * Inline KQL decoding & baselining legitimate IT automation
+  * AMSI evasion detection & Script Block Logging (Event ID 4104)
+  * Sysmon/Defender correlation (identifying LOLBins & proxy execution)
+  * Timeline reconstruction & network cradle IoCs
+  * Incident Response containment & Entra ID session revocation
 
 ### 2. LSASS Access Hunting
 * **MITRE ATT&CK:** `T1003 — OS Credential Dumping: LSASS Memory`

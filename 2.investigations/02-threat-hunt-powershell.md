@@ -11,6 +11,8 @@
 
 This investigation analyses a suspicious PowerShell execution involving encoded or obfuscated commands. Such behaviour is commonly associated with malware delivery, credential harvesting, and in-memory execution to bypass basic string-based security controls.
 
+> 📖 **Standard Operating Procedure (SOP):** The triage, Sysmon correlation, and containment steps executed in this investigation follow the methodology defined in my [Threat Hunting Playbook: PowerShell Encoded Commands & Execution Evasion](../4.hunting/powershell-encoded/hunting.md).
+
 ## ▪️ 2. Incident Context and Source
 ###  Detection Source:
 Host-based Telemetry (Windows Event Viewer - Sysmon Operational Logs) / Proactive Threat Hunting

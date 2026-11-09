@@ -19,6 +19,8 @@ Verdict: True Positive
 Impact: High (Malware execution and C2 connection)
 Action: Endpoint isolated, user credentials reset, and ticket escalated to IR team.
 
+> 📖 **Standard Operating Procedure (SOP):** The triage, Sysmon correlation, and containment steps executed in this investigation follow the methodology defined in my [Threat Hunting Playbook: PowerShell Encoded Commands & Execution Evasion](../4.hunting/powershell-encoded/hunting.md).
+
 ---
 
 ## 🔻 Incident Summary

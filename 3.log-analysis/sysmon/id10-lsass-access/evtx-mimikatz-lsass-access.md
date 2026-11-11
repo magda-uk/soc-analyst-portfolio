@@ -8,6 +8,8 @@
 ## 1. Executive Summary
 A critical security event was detected involving unauthorized access to the Local Security Authority Subsystem Service (`lsass.exe`) process memory. The telemetry indicates the execution of the well-known credential extraction tool, Mimikatz, directly from a user's desktop, successfully requesting memory read access to LSASS. 
 
+> 📖 **Standard Operating Procedure (SOP):** This analysis demonstrates the Event ID 10 triage techniques and telemetry validation outlined in my [Threat Hunting Playbook: LSASS Access & Credential Dumping](/4.hunting/lsass-access/hunting.md).
+
 ## 2. Triggering Event (The Alert)
 The investigation was initiated by a Sysmon Event ID 10 (ProcessAccess) alert. This event is triggered when a process opens a handle to another process, which is heavily monitored when the target is `lsass.exe` due to its role in managing system credentials.
 

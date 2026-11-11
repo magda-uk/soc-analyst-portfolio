@@ -23,6 +23,7 @@ Following the successful memory dump, the adversary utilized native Windows bina
 **Verdict:** True Positive.  
 **Action Required:** Immediate network containment of `Azul_Fifty`, credential rotation for the affected user, and escalation to the Incident Response team.
 
+> 📖 **Standard Operating Procedure (SOP):** This end-to-end analysis, covering credential dumping telemetry and data exfiltration, follows the detection workflows defined in my [Threat Hunting Playbook: LSASS Access & Credential Dumping](../4.hunting/lsass-access/hunting.md).
 ---
 
 ## ▪️ 2. MITRE ATT&CK Mapping

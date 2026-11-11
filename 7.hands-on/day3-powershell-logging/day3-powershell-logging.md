@@ -7,6 +7,8 @@ This analysis explores the critical role of **Event ID 4104 (PowerShell Script B
 
 This case study demonstrates how to detect encoded executions and leverage advanced telemetry to reveal the true operational intent of the adversary.
 
+> 📖 **Standard Operating Procedure (SOP):** This deep-dive analysis demonstrates the dynamic de-obfuscation and Event ID 4104 triage techniques outlined in my [Threat Hunting Playbook: PowerShell Encoded Commands](/4.hunting/powershell-encoded/hunting.md).
+
 ---
 
 ## ◾  Attack Simulation (Red Team Perspective)

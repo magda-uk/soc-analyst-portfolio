@@ -180,7 +180,7 @@ Together, these three investigations represent a complete SOC operational lifecy
 *(Phase 1: Identification: Understanding and manually decoding the obfuscation technique).*  
 🔗 **[Investigation Case 2: Phishing via MS Word & PowerShell Execution (True Positive)](/2.investigations/05-true-positive-powershell.md)**  
 *(Phase 2: Triage & Response: Detecting and isolating a live evasion attempt during a LotL malware infection).*   
-🔗**[Investigation Case 3: Defeating Obfuscation with PowerShell ScriptBlock Logging (Event ID 4104)](/7.hands-on/day3-powershell-logging/day3-powershell-logging.md)**  
+🔗 **[Investigation Case 3: Defeating Obfuscation with PowerShell ScriptBlock Logging (Event ID 4104)](/7.hands-on/day3-powershell-logging/day3-powershell-logging.md)**  
 *(Phase 3: Detection Engineering: Configuring advanced telemetry to automatically strip the disguise and reveal true intent).*
 
 

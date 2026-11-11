@@ -47,11 +47,13 @@ To counter this evasion tactic, robust endpoint visibility requires PowerShell O
 
 ## ◾ MITRE ATT&CK Mapping
 This analysis directly maps to the following adversary behaviours:
-*   **[T1059.001](https://attack.mitre.org/techniques/T1059/001/) Command and Scripting Interpreter: PowerShell**
-*   **[T1140](https://attack.mitre.org/techniques/T1140/) Deobfuscate/Decode Files or Information** (From the perspective of the PowerShell engine processing the encoded payload).
-*   **[T1027](https://attack.mitre.org/techniques/T1027/) Obfuscated Files or Information**
 
+◾   **Execution (TA0002):**
+*   **[T1059.001](https://attack.mitre.org/techniques/T1059/001/) Command and Scripting Interpreter: PowerShell**
+
+◾   **Defense Evasion (TA0005):**
+*   **[T1027](https://attack.mitre.org/techniques/T1027/) Obfuscated Files or Information** (Utilising Base64 to mask the command-line payload).
+*   **[T1140](https://attack.mitre.org/techniques/T1140/) Deobfuscate/Decode Files or Information** (From the perspective of the PowerShell engine dynamically unpacking the payload in memory).
 ## ◾ Author
 **Magda Dominguez**  
-*SOC Analyst (L1-ready) Bristol, UK*  
-Focused on Blue Team operations, detection engineering and log analysis.
+[![Magda Dominguez LinkedIn](https://img.shields.io/badge/LinkedIn-Magda_Dominguez-9370DB?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/magda-d-infosec)

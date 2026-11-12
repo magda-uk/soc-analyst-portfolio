@@ -4,7 +4,7 @@
 <p align="left">
   <img src="https://img.shields.io/badge/Blue%20Team-SOC%20Analyst-blue?style=flat-square" alt="Blue Team SOC Analyst">
   <img src="https://img.shields.io/badge/Microsoft-Sentinel-0078D4?style=flat-square&logo=microsoft" alt="Microsoft Sentinel">
-  <img src="https://img.shields.io/badge/Azure-Entra%20ID-0078D4?style=flat-square&logo=microsoftazure" alt="Azure Entra ID">
+  <img src="https://img.shields.io/badge/Azure-Entra%20ID-9370DB?style=flat-square&logo=microsoftazure" alt="Azure Entra ID">
   <img src="https://img.shields.io/badge/Wazuh-SIEM-00AEEF?style=flat-square&logo=wazuh" alt="Wazuh SIEM">
   <img src="https://img.shields.io/badge/Sysmon-Event%20Analysis-purple?style=flat-square&logo=windows" alt="Sysmon Event Analysis">
   <img src="https://img.shields.io/badge/KQL-Queries-green?style=flat-square&logo=azuredataexplorer" alt="KQL Queries">

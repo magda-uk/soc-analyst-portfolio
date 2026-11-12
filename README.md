@@ -29,7 +29,8 @@ This portfolio brings together my hands-on SOC training and the investigative sk
 The same methodology I used to analyse perpetual inventory discrepancies, validate multi-source data, and reconstruct supply chain timelines now underpins my approach to detection engineering, log analysis, and structured SOC investigations.
 
 > ⚠️ **Recruiters & Hiring Managers:** Looking for an executive summary of my best work? 
-Please visit my curated ➡️     **[Blue Team & SOC Analyst Showcase](https://github.com/magda-uk/soc-analyst-showcase)**.
+
+Please visit my curated ➡️ **[Blue Team & SOC Analyst Showcase](https://github.com/magda-uk/soc-analyst-showcase)**.
 
 ---
 

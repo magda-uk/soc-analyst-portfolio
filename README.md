@@ -31,7 +31,7 @@ Please visit my curated ➡️     **[Blue Team & SOC Analyst Showcase](https://
 This repository serves as my living knowledge base. While my *Showcase* highlights polished final reports, this repository is where the daily hands-on work happens. 
 
 * 📈 **Living Archive:** Contains raw telemetry, configuration files, and daily exercises.
-* 🔗 **MITRE Mapping:** All detections and hunts are strictly mapped to MITRE ATT&CK techniques.
+* 🔗 **[MITRE Mapping](https://github.com/magda-uk/mitre-attack-mapping):** All detections and hunts are strictly mapped to MITRE ATT&CK techniques.
 * 🛡️ **Enterprise Tools:** Configured and queried using Sysmon, Sentinel, KQL, and Wazuh.
 * 📚 **Full Spectrum:** Covering everything from baseline theory to advanced endpoint evasion.
 

@@ -1,12 +1,12 @@
-# 📚 SOC Glossary & MITRE ATT&CK Mapping
+#  SOC Glossary & MITRE ATT&CK Mapping
 
-## 🎯 Purpose
+##  Purpose
 This document serves as the theoretical foundation for my portfolio. It provides a comprehensive mapping of my investigations to the **MITRE ATT&CK / D3FEND frameworks**, alongside clear definitions of key SOC, detection engineering, and threat-related terms. 
 
 It acts as a quick reference for understanding adversary behaviour, log artefacts, and the investigation terminology used throughout my playbooks.
 
 ---
-## 📍 MITRE ATT&CK & D3FEND Mapping (Common in This Portfolio)
+## 🔻 MITRE ATT&CK & D3FEND Mapping 
 
 Understanding adversary behaviour through the MITRE framework is core to my detection engineering methodology. Below is a comprehensive map of the key Tactics (The *Why*) and Techniques (The *How*) explored in my investigations, threat hunts, and emulation labs across this repository. 
 
@@ -169,3 +169,24 @@ Understanding adversary behaviour through the MITRE framework is core to my dete
 - **OEM (Original Equipment Manufacturer):** The manufacturer of hardware or pre-installed software system components. In threat analysis, identifying OEM binaries or registry paths helps distinguish legitimate vendor background tasks from injected code.
 - **Living off the Land (LotL):** An adversary technique that abuses legitimate, pre-installed administrative tools and binaries native to the operating system (e.g., PowerShell, WMI, Certutil) to perform malicious actions, effectively bypassing traditional signature-based security controls.
 - **Living off the Web (LotW):** The practice of leveraging trusted cloud services, public code repositories, or legitimate APIs (e.g., GitHub, Discord webhooks, cloud storage buckets) for command and control (C2) communication, payload hosting, or data exfiltration to blend in with normal business traffic.
+
+## 🌐 Network & OT (Operational Technology) Concepts
+
+- **Purdue Model:** A structural model for industrial control system (ICS) network segmentation. It separates enterprise IT networks from operational technology (OT) systems to contain breaches and protect critical infrastructure (such as supply chain refrigeration units).
+- **OSI Model:** The conceptual framework used to understand, standardise, and troubleshoot network communications across seven distinct layers, from physical hardware up to application interfaces.
+- **PCAP (Packet Capture):** A file containing captured network traffic data. Analysing PCAP files (e.g., via Wireshark) is essential for investigating network-based attacks, port scans, and unencrypted data exfiltration.
+- **Network Segmentation:** The practice of splitting a network into smaller, isolated subnets to limit adversary lateral movement and protect sensitive domains.
+- **NLA (Network Level Authentication):** A security feature in RDP that requires the connecting user to authenticate themselves before a session is established with the server, mitigating denial-of-service and brute-force risks.
+
+---
+
+## 🏗️ SIEM & Detection Engineering Architecture
+
+- **Log Normalisation:** The process of parsing raw, unstructured log data from various disparate sources into a standard, readable format (schema) so the SIEM can query and correlate it efficiently.
+- **Correlation Rule:** A detection logic query running in the SIEM that looks for specific sequences of events or thresholds across different log sources to identify a broader attack pattern.
+- **Telemetry Ingestion:** The continuous collection and routing of log data from endpoints, cloud identities, and network sensors into a centralised SIEM for analysis.
+- **Alert Fatigue:** The state of desensitisation that SOC analysts experience when exposed to a high volume of frequent, false-positive alerts, often leading to missed critical threats. 
+- **Honeytoken (Decoy Object):** A digital asset (file, credential, database record) with no legitimate operational use, deployed strictly to detect unauthorised access. Any interaction with a honeytoken is an immediate, high-fidelity True Positive.
+
+## 
+[![Magda Dominguez LinkedIn](https://img.shields.io/badge/LinkedIn-Magda_Dominguez-9370DB?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/magda-d-infosec)

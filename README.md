@@ -40,6 +40,18 @@ Please visit my curated ➡️ **[Blue Team & SOC Analyst Showcase](https://gith
   <tr>
     <td width="50%" valign="top">
 
+### [SOC Glossary & MITRE Mapping](/0.theory/glossary.md)
+
+*Focus:* Core Concepts & Framework Mapping
+
+*Role:* Cyber Security Fundamentals
+
+*Objective:* Comprehensive glossary of SOC terminology, adversary behaviours, and a full MITRE ATT&CK & D3FEND map of this portfolio.
+
+`#mitre-attack` `#d3fend` `#soc-glossary`
+</td>
+    <td width="50%" valign="top">
+
 ###  [Detection Engineering](./1.detections/README.md)
 
 *Focus:* Sigma & KQL Rule Creation
@@ -51,6 +63,8 @@ Please visit my curated ➡️ **[Blue Team & SOC Analyst Showcase](https://gith
 `#kql` `#sigma` `#rule-creation`
 
 </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
 
 ###  [Investigations](/2.investigations/README.md)
@@ -64,11 +78,6 @@ Please visit my curated ➡️ **[Blue Team & SOC Analyst Showcase](https://gith
 `#incident-response` `#triage` `#tuning`
 
 </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
     <td width="50%" valign="top">
 
 ###  [Log Analysis](./3.log-analysis/README.md)
@@ -82,6 +91,8 @@ Please visit my curated ➡️ **[Blue Team & SOC Analyst Showcase](https://gith
 `#sysmon` `#entra-id` `#powershell`
 
 </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
 
 ###  [Threat Hunting](./4.hunting/README.md)
@@ -95,11 +106,6 @@ Please visit my curated ➡️ **[Blue Team & SOC Analyst Showcase](https://gith
 `#playbooks` `#proactive-hunting` `#identity`
 
 </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
     <td width="50%" valign="top">
 
 ###  [Security Architecture & Labs](./5.projects/README.md)
@@ -113,6 +119,8 @@ Please visit my curated ➡️ **[Blue Team & SOC Analyst Showcase](https://gith
 `#wazuh` `#homelab` `#emulation`
 
 </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
 
 ###  [SOC Documentation](./6.documents/2.incident-response-workflow.md)
@@ -126,6 +134,8 @@ Please visit my curated ➡️ **[Blue Team & SOC Analyst Showcase](https://gith
 `#sop` `#governance` `#checklists`
 
 </td>
+    <td width="50%" valign="top">
+    </td>
   </tr>
 </table>
 
